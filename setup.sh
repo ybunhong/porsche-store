@@ -5,6 +5,9 @@ set -e
 
 echo "🔧 Setting up Git configuration for this project..."
 
+npm install 
+echo "✅  npm install successfully"
+
 git_ok=false
 gitflow_ok=false
 node_ok=false
