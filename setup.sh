@@ -10,8 +10,8 @@ gitflow_ok=false
 node_ok=false
 
 # Checking for Git
-echo "🔍 Checking for Git..."
 echo ""
+echo "🔍 Checking for Git..."
 if command -v git &> /dev/null; then
   git_ok=true
   echo "✅  Git is installed: $(git --version)"
@@ -21,8 +21,8 @@ else
 fi
 
 # Checking for Git Flow
-echo "🔍 Checking for Git Flow..."
 echo ""
+echo "🔍 Checking for Git Flow..."
 if command -v git-flow &> /dev/null; then
   gitflow_ok=true
   echo "✅  Git Flow is installed: $(git-flow version)"
@@ -32,8 +32,8 @@ else
 fi
 
 # Checking for Node.js
-echo "🔍 Checking for Node.js..."
 echo ""
+echo "🔍 Checking for Node.js..."
 if command -v node &> /dev/null; then
   node_ok=true
   echo "✅  Node.js is installed: $(node -v)"
@@ -61,7 +61,7 @@ if [ "$git_ok" = true ] && [ "$gitflow_ok" = true ] && [ "$node_ok" = true ]; th
 
   if [[ "$run_gitflow_init" == "y" || "$run_gitflow_init" == "Y" ]]; then
   echo "⚙️ Running git flow init..."
-  git flow init
+  git flow init -d
   else
   echo "ℹ️ Skipping git flow initialization."
   fi
