@@ -1,6 +1,5 @@
 {
   "extends": ["airbnb-base"],
-  "plugins": ["naming-convention"],
   "env": {
     "browser": true,
     "es2021": true,
@@ -16,19 +15,12 @@
     "arrow-body-style": ["error", "as-needed"],
     "import/prefer-default-export": "off",
     "import/extensions": "off",
-    "naming-convention/naming-convention": [
+    "camelcase": ["error", { "properties": "always" }],
+    "id-match": [
       "error",
+      "^[a-z][a-zA-Z0-9]*$|^[A-Z][a-zA-Z0-9]*$",
       {
-        "selector": "variable",
-        "format": ["camelCase"]
-      },
-      {
-        "selector": "function",
-        "format": ["camelCase"]
-      },
-      {
-        "selector": "class",
-        "format": ["PascalCase"]
+        "onlyDeclarations": true
       }
     ]
   }
