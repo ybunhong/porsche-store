@@ -5,25 +5,74 @@ set -e
 
 echo "🔧 Setting up Git configuration for this project..."
 
+git_ok=false
+gitflow_ok=false
+node_ok=false
 
-# Prompt for Git username and email
-read -p "👤 Enter your Git user name: " git_username
-read -p "📧 Enter your Git email: " git_email
+# Checking for Git
+echo "🔍 Checking for Git..."
+echo ""
+if command -v git &> /dev/null; then
+  git_ok=true
+  echo "✅  Git is installed: $(git --version)"
+else
+  echo "❌  Git is not installed."
+  echo "👉  Install it from: https://git-scm.com/"
+fi
 
-# Set Git author info (optional, can be overridden globally)
-git config user.name "$git_username"
-git config user.email "$git_email"
+# Checking for Git Flow
+echo "🔍 Checking for Git Flow..."
+echo ""
+if command -v git-flow &> /dev/null; then
+  gitflow_ok=true
+  echo "✅  Git Flow is installed: $(git-flow version)"
+else
+  echo "❌  Git Flow is not installed."
+  echo "👉  Install it from: https://github.com/nvie/gitflow/wiki/Installation"
+fi
 
-# Enable rebase on pull (recommended for cleaner history)
-git config pull.rebase true
+# Checking for Node.js
+echo "🔍 Checking for Node.js..."
+echo ""
+if command -v node &> /dev/null; then
+  node_ok=true
+  echo "✅  Node.js is installed: $(node -v)"
+else
+  echo "❌  Node.js is not installed."
+  echo "👉  Install it from: https://nodejs.org/"
+fi
 
-# Optional: automatically stash uncommitted changes before rebase
-git config rebase.autoStash true
+# Check all conditions
+if [ "$git_ok" = true ] && [ "$gitflow_ok" = true ] && [ "$node_ok" = true ]; then
+  echo ""
+  echo "🎯  All preconditions met. Proceeding with Git setup..."
 
-# Optional: Set default branch name if initializing
-git config init.defaultBranch main
+  read -p "👤  Enter your Git user name: " git_username
+  read -p "📧  Enter your Git email: " git_email
 
 
+  #config setting
+  git config user.name "$git_username"
+  git config user.email "$git_email"
 
+  #prompt for git flow extension setup
+  echo ""
+  read -p "🚀 Do you want to initialize Git Flow in this repository? (y/n): " run_gitflow_init
 
-echo "✅ Git setup completed."
+  if [[ "$run_gitflow_init" == "y" || "$run_gitflow_init" == "Y" ]]; then
+  echo "⚙️ Running git flow init..."
+  git flow init
+  else
+  echo "ℹ️ Skipping git flow initialization."
+  fi
+
+  git config pull.rebase true
+  git config rebase.autoStash true
+  git config init.defaultBranch main
+
+  echo "✅  Git setup completed for $git_username <$git_email>"
+else
+  echo ""
+  echo "⚠️  Skipping Git setup because one or more requirements were not met."
+  exit 1
+fi
