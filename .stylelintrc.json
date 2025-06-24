@@ -5,6 +5,7 @@
     "color-hex-case": "lower",
     "number-leading-zero": "always",
     "declaration-colon-space-after": "always",
-    "block-no-empty": true
+    "block-no-empty": true,
+    "custom-property-pattern": "^[a-z][a-z0-9-]+$"
   }
 }

@@ -15,7 +15,7 @@ function checkDir(dir) {
   const entries = fs.readdirSync(dir);
 
   entries.forEach(entry => {
-    if (["index.html", "data.json"].includes(entry)) return;
+    if (["index.html", "data.json", ".gitkeep"].includes(entry)) return;
 
     const fullPath = path.join(dir, entry);
     const stat = fs.statSync(fullPath);
