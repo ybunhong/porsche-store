@@ -4,7 +4,7 @@ module.exports = {
     "type-enum": [
       2, //0 is ignore, 1 is allow commit but show warining, 2 is block commit
       "always", //conditon
-      ["feat", "fix", "docs", "refactor", "test", "ci", "king"], // Customize here
+      ["feat", "init", "add", "change", "fix", "chore", "refactor", "docs", "style", "test", "perf", "ci", "build"], // Customize here
     ],
     "subject-case": [0], //always lower
   },
