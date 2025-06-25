@@ -17,6 +17,7 @@
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-lit": "^2.1.1",
     "globals": "^16.2.0",
     "htmlhint": "^1.6.3",
     "husky": "^9.1.7",
@@ -44,5 +45,8 @@
       "htmlhint",
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "lit": "^3.3.0"
   }
 }

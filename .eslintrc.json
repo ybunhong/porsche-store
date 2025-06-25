@@ -1,5 +1,6 @@
 {
-  "extends": ["airbnb-base"],
+  "extends": ["airbnb-base", "plugin:lit/recommended"],
+  "plugins": ["lit"],
   "env": {
     "browser": true,
     "es2021": true,
