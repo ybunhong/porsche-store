@@ -1,11 +1,7 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "string-quotes": "double",
-    "color-hex-case": "lower",
-    "number-leading-zero": "always",
-    "declaration-colon-space-after": "always",
     "block-no-empty": true,
-    "custom-property-pattern": "^[a-z][a-z0-9-]+$"
+    "custom-property-pattern": "^[a-z][a-z0-9-]*$"
   }
 }
