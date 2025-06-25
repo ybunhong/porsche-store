@@ -1,8 +1,8 @@
-import "../components/testing";
+import "../components/input-form";
 
 export function renderProductPage() {
   return `
     <h1> product page </h1>
-    <button-product label ='rith' title='idk1122'></button-product>
+    <input-form></input-form>
   `;
 }

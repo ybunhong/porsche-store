@@ -1,5 +1,11 @@
 {
   "extends": "stylelint-config-standard",
+  "overrides": [
+    {
+      "files": ["**/*.js"],
+      "customSyntax": "postcss-jsx"
+    }
+  ],
   "rules": {
     "block-no-empty": true,
     "custom-property-pattern": "^[a-z][a-z0-9-]*$"
