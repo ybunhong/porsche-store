@@ -2,6 +2,7 @@ import "../components/input-form";
 
 export function renderAuthPage() {
   return `
-    <input-form> </input-form>
+    <input-form label="asf"> </input-form>
+ 
   `;
 }

@@ -7,6 +7,12 @@
     "node": true
   },
   "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["vite.config.js"]
+      }
+    ],
     "no-console": "warn",
     "no-undef": "error",
     "quotes": ["error", "double"],
