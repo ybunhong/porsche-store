@@ -29,6 +29,11 @@
       {
         "onlyDeclarations": true
       }
-    ]
+    ],
+    "lit/no-invalid-html": "error", // catches invalid HTML
+    "lit/no-unclosed-tags": "error", // enforces tag-pairs
+    "lit/attribute-value-entities": "error", // ensures special chars like `&` are escaped
+    "lit/no-duplicate-template-bindings": "error", // prevents duplicate bindings
+    "lit/no-property-change-update": "error"
   }
 }

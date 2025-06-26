@@ -22,8 +22,6 @@
     "htmlhint": "^1.6.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
-    "postcss": "^8.5.6",
-    "postcss-jsx": "^0.36.4",
     "prettier": "^3.6.0",
     "stylelint": "^16.21.0",
     "stylelint-config-standard": "^38.0.0",
@@ -34,7 +32,6 @@
     "**/*": "node check-name.cjs",
     "*.js": [
       "eslint --fix",
-      "stylelint --fix",
       "prettier --write"
     ],
     "*.json": [
