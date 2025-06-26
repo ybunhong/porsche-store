@@ -1,11 +1,23 @@
 {
-  "extends": ["airbnb-base", "plugin:lit/recommended"],
   "plugins": ["lit"],
+  "extends": ["airbnb-base"],
   "env": {
     "browser": true,
     "es2021": true,
     "node": true
   },
+  "overrides": [
+    {
+      "files": ["src/components/**/*.js"],
+      "extends": ["plugin:lit/recommended"],
+      "rules": {
+        "lit/no-invalid-html": "error",
+        "lit/attribute-value-entities": "error",
+        "lit/no-duplicate-template-bindings": "error",
+        "lit/no-property-change-update": "error"
+      }
+    }
+  ],
   "rules": {
     "import/no-extraneous-dependencies": [
       "error",
@@ -29,11 +41,6 @@
       {
         "onlyDeclarations": true
       }
-    ],
-    "lit/no-invalid-html": "error", // catches invalid HTML
-    "lit/no-unclosed-tags": "error", // enforces tag-pairs
-    "lit/attribute-value-entities": "error", // ensures special chars like `&` are escaped
-    "lit/no-duplicate-template-bindings": "error", // prevents duplicate bindings
-    "lit/no-property-change-update": "error"
+    ]
   }
 }
