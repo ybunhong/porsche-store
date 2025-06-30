@@ -11,6 +11,7 @@ echo "✅  npm install successfully"
 git_ok=false
 gitflow_ok=false
 node_ok=false
+review_board_ok=false
 
 # Checking for Git
 echo ""
@@ -44,9 +45,16 @@ else
   echo "❌  Node.js is not installed."
   echo "👉  Install it from: https://nodejs.org/"
 fi
+if command -v rbt &> /dev/null; then
+  review_board_ok=true
+  echo "✅ Review Board CLI (rbt) is installed: $(rbt --version)"
+else
+  echo "❌ Review Board CLI (rbt) is not installed. Install with: pipx install RBTools"
+  exit 1
+fi
 
 # Check all conditions
-if [ "$git_ok" = true ] && [ "$gitflow_ok" = true ] && [ "$node_ok" = true ]; then
+if [ "$git_ok" = true ] && [ "$gitflow_ok" = true ] && [ "$node_ok" = true ] && [ "$review_board_ok" = true ]; then
   echo ""
   echo "🎯  All preconditions met. Proceeding with Git setup..."
 
