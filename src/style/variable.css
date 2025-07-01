@@ -1,4 +1,19 @@
 :root {
+  /* the official font of porsche store
+  logo wordmark : custom lettering
+  main brand font : porsche sans
+  header : franklin gothic
+  sub header : news gothic
+  body & nav text : arial
+
+  due to the font licensed and not publicly available the closet font we can get to the offical porsche store font:
+  libre Franklin = closest to Franklin Gothic (via Google Fonts)
+  oswald = closest to News Gothic (via Google Fonts)
+  arial = default body font already used in Porsche style
+  */
+  --font-heading: "Libre Franklin", "Franklin Gothic Medium", arial, sans-serif;
+  --font-subheading: "Oswald", arial, sans-serif;
+
   /* color */
   --color-primary-color: #010205;
   --color-secondary-color: #fff;

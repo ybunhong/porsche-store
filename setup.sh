@@ -45,6 +45,9 @@ else
   echo "❌  Node.js is not installed."
   echo "👉  Install it from: https://nodejs.org/"
 fi
+
+echo ""
+echo "🔍 Checking for rbt..."
 if command -v rbt &> /dev/null; then
   review_board_ok=true
   echo "✅ Review Board CLI (rbt) is installed: $(rbt --version)"
