@@ -1,0 +1,17 @@
+/* base styles */
+@import url("./styles/base/reset.css");
+@import url("./styles/base/typography.css");
+@import url("./styles/base/variable.css");
+
+/* layout styles */
+@import url("./styles/layout/flex.css");
+@import url("./styles/layout/grid.css");
+@import url("./styles/layout/spacing.css");
+
+/* components styles */
+@import url("./styles/components");
+
+/* utility styles */
+@import url("./styles/utils/display.css");
+@import url("./styles/utils/overflow.css");
+@import url("./styles/utils/position.css");

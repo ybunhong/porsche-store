@@ -1,0 +1,133 @@
+:root {
+  /* the official font of porsche store
+  logo wordmark : custom lettering
+  main brand font : porsche sans
+  header : franklin gothic
+  sub header : news gothic
+  body & nav text : arial
+
+  due to the font licensed and not publicly available the closet font we can get to the offical porsche store font:
+  libre Franklin = closest to Franklin Gothic (via Google Fonts)
+  oswald = closest to News Gothic (via Google Fonts)
+  arial = default body font already used in Porsche style
+  */
+  --font-heading: "Libre Franklin", "Franklin Gothic Medium", "arial", "sans-serif";
+  --font-subheading: "Oswald", "arial", "sans-serif";
+
+  /* color */
+  --color-primary-color: #010205;
+  --color-secondary-color: #fff;
+
+  /* action States */
+  --color-dark-hover: #6b6d70;
+
+  /* grey color */
+  --color-grey-1000: #010205;
+  --color-grey-800: #1a1d24;
+  --color-grey-700: #535457;
+  --color-grey-500: #949598;
+  --color-grey-400: #6b6d70;
+  --color-grey-300: #d8d8db;
+  --color-grey-100: #eeeff2;
+
+  /* semantic color */
+  --color-success-content: #197e10;
+  --color-warning-content: #f3be00;
+  --color-error-content: #cc1922;
+  --color-info-content: #2762ec;
+  --color-success-bg: #e4ffec;
+  --color-warning-bg: #fff4d2;
+  --color-error-bg: #ffe2e4;
+  --color-info-bg: #d3e1ff;
+
+  /* gaps */
+  .gap-1 {
+    gap: 0.25rem;
+  }
+
+  .gap-2 {
+    gap: 0.5rem;
+  }
+
+  .gap-3 {
+    gap: 0.75rem;
+  }
+
+  .gap-4 {
+    gap: 1rem;
+  }
+
+  .gap-5 {
+    gap: 1.25rem;
+  }
+
+  .gap-6 {
+    gap: 1.5rem;
+  }
+
+  .gap-8 {
+    gap: 2rem;
+  }
+
+  .gap-10 {
+    gap: 2.5rem;
+  }
+
+  .gap-12 {
+    gap: 3rem;
+  }
+
+  /* Z-index Scale */
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --size-full: 100%;
+  --size-screen-w: 100vw;
+  --size-screen-h: 100vh;
+
+  /* padding */
+  --padding-1: 4px;
+  --padding-2: 8px;
+  --padding-3: 16px;
+  --padding-4: 30px;
+
+  /* border Radius */
+  --radius-1: 3px;
+  --radius-2: 8px;
+  --radius-3: 10px;
+  --radius-4: 12px;
+
+  /* heading font size */
+  --font-size-h1: 50px;
+  --font-size-h2: 48px;
+  --font-size-h3: 36px;
+  --font-size-h4: 30px;
+  --font-size-h5: 24px;
+  --font-size-h6: 20px;
+
+  /*  Paragraph font sizes */
+  --font-size-p1: 18px;
+  --font-size-p2: 16px;
+  --font-size-p3: 14px;
+  --font-size-p4: 12px;
+
+  /* font weight */
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* line height */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.2;
+  --line-height-loose: 1.3;
+  --line-height-p: 1.5;
+}
