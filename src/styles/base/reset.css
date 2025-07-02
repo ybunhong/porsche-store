@@ -29,17 +29,3 @@ ol,
 figure {
   margin: 0;
 }
-
-/* Apply heading font */
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-heading);
-}
-
-/* Apply sub heading font */
-h4,
-h5 {
-  font-family: var(--font-subheading);
-}

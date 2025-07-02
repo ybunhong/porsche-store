@@ -46,6 +46,7 @@ else
   echo "👉  Install it from: https://nodejs.org/"
 fi
 
+# Checking for Review Board CLI
 echo ""
 echo "🔍 Checking for rbt..."
 if command -v rbt &> /dev/null; then
@@ -56,34 +57,54 @@ else
   exit 1
 fi
 
-# Check all conditions
+# If all conditions are met
 if [ "$git_ok" = true ] && [ "$gitflow_ok" = true ] && [ "$node_ok" = true ] && [ "$review_board_ok" = true ]; then
   echo ""
   echo "🎯  All preconditions met. Proceeding with Git setup..."
 
-  read -p "👤  Enter your Git user name: " git_username
-  read -p "📧  Enter your Git email: " git_email
+ current_git_username=$(git config user.name | xargs || echo "")
+current_git_email=$(git config user.email | xargs || echo "")
 
 
-  #config setting
+  if [ -n "$current_git_username" ] && [ -n "$current_git_email" ]; then
+    echo "🔎 Existing Git config found:"
+    echo "   👤 Name: $current_git_username"
+    echo "   📧 Email: $current_git_email"
+
+    read -p "❓ would you like to change your User_name👤 and 📧Email? (y to change / n to keep): " use_existing
+
+    if [[ "$use_existing" == "n" || "$use_existing" == "N" ]]; then
+      git_username="$current_git_username"
+      git_email="$current_git_email"
+    else
+      read -p "👤  Enter your new Git user name: " git_username
+      read -p "📧  Enter your new Git email: " git_email
+    fi
+  else
+    echo "ℹ️  No existing Git user config found. Please enter new details."
+    read -p "👤  Enter your Git user name: " git_username
+    read -p "📧  Enter your Git email: " git_email
+  fi
+
+  # Set Git config
   git config user.name "$git_username"
   git config user.email "$git_email"
 
-  #prompt for git flow extension setup
   echo ""
   read -p "🚀 Do you want to initialize Git Flow in this repository? (y/n): " run_gitflow_init
 
   if [[ "$run_gitflow_init" == "y" || "$run_gitflow_init" == "Y" ]]; then
-  echo "⚙️ Running git flow init..."
-  git flow init -d
+    echo "⚙️  Running git flow init..."
+    git flow init -d
   else
-  echo "ℹ️ Skipping git flow initialization."
+    echo "ℹ️ Skipping git flow initialization."
   fi
 
   git config pull.rebase true
   git config rebase.autoStash true
   git config init.defaultBranch main
 
+  echo ""
   echo "✅  Git setup completed for $git_username <$git_email>"
 else
   echo ""

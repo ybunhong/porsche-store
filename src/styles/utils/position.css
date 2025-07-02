@@ -1,0 +1,45 @@
+/* Position */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.static {
+  position: static;
+}
+
+/* Z-Index */
+.z-0 {
+  z-index: var(--z-0);
+}
+
+.z-10 {
+  z-index: var(--z-10);
+}
+
+.z-20 {
+  z-index: var(--z-20);
+}
+
+.z-30 {
+  z-index: var(--z-30);
+}
+
+.z-40 {
+  z-index: var(--z-40);
+}
+
+.z-50 {
+  z-index: var(--z-50);
+}
