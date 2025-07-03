@@ -11,3 +11,112 @@ h4,
 h5 {
   font-family: var(--font-subheading);
 }
+
+/* Text */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* text color */
+.text-primary {
+  color: var(--color-primary-color);
+}
+
+.text-secondary {
+  color: var(--color-secondary-color);
+}
+
+.text-white {
+  color: white;
+}
+
+.text-success {
+  color: var(--color-success-content);
+}
+
+.text-warning {
+  color: var(--color-warning-content);
+}
+
+.text-error {
+  color: var(--color-error-content);
+}
+
+.text-info {
+  color: var(--color-info-content);
+}
+
+.text-muted {
+  color: var(--color-grey-500);
+}
+
+/* font weight */
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+/* font size */
+.text-h1 {
+  font-size: var(--font-size-h1);
+}
+
+.text-h2 {
+  font-size: var(--font-size-h2);
+}
+
+.text-h3 {
+  font-size: var(--font-size-h3);
+}
+
+.text-h4 {
+  font-size: var(--font-size-h4);
+}
+
+.text-h5 {
+  font-size: var(--font-size-h5);
+}
+
+.text-h6 {
+  font-size: var(--font-size-h6);
+}
+
+/* Paragraph font sizes */
+.text-p1 {
+  font-size: var(--font-size-p1);
+}
+
+.text-p2 {
+  font-size: var(--font-size-p2);
+}
+
+.text-p3 {
+  font-size: var(--font-size-p3);
+}
+
+.text-p4 {
+  font-size: var(--font-size-p4);
+}

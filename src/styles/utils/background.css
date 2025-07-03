@@ -1,0 +1,15 @@
+.bg-success {
+  background-color: var(--color-success-bg);
+}
+
+.bg-warning {
+  background-color: var(--color-warning-bg);
+}
+
+.bg-error {
+  background-color: var(--color-error-bg);
+}
+
+.bg-info {
+  background-color: var(--color-info-bg);
+}

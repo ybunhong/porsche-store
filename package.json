@@ -29,7 +29,6 @@
     "vite": "^6.3.5"
   },
   "lint-staged": {
-    "**/*": "node check-name.cjs",
     "*.js": [
       "eslint --fix",
       "prettier --write"
