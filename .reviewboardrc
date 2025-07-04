@@ -1,5 +1,5 @@
 REVIEWBOARD_URL = "https://review.clp.kr"
-REPOSITORY = "anchor-server"
+REPOSITORY = "Skill-Forge-Lab/Team-Projects/Clone-Project"
 REPOSITORY_TYPE = "git"
 BRANCH = "develop"
 LAND_DEST_BRANCH = "develop"
