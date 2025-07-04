@@ -63,19 +63,19 @@ h5 {
 }
 
 /* font weight */
-.font-bold {
+.bold {
   font-weight: var(--font-weight-bold);
 }
 
-.font-semibold {
+.semibold {
   font-weight: var(--font-weight-semibold);
 }
 
-.font-medium {
+.medium {
   font-weight: var(--font-weight-medium);
 }
 
-.font-regular {
+.regular {
   font-weight: var(--font-weight-regular);
 }
 
@@ -105,18 +105,18 @@ h5 {
 }
 
 /* Paragraph font sizes */
-.text-p1 {
+.text-p-lg {
   font-size: var(--font-size-p1);
 }
 
-.text-p2 {
+.text-p-base {
   font-size: var(--font-size-p2);
 }
 
-.text-p3 {
+.text-p-sm {
   font-size: var(--font-size-p3);
 }
 
-.text-p4 {
+.text-p-xs {
   font-size: var(--font-size-p4);
 }
