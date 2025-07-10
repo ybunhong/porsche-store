@@ -1,122 +1,62 @@
-/* Apply heading font */
+/* Apply typography styles */
+.display-xl {
+  font: var(--font-display-xl);
+}
+
+.display-lg {
+  font: var(--font-display-lg);
+}
+
+.display-md {
+  font: var(--font-display-md);
+}
+
 h1,
+.heading-xl {
+  font: var(--font-heading-xl);
+}
+
 h2,
+.heading-lg {
+  font: var(--font-heading-lg);
+}
+
 h3,
-h4 {
-  font-family: var(--font-heading);
+.heading-md {
+  font: var(--font-heading-md);
 }
 
-/* Apply sub heading font */
 h4,
-h5 {
-  font-family: var(--font-subheading);
+.heading-sm {
+  font: var(--font-heading-sm);
 }
 
-/* Text */
-.text-left {
-  text-align: left;
+h5,
+.heading-xs {
+  font: var(--font-heading-xs);
 }
 
-.text-center {
-  text-align: center;
+.body-lg {
+  font: var(--font-body-lg);
 }
 
-.text-right {
-  text-align: right;
+.body-md,
+p {
+  font: var(--font-body-md);
 }
 
-.text-justify {
-  text-align: justify;
+.body-sm {
+  font: var(--font-body-sm);
 }
 
-/* text color */
-.text-primary {
-  color: var(--color-primary-color);
+.body-xs {
+  font: var(--font-body-xs);
 }
 
-.text-secondary {
-  color: var(--color-secondary-color);
+.body-2xs {
+  font: var(--font-body-2xs);
 }
 
-.text-white {
-  color: white;
-}
-
-.text-success {
-  color: var(--color-success-content);
-}
-
-.text-warning {
-  color: var(--color-warning-content);
-}
-
-.text-error {
-  color: var(--color-error-content);
-}
-
-.text-info {
-  color: var(--color-info-content);
-}
-
-.text-muted {
-  color: var(--color-grey-500);
-}
-
-/* font weight */
-.bold {
-  font-weight: var(--font-weight-bold);
-}
-
-.semibold {
-  font-weight: var(--font-weight-semibold);
-}
-
-.medium {
-  font-weight: var(--font-weight-medium);
-}
-
-.regular {
-  font-weight: var(--font-weight-regular);
-}
-
-/* font size */
-.text-h1 {
-  font-size: var(--font-size-h1);
-}
-
-.text-h2 {
-  font-size: var(--font-size-h2);
-}
-
-.text-h3 {
-  font-size: var(--font-size-h3);
-}
-
-.text-h4 {
-  font-size: var(--font-size-h4);
-}
-
-.text-h5 {
-  font-size: var(--font-size-h5);
-}
-
-.text-h6 {
-  font-size: var(--font-size-h6);
-}
-
-/* Paragraph font sizes */
-.text-p-lg {
-  font-size: var(--font-size-p1);
-}
-
-.text-p-base {
-  font-size: var(--font-size-p2);
-}
-
-.text-p-sm {
-  font-size: var(--font-size-p3);
-}
-
-.text-p-xs {
-  font-size: var(--font-size-p4);
+.body-3xs {
+  font: var(--font-body-3xs);
 }
