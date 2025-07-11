@@ -67,6 +67,7 @@
 
 .px-1 {
   padding-left: var(--padding-1);
+  padding-right: var(--padding-1);
 }
 
 .py-1 {
@@ -96,6 +97,7 @@
 
 .px-2 {
   padding-left: var(--padding-2);
+  padding-right: var(--padding-2);
 }
 
 .py-2 {
@@ -125,6 +127,7 @@
 
 .px-3 {
   padding-left: var(--padding-3);
+  padding-right: var(--padding-3);
 }
 
 .py-3 {
@@ -154,6 +157,7 @@
 
 .px-4 {
   padding-left: var(--padding-4);
+  padding-right: var(--padding-4);
 }
 
 .py-4 {
@@ -183,6 +187,7 @@
 
 .px-5 {
   padding-left: var(--padding-5);
+  padding-right: var(--padding-5);
 }
 
 .py-5 {
@@ -212,6 +217,7 @@
 
 .px-6 {
   padding-left: var(--padding-6);
+  padding-right: var(--padding-6);
 }
 
 .py-6 {
