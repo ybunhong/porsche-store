@@ -441,6 +441,7 @@
 .ml-12 {
   margin-left: var(--margin-12);
 }
+
 .section-spacing {
   margin: clamp(48px, 3vw + 38px, 96px);
 }
