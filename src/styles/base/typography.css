@@ -1,15 +1,64 @@
-/* Apply heading font */
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-heading);
+/* Apply typography styles */
+.display-xl {
+  font: var(--font-display-xl);
 }
 
-/* Apply sub heading font */
+.display-lg {
+  font: var(--font-display-lg);
+}
+
+.display-md {
+  font: var(--font-display-md);
+}
+
+h1,
+.heading-xl {
+  font: var(--font-heading-xl);
+}
+
+h2,
+.heading-lg {
+  font: var(--font-heading-lg);
+}
+
+h3,
+.heading-md {
+  font: var(--font-heading-md);
+}
+
 h4,
-h5 {
-  font-family: var(--font-subheading);
+.heading-sm {
+  font: var(--font-heading-sm);
+}
+
+h5,
+.heading-xs {
+  font: var(--font-heading-xs);
+}
+
+.body-lg {
+  font: var(--font-body-lg);
+}
+
+.body-md,
+p {
+  font: var(--font-body-md);
+}
+
+.body-sm {
+  font: var(--font-body-sm);
+}
+
+.body-xs {
+  font: var(--font-body-xs);
+}
+
+.body-2xs {
+  font: var(--font-body-2xs);
+}
+
+.body-3xs {
+  font: var(--font-body-3xs);
 }
 
 /* Text */
@@ -29,94 +78,38 @@ h5 {
   text-align: justify;
 }
 
-/* text color */
-.text-primary {
-  color: var(--color-primary-color);
-}
-
-.text-secondary {
-  color: var(--color-secondary-color);
-}
-
 .text-white {
-  color: white;
+  color: var(--color-white);
 }
 
-.text-success {
-  color: var(--color-success-content);
+.text-black {
+  color: var(--color-black);
+}
+
+.text-disable {
+  color: var(--color-gray-500);
 }
 
 .text-warning {
-  color: var(--color-warning-content);
+  color: var(--color-warning);
+}
+
+.text-success {
+  color: var(--color-success);
 }
 
 .text-error {
-  color: var(--color-error-content);
+  color: var(--color-error);
+}
+
+.text-vintage {
+  color: var(--color-vintage);
+}
+
+.text-trust {
+  color: var(--color-trust);
 }
 
 .text-info {
   color: var(--color-info-content);
-}
-
-.text-muted {
-  color: var(--color-grey-500);
-}
-
-/* font weight */
-.bold {
-  font-weight: var(--font-weight-bold);
-}
-
-.semibold {
-  font-weight: var(--font-weight-semibold);
-}
-
-.medium {
-  font-weight: var(--font-weight-medium);
-}
-
-.regular {
-  font-weight: var(--font-weight-regular);
-}
-
-/* font size */
-.text-h1 {
-  font-size: var(--font-size-h1);
-}
-
-.text-h2 {
-  font-size: var(--font-size-h2);
-}
-
-.text-h3 {
-  font-size: var(--font-size-h3);
-}
-
-.text-h4 {
-  font-size: var(--font-size-h4);
-}
-
-.text-h5 {
-  font-size: var(--font-size-h5);
-}
-
-.text-h6 {
-  font-size: var(--font-size-h6);
-}
-
-/* Paragraph font sizes */
-.text-p-lg {
-  font-size: var(--font-size-p1);
-}
-
-.text-p-base {
-  font-size: var(--font-size-p2);
-}
-
-.text-p-sm {
-  font-size: var(--font-size-p3);
-}
-
-.text-p-xs {
-  font-size: var(--font-size-p4);
 }
