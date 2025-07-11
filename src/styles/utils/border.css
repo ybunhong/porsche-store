@@ -44,6 +44,19 @@
   border-color: var(--border-color-white);
 }
 
+/* Border Shadows */
+.shadow-low {
+  box-shadow: var(--shadow-low);
+}
+
+.shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+
+.shadow-high {
+  box-shadow: var(--shadow-high);
+}
+
 /* .border-primary {
   border-color: var(--border-color-primary);
 }

@@ -24,22 +24,22 @@
   z-index: var(--z-0);
 }
 
-.z-10 {
-  z-index: var(--z-10);
+.z-100 {
+  z-index: var(--z-100);
 }
 
-.z-20 {
-  z-index: var(--z-20);
+.z-1000 {
+  z-index: var(--z-1000);
 }
 
-.z-30 {
-  z-index: var(--z-30);
+.z-2000 {
+  z-index: var(--z-2000);
 }
 
-.z-40 {
-  z-index: var(--z-40);
+.z-3000 {
+  z-index: var(--z-3000);
 }
 
-.z-50 {
-  z-index: var(--z-50);
+.z-5000 {
+  z-index: var(--z-5000);
 }
