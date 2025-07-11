@@ -60,3 +60,56 @@ p {
 .body-3xs {
   font: var(--font-body-3xs);
 }
+
+/* Text */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.text-black {
+  color: var(--color-black);
+}
+
+.text-disable {
+  color: var(--color-gray-500);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+.text-vintage {
+  color: var(--color-vintage);
+}
+
+.text-trust {
+  color: var(--color-trust);
+}
+
+.text-info {
+  color: var(--color-info-content);
+}
