@@ -26,6 +26,14 @@ import UpDownArrowIcon from "./callToAction/up-down-arrows.svg";
 import VerifyCheckIcon from "./callToAction/verify-check.svg";
 import XIcon from "./callToAction/x.svg";
 import YoutubeIcon from "./callToAction/Youtube.svg";
+import PorscheLogoIcon from "./logo/porsche-icon.svg";
+import PorscheLogoIconText from "./logo/porsche-icon-text.svg";
+import MenuIcon from "./callToAction/menu.svg";
+import BagIcon from "./callToAction/bag.svg";
+import ProfileIcon from "./callToAction/profile.svg";
+import Heart from "./callToAction/heart.svg";
+import HeartFilled from "./callToAction/heart-filled.svg";
+import CrossIcon from "./callToAction/cross.svg";
 
 export {
   PinterestIcon,
@@ -56,4 +64,12 @@ export {
   VerifyCheckIcon,
   XIcon,
   YoutubeIcon,
+  PorscheLogoIcon,
+  MenuIcon,
+  BagIcon,
+  ProfileIcon,
+  PorscheLogoIconText,
+  Heart,
+  HeartFilled,
+  CrossIcon,
 };

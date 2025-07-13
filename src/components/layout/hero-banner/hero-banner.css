@@ -1,0 +1,10 @@
+.hero {
+  height: 90vh;
+  min-width: 320px;
+}
+
+.hero-image {
+  width: 100vw;
+  height: 90vh;
+  object-fit: cover;
+}

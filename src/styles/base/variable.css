@@ -18,6 +18,7 @@
   --color-dark-hover: #6b6d70;
 
   /* Thematic / Accent Colors */
+  --color-muted: #6b6d70;
   --color-warm: #dacaab;
   --color-warning: #fd6a02;
   --color-error: #cc1922;
@@ -150,7 +151,7 @@
   --line-height-p: 1.5;
 
   /* Border colors */
-  --border-color-default: var(--color-grey-1000);
+  --border-color-default: var(--color-gray-700);
   --border-color-black: #000;
   --border-color-white: #fff;
 
@@ -177,4 +178,12 @@
   --icon-s: 1rem;
   --icon-l: 2rem;
   --icon-xl: 3rem;
+
+  /* Offset variables */
+  --offset-1: 4px;
+  --offset-2: 8px;
+  --offset-3: 12px;
+  --offset-4: 16px;
+  --offset-5: 20px;
+  --offset-6: 24px;
 }

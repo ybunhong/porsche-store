@@ -1,5 +1,5 @@
-import { BaseComponent } from "./base-component.js";
-import "../styles/main.css";
+import { BaseComponent } from "../../base-component.js";
+import "./base-button.css";
 
 class BaseButton extends BaseComponent {
   static get observedAttributes() {
@@ -11,6 +11,11 @@ class BaseButton extends BaseComponent {
     this.label = "";
     this.variant = "primary";
     this.disabled = false;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.updateTemplate();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -26,23 +31,18 @@ class BaseButton extends BaseComponent {
   }
 
   updateTemplate() {
-    let classes = "py-3 px-1 rounded text-p-base semibold w-full ";
+    let classes = "py-3 px-2 rounded-sm body-xs text-center heading-lg  w-full ";
 
-    if (this.variant === "primary") {
-      classes += "bg-primary text-white text-center";
-    } else if (this.variant === "secondary") {
-      classes += "border text-black bg-transparent";
-    } else if (this.variant === "tertiary") {
-      classes += "text-black bg-white border-none";
-    } else if (this.variant === "ghost") {
-      classes += "border border-white text-white bg-transparent ";
-    }
+    classes += `button-${this.variant} `;
 
     this.template = `
       <button class="${classes}">${this.label}</button>
+      
     `;
     this.render();
   }
 }
 
 customElements.define("base-button", BaseButton);
+
+export { BaseButton };
