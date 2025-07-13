@@ -1,8 +1,6 @@
-import { BaseComponent } from "../../base-component";
-import "../../../styles/index.css";
 import "./hamburger-panel.css";
-import { CrossIcon } from "../../../assets/assets";
-import "../../ui/index";
+import { CrossIcon } from "@assets";
+import "@ui";
 
 class HamBurgerPanel extends BaseComponent {
   constructor() {

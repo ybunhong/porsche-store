@@ -1,6 +1,5 @@
-import { BaseComponent } from "../../base-component.js";
 import "./hero-banner.css";
-import "../../ui/index.js";
+import "@ui";
 import BannerImage from "../../../assets/img.avif";
 
 class HeroBanner extends BaseComponent {

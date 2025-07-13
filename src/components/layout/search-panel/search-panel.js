@@ -1,8 +1,6 @@
-import { BaseComponent } from "../../base-component";
-import "../../../styles/index.css";
 import "./search-panel.css";
 import { CrossIcon } from "../../../assets/assets";
-import "../../ui/index";
+import "@ui";
 
 class SearchPanel extends BaseComponent {
   constructor() {

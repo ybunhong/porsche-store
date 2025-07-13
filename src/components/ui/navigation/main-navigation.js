@@ -1,5 +1,3 @@
-import { BaseComponent } from "../../base-component.js";
-import "../../../styles/index.css";
 import "./main-navigation.css";
 
 class MainNavigation extends BaseComponent {

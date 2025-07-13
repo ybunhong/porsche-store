@@ -1,6 +1,4 @@
-import { BaseComponent } from "../../base-component.js";
-import "../../../styles/index.css";
-import "../../ui/index.js";
+import "@ui";
 import "./base-header.css";
 
 class BaseHeader extends BaseComponent {

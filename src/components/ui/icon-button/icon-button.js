@@ -1,4 +1,3 @@
-import { BaseComponent } from "../../base-component.js";
 import "./icon-button.css";
 
 class IconButton extends BaseComponent {

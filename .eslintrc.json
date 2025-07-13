@@ -6,7 +6,21 @@
     "node": true
   },
   "plugins": ["html", "prettier"],
-
+  "globals": {
+    "BaseComponent": "readonly"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@ui", "./src/components/ui"],
+          ["@assets", "./src/assets/assets.js"],
+          ["@base-components", "./src/components/base-component.js"]
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "rules": {
     "prettier/prettier": "error",
     "import/no-absolute-path": "off",
@@ -33,5 +47,14 @@
         "onlyDeclarations": true
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["vite.config.js"],
+      "parserOptions": {
+        "ecmaVersion": 2022,
+        "sourceType": "module"
+      }
+    }
+  ]
 }

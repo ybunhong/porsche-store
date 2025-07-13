@@ -1,5 +1,3 @@
-import { BaseComponent } from "../../base-component";
-import "../../../styles/index.css";
 import "./menu-item.css";
 
 class MenuItem extends BaseComponent {
