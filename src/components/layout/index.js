@@ -5,5 +5,6 @@ import "./search-panel/search-panel";
 import "./search-result-item/search-result-item";
 import "./profile-panel/profile-panel";
 import "./product-card/product-card";
+import "./banner/banner_component";
 import "./scroll-product/scroll-product";
 import "./show-more-card/show-more-card";

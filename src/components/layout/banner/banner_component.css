@@ -1,0 +1,96 @@
+.banner {
+  position: relative;
+  margin: 1.25rem; /* m-5 */
+  overflow: hidden;
+}
+
+.banner picture,
+.banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay covers entire banner and centers content */
+.overlay {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-color: rgb(0 0 0 / 30%); /* semi-transparent dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center; /* horizontal centering */
+  text-align: center;
+  padding: 1.25rem; /* p-5 */
+  gap: 20px;
+  color: white; /* text color */
+  user-select: none;
+}
+
+/* Logo */
+.overlay img {
+  width: 100%; /* responsive */
+  height: auto; /* maintain aspect ratio */
+  max-width: 600px; /* optional max width */
+}
+
+/* Heading */
+.overlay h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1;
+  width: auto;
+}
+
+/* Paragraph */
+.overlay p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Button container */
+.overlay base-button {
+  display: inline-block;
+  max-width: none;
+}
+
+/* Actual button inside base-button */
+.overlay base-button button {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 120px; /* consistent size */
+  box-sizing: border-box;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Buttons container: side by side */
+.button-group {
+  display: inline;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* align vertically */
+  gap: 1rem; /* space between buttons */
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments for larger screens */
+@media (width >= 768px) {
+  .overlay h1 {
+    font-size: 50px;
+  }
+
+  .overlay p {
+    font-size: 20px;
+  }
+
+  .overlay base-button {
+    width: auto;
+  }
+}
