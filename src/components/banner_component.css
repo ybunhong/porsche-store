@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: var(--font-body-md, Arial), sans-serif;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: var(--margin-5, 20px) auto;
+  overflow: hidden;
+}
+
+.banner picture,
+.banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-white);
+  padding: var(--padding-5, 20px);
+  border-radius: var(--radius-lg, 8px);
+  width: 80%;
+  max-width: 500px;
+}
+
+.overlay img {
+  margin-bottom: var(--margin-5);
+}
+
+.overlay button {
+  padding: var(--padding-3, 10px) var(--padding-4, 20px);
+  font-size: var(--font-size-p2, 1rem);
+  color: var(--color-black);
+  background-color: var(--color-warning, #fd6a02);
+  border: none;
+  border-radius: var(--radius-md, 4px);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.overlay button:hover {
+  background-color: var(--color-dark-hover, #6b6d70);
+}
+
+/* Media Query for Viewports 760px and Below */
+@media (width <= 760px) {
+  .banner {
+    width: 90%;
+    max-width: 375px;
+    margin: var(--margin-2, 10px) auto;
+  }
+
+  .overlay {
+    width: 90%;
+    max-width: 375px;
+    padding: var(--padding-4, 15px);
+  }
+
+  .overlay button {
+    font-size: var(--font-size-p3, 0.9rem);
+  }
+}
