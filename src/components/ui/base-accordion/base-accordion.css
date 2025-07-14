@@ -1,0 +1,85 @@
+.acc-body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-p2);
+  border-bottom: 1px solid rgb(216 216 219);
+}
+
+.acc-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-black);
+  padding: 1em 0;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.acc-heading:hover {
+  background-color: #eaeaea;
+}
+
+.acc-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  padding-bottom: 0;
+  display: block;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease,
+    margin-top 0.3s ease,
+    padding-bottom 0.3s ease;
+}
+
+.acc-body.open .acc-content {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: clamp(16px, 1.25vw + 12px, 36px);
+  padding-bottom: var(--padding-4);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--margin-4);
+}
+
+.label {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: clamp(4px, 0.25vw + 3px, 8px);
+}
+
+.value {
+  color: var(--color-gray-500);
+}
+
+.toggle-icon {
+  display: block;
+  width: 19.5px;
+  height: 19.5px;
+  transition: transform 0.3s ease;
+}
+
+.acc-body.open .toggle-icon {
+  transform: rotate(-180deg);
+}
+
+/* Responsive layout when .responsive is present */
+@media (width >= 760px) {
+  .acc-content.responsive {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-4);
+  }
+
+  .acc-content.responsive .row {
+    width: calc(50% - 8px);
+  }
+}
+
+base-accordion {
+  display: block;
+  border-bottom: 1px solid rgb(216 216 219);
+}
