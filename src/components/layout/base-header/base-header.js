@@ -1,5 +1,4 @@
 import "@ui";
-import "./base-header.css";
 
 class BaseHeader extends BaseComponent {
   static get observedAttributes() {

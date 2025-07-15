@@ -1,75 +1,124 @@
-import PinterestIcon from "./callToAction/pinterest.svg";
-import ArrowOppositeIcon from "./callToAction/arrow-opposite.svg";
-import BellIcon from "./callToAction/bell.svg";
-import CardIcon from "./callToAction/card.svg";
-import ChevronIcon from "./callToAction/chevron.svg";
-import ChimneyIcon from "./callToAction/chimney.svg";
-import DurationIcon from "./callToAction/duration.svg";
-import EmailIcon from "./callToAction/email.svg";
-import FacebookIcon from "./callToAction/facebook.svg";
-import FileIcon from "./callToAction/file.svg";
-import Flowbite from "./callToAction/flowbite.svg";
-import GoogleIcon from "./callToAction/google.svg";
-import InformationIcon from "./callToAction/Information.svg";
-import InstagramIcon from "./callToAction/instagram.svg";
-import LeatherIcon from "./callToAction/leather.svg";
-import LinkedinIcon from "./callToAction/linkin.svg";
-import LocationIcon from "./callToAction/location.svg";
-import NegativeIcon from "./callToAction/Negative.svg";
-import PaperAirplaneIcon from "./callToAction/paper-airplane.svg";
-import PenIcon from "./callToAction/pen.svg";
-import PlusIcon from "./callToAction/Plus.svg";
-import SearchIcon from "./callToAction/Search.svg";
-import TagIcon from "./callToAction/tag.svg";
-import TruckIcon from "./callToAction/truck.svg";
-import UpDownArrowIcon from "./callToAction/up-down-arrows.svg";
-import VerifyCheckIcon from "./callToAction/verify-check.svg";
-import XIcon from "./callToAction/x.svg";
-import YoutubeIcon from "./callToAction/Youtube.svg";
-import PorscheLogoIcon from "./logo/porsche-icon.svg";
-import PorscheLogoIconText from "./logo/porsche-icon-text.svg";
-import MenuIcon from "./callToAction/menu.svg";
-import BagIcon from "./callToAction/bag.svg";
-import ProfileIcon from "./callToAction/profile.svg";
-import Heart from "./callToAction/heart.svg";
-import HeartFilled from "./callToAction/heart-filled.svg";
-import CrossIcon from "./callToAction/cross.svg";
+// brand logo
+import porscheIcon from "./brand-logo/porsche-icon.svg";
+import porscheText from "./brand-logo/porsche-icon-text.svg";
+
+// director icons
+import bell from "./icons/indicator/bell.svg";
+import card from "./icons/indicator/card.svg";
+import checkCircle from "./icons/indicator/check-circle.svg";
+import clock from "./icons/indicator/clock.svg";
+import document from "./icons/indicator/document.svg";
+import leather from "./icons/indicator/leather.svg";
+import location from "./icons/indicator/location.svg";
+import mail from "./icons/indicator/mail.svg";
+import pagePinned from "./icons/indicator/page-pinned.svg";
+import profile from "./icons/indicator/profile.svg";
+import tag from "./icons/indicator/tag.svg";
+import truck from "./icons/indicator/truck.svg";
+import heart from "./icons/indicator/heart.svg";
+import heartFilled from "./icons/indicator/heart-filled.svg";
+import cartEmpty from "./icons/indicator/cart-empty.svg";
+import cartFilled from "./icons/indicator/cart-filled.svg";
+
+// interface control icons
+import expand from "./icons/interface-controll/expand.svg";
+import filter from "./icons/interface-controll/filter.svg";
+import menu from "./icons/interface-controll/menu.svg";
+import pencil from "./icons/interface-controll/pencil.svg";
+import sliders from "./icons/interface-controll/sliders.svg";
+import sort from "./icons/interface-controll/sort.svg";
+import plus from "./icons/interface-controll/plus.svg";
+import minus from "./icons/interface-controll/minus.svg";
+import cross from "./icons/interface-controll/cross.svg";
+import search from "./icons/interface-controll/search-.svg";
+
+// payments icons
+import americanExpressMd from "./icons/payments/american-express-md.svg";
+import amexSm from "./icons/payments/amex-sm.svg";
+import amexLg from "./icons/payments/amex-lg.svg";
+import applePayLg from "./icons/payments/apple-pay-lg.svg";
+import dinerLg from "./icons/payments/diner-lg.svg";
+import dinerMd from "./icons/payments/diner-md.svg";
+import dinersSm from "./icons/payments/diners-sm.svg";
+import discoverLg from "./icons/payments/discover-lg.svg";
+import discoverMd from "./icons/payments/discover-md.svg";
+import googlePayLg from "./icons/payments/google-pay-lg.svg";
+import googlePaySm from "./icons/payments/google-pay-sm.svg";
+import mastercardLg from "./icons/payments/mastercard-lg.svg";
+import paypalLg from "./icons/payments/paypal-lg.svg";
+import paypalSm from "./icons/payments/paypal-sm.svg";
+import paypalMd from "./icons/payments/paypal-md.svg";
+import visaLg from "./icons/payments/visa-lg.svg";
+import visaMd from "./icons/payments/visa-md.svg";
+
+// social media icons
+import facebook from "./icons/social-media/facebook.svg";
+import google from "./icons/social-media/google.svg";
+import instagram from "./icons/social-media/instagram.svg";
+import linkin from "./icons/social-media/linkin.svg";
+import pinterest from "./icons/social-media/pinterest.svg";
+import telegram from "./icons/social-media/telegram.svg";
+import x from "./icons/social-media/x.svg";
+import youtube from "./icons/social-media/youtube.svg";
+
+// navigation
+import arrow from "./icons/navigation/arrow.svg";
+import chevron from "./icons/navigation/chevron.svg";
 
 export {
-  PinterestIcon,
-  ArrowOppositeIcon,
-  BellIcon,
-  CardIcon,
-  ChevronIcon,
-  ChimneyIcon,
-  DurationIcon,
-  EmailIcon,
-  FacebookIcon,
-  FileIcon,
-  Flowbite,
-  GoogleIcon,
-  InformationIcon,
-  InstagramIcon,
-  LeatherIcon,
-  LinkedinIcon,
-  LocationIcon,
-  NegativeIcon,
-  PaperAirplaneIcon,
-  PenIcon,
-  PlusIcon,
-  SearchIcon,
-  TagIcon,
-  TruckIcon,
-  UpDownArrowIcon,
-  VerifyCheckIcon,
-  XIcon,
-  YoutubeIcon,
-  PorscheLogoIcon,
-  MenuIcon,
-  BagIcon,
-  ProfileIcon,
-  PorscheLogoIconText,
-  Heart,
-  HeartFilled,
-  CrossIcon,
+  expand,
+  filter,
+  menu,
+  pencil,
+  sliders,
+  sort,
+  americanExpressMd,
+  amexSm,
+  amexLg,
+  applePayLg,
+  dinerLg,
+  dinerMd,
+  dinersSm,
+  discoverLg,
+  discoverMd,
+  googlePayLg,
+  googlePaySm,
+  mastercardLg,
+  paypalLg,
+  paypalSm,
+  paypalMd,
+  visaLg,
+  visaMd,
+  facebook,
+  google,
+  instagram,
+  linkin,
+  pinterest,
+  telegram,
+  x,
+  youtube,
+  arrow,
+  chevron,
+  porscheIcon,
+  porscheText,
+  minus,
+  plus,
+  cross,
+  bell,
+  card,
+  checkCircle,
+  clock,
+  document,
+  leather,
+  location,
+  mail,
+  pagePinned,
+  profile,
+  tag,
+  truck,
+  heart,
+  heartFilled,
+  search,
+  cartFilled,
+  cartEmpty,
 };

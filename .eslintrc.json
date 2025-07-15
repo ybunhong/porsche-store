@@ -14,7 +14,9 @@
       "alias": {
         "map": [
           ["@ui", "./src/components/ui"],
+          ["@layout", "./src/components/layout/index.js"],
           ["@assets", "./src/assets/assets.js"],
+          ["@components", "./src/components/index.js"],
           ["@base-components", "./src/components/base-component.js"]
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]

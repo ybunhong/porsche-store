@@ -2,14 +2,14 @@ import "./icon-button.css";
 
 class IconButton extends BaseComponent {
   static get observedAttributes() {
-    return ["icon", "size"];
+    return ["icon", "size", "toggleIcon"];
   }
 
   constructor() {
     super();
-    this.label = "";
+    this.icon = "";
     this.variant = "primary";
-    this.disabled = false;
+    this.size = 1;
   }
 
   connectedCallback() {
@@ -17,6 +17,7 @@ class IconButton extends BaseComponent {
     this.action = this.getAttribute("action");
     this.updateTemplate();
     this.addEventListener("click", () => {
+      this.hasToggleIcon = !this.toggleIcon;
       if (this.action) {
         this.dispatchEvent(
           new CustomEvent("toggle-panel", {
@@ -37,6 +38,10 @@ class IconButton extends BaseComponent {
       if (name === "size") {
         this.size = newValue;
       }
+      if (name === "toggleIcon") {
+        this.toggleIcon = newValue;
+        this.hasToggleIcon = newValue !== null;
+      }
       this.updateTemplate();
     }
   }
@@ -54,4 +59,3 @@ class IconButton extends BaseComponent {
 }
 
 customElements.define("icon-button", IconButton);
-export { IconButton };

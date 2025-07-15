@@ -1,10 +1,10 @@
 .hero {
-  height: 90vh;
+  height: 91.5vh;
   min-width: 320px;
 }
 
 .hero-image {
   width: 100vw;
-  height: 90vh;
+  height: 91.5%;
   object-fit: cover;
 }

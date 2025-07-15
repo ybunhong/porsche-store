@@ -1,5 +1,5 @@
 import "./search-panel.css";
-import { CrossIcon } from "../../../assets/assets";
+import { cross } from "../../../assets/assets";
 import "@ui";
 
 class SearchPanel extends BaseComponent {
@@ -54,7 +54,7 @@ class SearchPanel extends BaseComponent {
     <aside class="search-panel ${this.isOpen ? "open" : ""} bg-white px-5 py-4 absolute  h-full z-100 left-0 top-0">
       <div class="flex justify-center items-center">
         <h5>Porsche Shop</h5>
-        <icon-button id="close-button" icon="${CrossIcon}" class="absolute right-5"></icon-button>
+        <icon-button id="close-button" icon="${cross}" class="absolute right-5"></icon-button>
       </div>
       <div> 
         ${Menuitem}

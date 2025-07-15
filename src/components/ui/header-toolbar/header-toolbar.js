@@ -1,15 +1,7 @@
 import "./header-toolbar.css";
-import {
-  BagIcon,
-  MenuIcon,
-  ProfileIcon,
-  SearchIcon,
-  PorscheLogoIcon,
-  PorscheLogoIconText,
-  Heart,
-} from "../../../assets/assets.js";
-import "../index.js";
-import "../../layout/index.js";
+import { cartEmpty, menu, profile, search, porscheIcon, porscheText, heart } from "@assets";
+import "@ui";
+import "@layout";
 
 class HeaderToolbar extends BaseComponent {
   static get observedAttributes() {
@@ -58,23 +50,23 @@ class HeaderToolbar extends BaseComponent {
 
     <!-- left logo section -->
       <div class="flex grow shrink border-medium">
-        <icon-button icon="${MenuIcon}" size="${0.6}" action="hamburger" ></icon-button>
-        <icon-button icon="${SearchIcon}" class="hide-tablet hide-desktop " action="search"></icon-button>
+        <icon-button icon="${menu}" action="hamburger"></icon-button>
+        <icon-button icon="${search}" class="hide-tablet hide-desktop " action="search"></icon-button>
         
       </div>
 
     <!-- center logo section -->
       <div class="flex justify-center">
-        <icon-button icon="${PorscheLogoIcon}" size="2" class="hide-tablet hide-desktop"></icon-button>
-        <icon-button icon="${PorscheLogoIconText}" class="show-tablet show-desktop" size="0.6"></icon-button>
+        <icon-button icon="${porscheIcon}" size="2" class="hide-tablet hide-desktop"></icon-button>
+        <icon-button icon="${porscheText}" class="show-tablet show-desktop" size="0.6"></icon-button>
       </div>
 
     <!-- right side logo  section -->
       <div class="flex grow shrink justify-end">
-          <icon-button icon="${SearchIcon}" class="show-tablet show-desktop" action="search"></icon-button>
-          <icon-button icon="${Heart}" class="show-tablet show-desktop"></icon-button>
-          <icon-button icon="${BagIcon}" class=""></icon-button>
-          <icon-button icon="${ProfileIcon}" class=""></icon-button>
+          <icon-button icon="${search}" class="show-tablet show-desktop" action="search"></icon-button>
+          <icon-button icon="${heart}" class="show-tablet show-desktop"></icon-button>
+          <icon-button icon="${cartEmpty}" class=""></icon-button>
+          <icon-button icon="${profile}" class=""></icon-button>
       </div>
 
     <!-- hidden panel -->
@@ -88,4 +80,3 @@ class HeaderToolbar extends BaseComponent {
 }
 
 customElements.define("header-toolbar", HeaderToolbar);
-export { HeaderToolbar };

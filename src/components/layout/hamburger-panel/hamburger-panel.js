@@ -1,5 +1,5 @@
 import "./hamburger-panel.css";
-import { CrossIcon } from "@assets";
+import { cross } from "@assets";
 import "@ui";
 
 class HamBurgerPanel extends BaseComponent {
@@ -93,7 +93,7 @@ class HamBurgerPanel extends BaseComponent {
     <aside class="hamburger-panel ${this.isOpen ? "open" : ""}  bg-white px-5 py-4 absolute z-5000  h-full left-0 top-0">
       <div class="flex justify-center items-center">
         <h2>Porsche Shop</h2>
-        <icon-button id="close-button" icon="${CrossIcon}" class="absolute right-5"></icon-button>
+        <icon-button id="close-button" icon="${cross}" class="absolute right-5"></icon-button>
       </div>
       <div>
         ${Menuitem}

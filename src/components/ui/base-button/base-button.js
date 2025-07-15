@@ -43,5 +43,3 @@ class BaseButton extends BaseComponent {
 }
 
 customElements.define("base-button", BaseButton);
-
-export { BaseButton };
