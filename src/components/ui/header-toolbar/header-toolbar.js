@@ -46,23 +46,23 @@ class HeaderToolbar extends BaseComponent {
     this.template = /* html */ `
 
     <!-- to do make the left section and right section evenly to (grid) -->
-    <div class="header flex items-center py-4 px-5  border-thin ">
+    <div class="header py-4 px-6  border-thin gap-2 w-full">
 
     <!-- left logo section -->
-      <div class="flex grow shrink border-medium">
+      <div class="flex justify-start items-center">
         <icon-button icon="${menu}" action="hamburger"></icon-button>
         <icon-button icon="${search}" class="hide-tablet hide-desktop " action="search"></icon-button>
         
       </div>
 
     <!-- center logo section -->
-      <div class="flex justify-center">
+      <div class="flex justify-center items-center">
         <icon-button icon="${porscheIcon}" size="2" class="hide-tablet hide-desktop"></icon-button>
-        <icon-button icon="${porscheText}" class="show-tablet show-desktop" size="0.6"></icon-button>
+        <icon-button icon="${porscheText}" size="0.6" class="show-tablet show-desktop" ></icon-button>
       </div>
 
     <!-- right side logo  section -->
-      <div class="flex grow shrink justify-end">
+      <div class="flex justify-end items-center gap-3">
           <icon-button icon="${search}" class="show-tablet show-desktop" action="search"></icon-button>
           <icon-button icon="${heart}" class="show-tablet show-desktop"></icon-button>
           <icon-button icon="${cartEmpty}" class=""></icon-button>

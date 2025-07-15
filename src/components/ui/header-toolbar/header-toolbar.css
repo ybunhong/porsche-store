@@ -1,3 +1,5 @@
 .header {
   min-width: 320px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }

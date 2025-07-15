@@ -26,7 +26,7 @@ class BaseHeader extends BaseComponent {
 
   updateTemplate() {
     this.template = /* html */ `
-     <header class="header flex flex-col z-1000">
+     <header class="flex flex-col z-1000">
       <header-toolbar></header-toolbar>
       <main-navigation><main-navigation>
     </header>
