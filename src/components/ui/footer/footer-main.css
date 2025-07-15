@@ -1,0 +1,35 @@
+@import url("./footer-type-a.css");
+@import url("./footer-type-b.css");
+@import url("./footer-type-c.css");
+
+.footer {
+  padding-right: var(--padding-4);
+  padding-left: var(--padding-4);
+  background-color: var(--color-black);
+}
+
+.footer p {
+  color: var(--color-gray-300);
+  font-size: var(--font-size-p2);
+}
+
+@media (width >=759px) {
+  .footer {
+    padding-right: var(--padding-5);
+    padding-left: var(--padding-5);
+  }
+}
+
+@media (width >= 760px) and (width <= 1024px) {
+  .footer {
+    padding-right: var(--padding-6);
+    padding-left: var(--padding-6);
+  }
+}
+
+@media (width >= 1025px) {
+  .footer {
+    padding-right: calc(var(--padding-6) * 1.5);
+    padding-left: calc(var(--padding-6) * 1.5);
+  }
+}
