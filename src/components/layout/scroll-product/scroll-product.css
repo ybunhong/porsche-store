@@ -39,7 +39,7 @@
 }
 
 @media (width <=767px) {
-  icon-button {
+  .arrow icon-button {
     display: none;
   }
 }

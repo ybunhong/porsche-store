@@ -71,6 +71,9 @@ import youtube from "./icons/social-media/youtube.svg";
 import arrow from "./icons/navigation/arrow.svg";
 import chevron from "./icons/navigation/chevron.svg";
 
+// flag
+import ukFlag from "./icons/flag/united-kingdom.svg";
+
 export {
   expand,
   filter,
@@ -133,4 +136,5 @@ export {
   car,
   cursorminus,
   cursorplus,
+  ukFlag,
 };

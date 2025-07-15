@@ -1,6 +1,6 @@
 import "@ui";
 import "./footer-main.css";
-import { YoutubeIcon } from "@assets";
+import { truckFast, clock, lock, car, ukFlag } from "@assets";
 
 class FooterTypeA extends BaseComponent {
   static get observedAttributes() {
@@ -28,10 +28,10 @@ class FooterTypeA extends BaseComponent {
 
   updateTemplate() {
     const iconItems = [
-      { text: "Fast<br>Shipping", label: YoutubeIcon },
-      { text: "30-day<br>return policy", label: YoutubeIcon },
-      { text: "Offical products<br>directly from Porsche", label: YoutubeIcon },
-      { text: "Secure<br>Data Transmission", label: YoutubeIcon },
+      { text: "Fast<br>Shipping", label: truckFast },
+      { text: "30-day<br>return policy", label: clock },
+      { text: "Offical products<br>directly from Porsche", label: car },
+      { text: "Secure<br>Data Transmission", label: lock },
     ];
 
     const iconList = iconItems
@@ -56,7 +56,7 @@ class FooterTypeA extends BaseComponent {
          
          <div class="flex items-center gap-4 ">
            <span class="bg-white rounded-xl flex items-center justify-center">
-           <icon-button icon="${YoutubeIcon}" size= "2"class=""></icon-button>
+           <icon-button icon="${ukFlag}" size= "2"class=""></icon-button>
            </span>
            <p class="">North America/ United States</p>
          </div>
