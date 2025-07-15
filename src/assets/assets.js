@@ -19,6 +19,10 @@ import heart from "./icons/indicator/heart.svg";
 import heartFilled from "./icons/indicator/heart-filled.svg";
 import cartEmpty from "./icons/indicator/cart-empty.svg";
 import cartFilled from "./icons/indicator/cart-filled.svg";
+import lock from "./icons/indicator/lock.svg";
+import mountain from "./icons/indicator/mountain.svg";
+import car from "./icons/indicator/car.svg";
+import truckFast from "./icons/indicator/truck-fast.svg";
 
 // interface control icons
 import expand from "./icons/interface-controll/expand.svg";
@@ -121,4 +125,8 @@ export {
   search,
   cartFilled,
   cartEmpty,
+  lock,
+  truckFast,
+  mountain,
+  car,
 };
