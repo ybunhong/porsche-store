@@ -41,10 +41,12 @@ class MainNavigation extends BaseComponent {
       .join("");
 
     this.template = /* html */ `
-      <nav class="header-nav flex border-t justify-center">
-      <ul class="flex ml-8">
+      <nav class="header-nav  border-t justify-center ">
+      <div class="ml-12 pl-6">
+      <ul class="flex">
         ${navList}
       </ul>
+      </div>
     </nav>
   
     `;

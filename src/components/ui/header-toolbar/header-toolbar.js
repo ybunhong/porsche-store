@@ -50,7 +50,8 @@ class HeaderToolbar extends BaseComponent {
 
     <!-- left logo section -->
       <div class="flex justify-start items-center">
-        <icon-button icon="${menu}" action="hamburger"></icon-button>
+        <icon-button icon="${menu}" action="hamburger" class="hide-tablet hide-desktop"></icon-button>
+        <icon-button icon="${menu}" action="hamburger" text="menu" class="hide-mobile"></icon-button>
         <icon-button icon="${search}" class="hide-tablet hide-desktop " action="search"></icon-button>
         
       </div>
@@ -58,7 +59,7 @@ class HeaderToolbar extends BaseComponent {
     <!-- center logo section -->
       <div class="flex justify-center items-center">
         <icon-button icon="${porscheIcon}" size="2" class="hide-tablet hide-desktop"></icon-button>
-        <icon-button icon="${porscheText}" size="0.6" class="show-tablet show-desktop" ></icon-button>
+        <icon-button icon="${porscheText}" size="7" class="show-tablet show-desktop hover-none" ></icon-button>
       </div>
 
     <!-- right side logo  section -->
