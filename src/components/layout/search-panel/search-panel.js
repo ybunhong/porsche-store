@@ -1,63 +1,85 @@
 import "./search-panel.css";
-import { cross } from "../../../assets/assets";
+import { cross, search } from "../../../assets/assets";
 import "@ui";
 
 class SearchPanel extends BaseComponent {
   constructor() {
     super();
     this.isOpen = false;
-    this.historyData = {
-      main: [
-        {
-          label: "All categories",
-          href: "#",
-          hasSubmenu: true,
-          submenu: [
-            { label: "← Back", icon: "↩️", action: "back" },
-            { label: "New Arrivals", href: "#", action: "navigate" },
-            { label: "Best Sellers", href: "#", action: "navigate" },
-            { label: "Sale Items", href: "#", action: "navigate" },
-            { label: "Limited Edition", href: "#", action: "navigate" },
-          ],
-        },
-      ],
-    };
+    this.historyData = ["testing1", "testing2", "testing3", "testing4"];
+    this.products = [
+      {
+        title: "Porsche 911 Carrera",
+        description: "The iconic sports car with a timeless design and high performance.",
+        price: "$120,000",
+      },
+      {
+        title: "MacBook Pro 16",
+        description: "Apple's most powerful laptop, ideal for professionals and creatives.",
+        price: "$2,499",
+      },
+      {
+        title: "Sony WH-1000XM5",
+        description: "Industry-leading noise cancelling headphones with superb audio quality.",
+        price: "$349",
+      },
+      {
+        title: "Samsung Galaxy S24 Ultra",
+        description: "Flagship Android smartphone with top-tier specs and camera system.",
+        price: "$1,199",
+      },
+      {
+        title: "Dyson V15 Detect",
+        description: "Powerful cordless vacuum with laser detection and intelligent cleaning.",
+        price: "$749",
+      },
+      {
+        title: "LEGO Porsche 911 RSR",
+        description: "Detailed LEGO model of the Porsche 911 RSR for collectors and kids.",
+        price: "$149",
+      },
+    ];
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.renderTemplate();
-    this.updateOpenState();
+    this.addEventListener("toggle-panel", event => {
+      const panelName = event.detail.panel;
+      if (panelName === "searchPanelClose") {
+        this.toggleOpen();
+      }
+    });
   }
 
   toggleOpen() {
     this.isOpen = !this.isOpen;
-    this.updateOpenState();
-  }
-
-  updateOpenState() {
-    const panel = this.querySelector(".search-panel");
+    const panel = this.querySelector("aside");
     if (panel) {
       panel.classList.toggle("open", this.isOpen);
     }
   }
 
   renderTemplate() {
-    const historyItem = this.historyData.main
-      .map(item => {
-        const hasSubmenuAttr = item.hasSubmenu ? "has-submenu" : "";
-        return `<menu-item label="${item.label}" href="${item.href}" ${hasSubmenuAttr}></menu-item>`;
-      })
+    const historyItem = this.historyData
+      .map(item => `<icon-button icon='${search}' text='${item}'></icon-button>`)
+      .join("");
+    const productItem = this.products
+      .map(
+        item =>
+          `<search-result-item title='${item.title}' description='${item.description}' price='${item.price}'></search-result-item>`
+      )
       .join("");
 
     this.template = /* html */ `
-    <aside class="search-panel ${this.isOpen ? "open" : ""} bg-white px-5 py-4 absolute  h-full z-100 left-0 top-0">
+    <aside id="searchpanel" class="search-panel ${this.isOpen ? "open" : ""} absolute  h-full z-100 left-0 top-0 flex">
 
-    <div>
+    <div class="search-panel-content bg-white px-5 h-full">
+    <!-- Right section -->
     <!-- search section -->
-      <div class="flex flex-col py-4 border-b items-center">
-        <icon-button id="close-button" icon="${cross}" class="self-end"></icon-button>
-        <h5>waiting for search component</h5>
+      <div class="flex flex-col gap-4 py-3 border-b">
+        <icon-button id="close-button" icon="${cross}" searchPanelClose class="self-end hide-tablet hide-desktop"></icon-button>
+        <search-input text="search.."></search-input>
       </div>
 
     <!-- search history section -->
@@ -66,21 +88,24 @@ class SearchPanel extends BaseComponent {
       </div>
 
      <!-- product history section -->
-
     <div class="py-2"> 
-      <search-result-item title="title", description="this is sssssssssssssssssssssssssssssssssssssssssssdescription", price="12$"></search-result-item>   
+      <div class="flex items-center justify-between pb-3">
+        <p class="body-xs">All category</p>
+        <icon-button text="Delete"></icon-button>
+      </div>
+      ${productItem}
+    </div>
+       
     </div>
 
+    <!-- Right section -->
+    <div class="hide-mobile pt-3 pl-3">
+         <icon-button id="close-button" icon="${cross}" action="searchPanelClose" class="self-end"></icon-button>
     </div>
     </aside>
   `;
 
     this.render();
-
-    const closeButton = this.querySelector("#close-button");
-    if (closeButton) {
-      closeButton.addEventListener("click", () => this.toggleOpen());
-    }
   }
 }
 

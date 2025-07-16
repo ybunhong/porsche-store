@@ -48,13 +48,13 @@ class SearchResultItem extends BaseComponent {
 
   updateTemplate() {
     this.template = /* html */ `
-      <a href="${this.href}" class="flex gap-3 w-full items-center">
+      <a href="${this.href}" class="flex gap-3 w-full items-center hover-bg-primary rounded">
 
         <div>
             <img src="${this.image || searchImage}" class="image"/>
         </div>
 
-        <div class="w-full overflow-hidden">
+        <div class="w-full overflow-hidden ">
             <h4 class>${this.title}</h4>
             <p class="body-sm whitespace-nowrap text-ellipsis" >${this.description}</p>
             <p class="body-xs text-disable">${this.price}</p>
