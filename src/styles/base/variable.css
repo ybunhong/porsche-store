@@ -19,7 +19,7 @@
   --color-dark-hover: #6b6d70;
 
   /* Thematic / Accent Colors */
-  --color-muted: #6b6d70;
+  --color-muted: var(--color-gray-200);
   --color-warm: #dacaab;
   --color-warning: #fd6a02;
   --color-error: #cc1922;
@@ -29,7 +29,7 @@
   --color-success-content: #197e10;
   --color-warning-bg: #fff4d2;
   --color-warning-content: #f3be00;
-  --color-error-bg: #ffe2e4;
+  --color-error-bg: #ffeded;
   --color-info-bg: #d3e1ff;
   --color-info-content: #2762ec;
 
