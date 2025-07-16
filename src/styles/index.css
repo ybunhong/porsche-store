@@ -19,6 +19,7 @@ utility styles
 @import url("./utils/layout/grid.css");
 @import url("./utils/layout/position.css");
 @import url("./utils/layout/spacing.css");
+@import url("./utils/layout/hover.css");
 
 /* visual styles */
 @import url("./utils/visual/background.css");
