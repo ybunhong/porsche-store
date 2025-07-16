@@ -1,4 +1,86 @@
-/* Apply typography styles */
+/* ==========================================================================
+   2. Typography Utility Classes
+   ========================================================================== */
+
+/* Original Heading Font Size Classes */
+.text-h1 {
+  font-size: var(--font-size-h1);
+}
+
+.text-h2 {
+  font-size: var(--font-size-h2);
+}
+
+.text-h3 {
+  font-size: var(--font-size-h3);
+}
+
+.text-h4 {
+  font-size: var(--font-size-h4);
+}
+
+.text-h5 {
+  font-size: var(--font-size-h5);
+}
+
+.text-h6 {
+  font-size: var(--font-size-h6);
+}
+
+/* Additional Heading Sizes */
+.text-hero {
+  font-size: var(--font-size-hero);
+}
+
+.text-display {
+  font-size: var(--font-size-display);
+}
+
+.text-title {
+  font-size: var(--font-size-title);
+}
+
+.text-subtitle {
+  font-size: var(--font-size-subtitle);
+}
+
+.text-lead {
+  font-size: var(--font-size-lead);
+}
+
+/* Original Paragraph Font Size Classes */
+.text-p1 {
+  font-size: var(--font-size-p1);
+}
+
+.text-p2 {
+  font-size: var(--font-size-p2);
+}
+
+.text-p3 {
+  font-size: var(--font-size-p3);
+}
+
+.text-p4 {
+  font-size: var(--font-size-p4);
+}
+
+/* Additional Paragraph / UI Sizes */
+.text-p0 {
+  font-size: var(--font-size-p0);
+}
+
+.text-p5 {
+  font-size: var(--font-size-p5);
+}
+
+.text-p6 {
+  font-size: var(--font-size-p6);
+}
+
+/* Apply new typography styles (using font shorthand) */
+
+/* Display Classes */
 .display-xl {
   font: var(--font-display-xl);
 }
@@ -11,6 +93,7 @@
   font: var(--font-display-md);
 }
 
+/* Heading Classes (and default H-tag styles) */
 h1,
 .heading-xl {
   font: var(--font-heading-xl);
@@ -36,6 +119,7 @@ h5,
   font: var(--font-heading-xs);
 }
 
+/* Body Classes (and default P-tag style) */
 .body-lg {
   font: var(--font-body-lg);
 }
@@ -61,7 +145,72 @@ p {
   font: var(--font-body-3xs);
 }
 
-/* Text */
+/* Font Weight Utility Classes */
+.font-thin {
+  font-weight: var(--font-weight-thin);
+}
+
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-extra-bold {
+  font-weight: var(--font-weight-extra-bold);
+}
+
+/* Line Height Utility Classes (Optional, as line-height is often part of font shorthand) */
+.leading-tight {
+  line-height: var(--line-height-tight);
+}
+
+.leading-normal {
+  line-height: var(--line-height-normal);
+}
+
+.leading-loose {
+  line-height: var(--line-height-loose);
+}
+
+.leading-h3 {
+  line-height: var(--line-height-h3);
+}
+
+.leading-p {
+  line-height: var(--line-height-p);
+}
+
+.leading-readable {
+  line-height: var(--line-height-readable);
+}
+
+.leading-loose-2 {
+  line-height: var(--line-height-loose-2);
+}
+
+.leading-xloose {
+  line-height: var(--line-height-xloose);
+}
+
+/* ==========================================================================
+   3. Text Alignment Utility Classes
+   ========================================================================== */
+
 .text-left {
   text-align: left;
 }
@@ -77,6 +226,10 @@ p {
 .text-justify {
   text-align: justify;
 }
+
+/* ==========================================================================
+   4. Text Color Utility Classes
+   ========================================================================== */
 
 .text-white {
   color: var(--color-white);
@@ -95,7 +248,7 @@ p {
 }
 
 .text-success {
-  color: var(--color-success);
+  color: var(--color-success-content);
 }
 
 .text-error {

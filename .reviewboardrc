@@ -1,5 +1,5 @@
 REVIEWBOARD_URL = "https://review.clp.kr"
 REPOSITORY = "Skill-Forge-Lab/Team-Projects/Clone-Project"
 REPOSITORY_TYPE = "git"
-BRANCH = "feature/add_typo"
-LAND_DEST_BRANCH = "feature/add_typo"
+BRANCH = "feature/update-typo"
+LAND_DEST_BRANCH = "feature/update-typo"

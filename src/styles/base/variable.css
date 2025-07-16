@@ -1,13 +1,14 @@
 @import url("https://db.onlinewebfonts.com/c/2ad24930d996d33544708f0637f7690a?family=Porsche+Next");
 
 :root {
-  --font-primary: "Porsche Next";
+  --font-primary: "Porsche Next", arial, "Helvetica Neue", helvetica, sans-serif;
   --font-heading: "Franklin Gothic Medium", "arial", "sans-serif";
   --font-subheading: "arial", "sans-serif";
 
   /* Base Colors */
   --color-white: #fff;
   --color-black: #000;
+  --color-black-pearl: #010205;
   --color-gray-100: #f6f6f6;
   --color-gray-200: #eeeef2;
   --color-gray-300: #d8d8d8;
@@ -124,7 +125,12 @@
   --radius-xl: 12px;
   --radius-2xl: 16px;
 
-  /* heading font size */
+  /* 🔠 Heading Font Sizes */
+  --font-size-hero: 72.5px; /* Hero headline (very large) */
+  --font-size-display: 50px; /* Large display heading */
+  --font-size-title: 43.1px; /* Prominent section heading */
+  --font-size-subtitle: 33.2px; /* Secondary section heading */
+  --font-size-lead: 25.9px; /* Subsection heading or intro */
   --font-size-h1: 50px;
   --font-size-h2: 48px;
   --font-size-h3: 36px;
@@ -132,31 +138,33 @@
   --font-size-h5: 24px;
   --font-size-h6: 20px;
 
-  /*  Paragraph font sizes */
+  /* 📝 Paragraph Font Sizes */
+  --font-size-p0: 20.3px; /* Large paragraph or UI heading */
   --font-size-p1: 18px;
   --font-size-p2: 16px;
   --font-size-p3: 14px;
   --font-size-p4: 12px;
+  --font-size-p5: 13px; /* Rare small text */
+  --font-size-p6: 11px; /* Micro/label text */
 
   /* font weight */
-  --font-weight-bold: 700;
-  --font-weight-semibold: 600;
-  --font-weight-medium: 500;
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
   --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 900;
 
   /* line height */
   --line-height-tight: 1.1;
   --line-height-normal: 1.2;
   --line-height-loose: 1.3;
-  --line-height-p: 1.5;
-
-  /* Border colors */
-  --border-color-default: var(--color-gray-700);
-  --border-color-black: #000;
-  --border-color-white: #fff;
-
-  /* --border-color-primary: #007bff;
-  --border-color-danger: #dc3545; */
+  --line-height-h3: 1.4; /* For headings like <h3> */
+  --line-height-p: 1.5; /* Paragraphs and body text */
+  --line-height-readable: 1.6; /* For small font sizes */
+  --line-height-loose-2: 1.7; /* For extra airy content */
+  --line-height-xloose: 1.85; /* Consider revising down */
 
   /* Border widths */
   --border-width-thin: 1px;

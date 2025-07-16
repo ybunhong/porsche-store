@@ -4,12 +4,12 @@
   gap: 16px;
 }
 
-.col-span-1-sm {
-  grid-column: span 1;
+.col-span-2-sm {
+  grid-column: span 2;
 }
 
 .col-span-full-sm {
-  grid-column: span 1;
+  grid-column: span 2;
 }
 
 @media (width >= 768px) {
