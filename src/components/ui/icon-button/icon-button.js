@@ -7,25 +7,38 @@ import "./icon-button.css";
  * <icon-button
  *   icon="/path/to/default-icon.svg"
  *   toggle-icon="/path/to/toggle-icon.svg"
+ *   text="Button Text"
  *   size="1.5"
  *   disabled
  *   action="some-panel"
  *   class="your-css-classes"
  * ></icon-button>
  *
+ *
  * Attributes:
- * - icon (string): URL/path of the default icon image (required)
+ * - icon (string): URL/path of the default icon image (optional)
  * - toggle-icon (string): URL/path of the icon to toggle to on click (optional)
+ * - text (string): Text content for the button (optional)
  * - size (number): Scale multiplier for the icon size, defaults to 1 (optional)
  * - disabled (boolean): Disables the button and prevents interaction (optional)
  * - action (string): Custom identifier dispatched with "toggle-panel" event on click (optional)
  *
- * Example:
+ * Examples:
+ * <!-- Icon only -->
+ * <icon-button icon="/icons/heart.svg"></icon-button>
+ *
+ * <!-- Text only -->
+ * <icon-button text="Click Me"></icon-button>
+ *
+ * <!-- Icon + Text -->
+ * <icon-button icon="/icons/heart.svg" text="Like"></icon-button>
+ *
+ * <!-- With toggle functionality -->
  * <icon-button
  *   icon="/icons/heart.svg"
- *   toggle-icon="/icons/menu.svg"
- *   size="1"
- *   action="sidebar"
+ *   toggle-icon="/icons/heart-filled.svg"
+ *   text="Like"
+ *   action="like-button"
  * ></icon-button>
  *
  * In JavaScript:
@@ -38,6 +51,12 @@ import "./icon-button.css";
  * btn.setToggleState(true);  // shows toggle icon
  * btn.setToggleState(false); // shows original icon
  *
+ * // Update text content
+ * btn.setText("New Text");
+ *
+ * // Update icon
+ * btn.setIcon("/new/icon.svg");
+ *
  * // Disable and enable the button
  * btn.disable();
  * btn.enable();
@@ -48,17 +67,18 @@ import "./icon-button.css";
  *
  * Accessibility:
  * - Disabled button uses 'disabled' attribute and updates tabindex accordingly.
+ * - Proper alt text for icons when no text is present
  */
 
 class IconButton extends BaseComponent {
   static get observedAttributes() {
-    return ["icon", "size", "toggle-icon", "disabled"];
+    return ["icon", "size", "toggle-icon", "disabled", "text"];
   }
 
   constructor() {
     super();
     this.icon = "";
-    this.variant = "primary";
+    this.text = "";
     this.size = 1;
     this.originalIcon = "";
     this.toggleIcon = "";
@@ -100,7 +120,7 @@ class IconButton extends BaseComponent {
       console.warn(`Invalid size value: ${value}. Using default size 1.`);
       return 1;
     }
-    return Math.min(Math.max(num, 0.1), 5);
+    return Math.min(Math.max(num, 0.1), 8);
   }
 
   setToggleIcon() {
@@ -111,38 +131,71 @@ class IconButton extends BaseComponent {
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
       switch (name) {
-        case "icon":
+        case "icon": {
           this.icon = newValue || "";
           if (!this.originalIcon) {
             this.originalIcon = newValue || "";
           }
           break;
-        case "size":
-          this.size = IconButton.validateSize(newValue);
-
+        }
+        case "size": {
+          const newSize = IconButton.validateSize(newValue);
+          // Only update if the size actually changed to prevent unnecessary re-renders
+          if (newSize !== this.size) {
+            this.size = newSize;
+          }
           break;
-        case "toggle-icon":
+        }
+        case "toggle-icon": {
           this.toggleIcon = newValue || "";
           this.hasToggleIcon = Boolean(newValue);
           break;
-        case "disabled":
+        }
+        case "disabled": {
           this.disabled = newValue !== null;
           break;
-        default:
+        }
+        case "text": {
+          this.text = newValue || "";
+          break;
+        }
+        default: {
           console.warn(`Unhandled observed attribute: ${name}`);
           break;
+        }
       }
       this.updateTemplate();
     }
   }
 
   updateTemplate() {
+    const hasIcon = Boolean(this.icon);
+    const hasText = Boolean(this.text);
+
+    // Generate appropriate alt text for accessibility
+    const altText = hasText ? this.text : "Button";
+
+    // Build the button content
+    let buttonContent = "";
+
+    if (hasIcon) {
+      buttonContent += `<img src="${this.icon}" alt="${altText}" class="icon-image" ${this.disabled ? "disabled" : ""}/>`;
+    }
+
+    if (hasText) {
+      buttonContent += `<span class="button-text ${hasIcon ? "ml-2" : ""}">${this.text}</span>`;
+    }
+    if (!hasIcon && !hasText) {
+      console.warn("IconButton: Neither icon nor text provided. Button may not be accessible.");
+      buttonContent = "<span class='button-text'>Button</span>";
+    }
+    const currentSize = this.size || 1;
+
     this.template = `
-      <button class="icon-button border-none bg-transparent flex justify-center" 
-      style="transform: scale(${this.size || 1})">
-        <img src="${this.icon}" 
-        alt="MenuIcon" 
-        ${this.disabled ? "disabled" : ""}/>
+      <button class="icon-button border-none bg-transparent flex items-center justify-center  hover-bg-primary rounded-sm p-1" 
+      style="--icon-scale: ${currentSize}; transform: scale(var(--icon-scale));" 
+      ${this.disabled ? "disabled" : ""}>
+        ${buttonContent}
       </button>
     `;
 
@@ -164,6 +217,19 @@ class IconButton extends BaseComponent {
     }
   }
 
+  setText(newText) {
+    this.text = newText || "";
+    this.setAttribute("text", this.text);
+    this.updateTemplate();
+  }
+
+  setIcon(newIcon) {
+    this.icon = newIcon || "";
+    this.originalIcon = newIcon || "";
+    this.setAttribute("icon", this.icon);
+    this.updateTemplate();
+  }
+
   disable() {
     this.disabled = true;
     this.setAttribute("disabled", "");
@@ -174,6 +240,20 @@ class IconButton extends BaseComponent {
     this.disabled = false;
     this.removeAttribute("disabled");
     this.updateTemplate();
+  }
+
+  // Debug method to check current state
+  getDebugInfo() {
+    return {
+      icon: this.icon,
+      text: this.text,
+      size: this.size,
+      originalIcon: this.originalIcon,
+      toggleIcon: this.toggleIcon,
+      isToggled: this.isToggled,
+      disabled: this.disabled,
+      hasToggleIcon: this.hasToggleIcon,
+    };
   }
 }
 
