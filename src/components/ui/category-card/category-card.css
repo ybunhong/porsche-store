@@ -1,0 +1,48 @@
+.card {
+  height: inherit;
+  box-shadow: var(--shadow-medium);
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.card-image {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card .text-area {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-area .text,
+.text-area .icon {
+  display: flex;
+  align-items: center;
+}
+
+.card .text {
+  font-style: var(--font-primary);
+  font-size: var(--font-size-p4);
+  font-weight: bold;
+  max-width: 70%;
+}
+
+.card .icon-arrow {
+  width: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transform: rotate(-90deg);
+}
