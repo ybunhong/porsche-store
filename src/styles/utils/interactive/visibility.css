@@ -1,3 +1,15 @@
+.hidden {
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 /* hide only on specific devices */
 .hide-mobile {
   display: block;
