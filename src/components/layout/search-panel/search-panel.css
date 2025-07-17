@@ -4,10 +4,12 @@
   width: 100%;
   padding: 0 16px;
   background-color: var(--color-gray-200);
+  visibility: hidden;
 }
 
 .search-panel.open {
   transform: translateX(0);
+  visibility: visible;
 }
 
 @media (width >= 767px) {

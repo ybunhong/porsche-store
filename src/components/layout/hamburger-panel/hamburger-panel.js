@@ -1,72 +1,87 @@
 import "./hamburger-panel.css";
-import { cross } from "@assets";
+import { cross, arrow } from "@assets";
 import "@ui";
 
 class HamBurgerPanel extends BaseComponent {
   constructor() {
     super();
-    this.isOpen = false;
-    this.menuData = {
-      main: [
-        {
-          label: "All categories",
-          href: "#",
-          hasSubmenu: true,
-          submenu: [
-            { label: "← Back", icon: "↩️", action: "back" },
-            { label: "New Arrivals", href: "#", action: "navigate" },
-            { label: "Best Sellers", href: "#", action: "navigate" },
-            { label: "Sale Items", href: "#", action: "navigate" },
-            { label: "Limited Edition", href: "#", action: "navigate" },
-          ],
-        },
-        {
-          label: "PORSCHE DESIGN",
-          href: "#",
-          hasSubmenu: true,
-          submenu: [
-            { label: "← Back", icon: "↩️", action: "back" },
-            {
-              label: "Accessories",
-              href: "#",
-              hasSubmenu: true,
-              submenu: [
-                { label: "← Back", icon: "↩️", action: "back" },
-                { label: "Leather Goods", href: "#", action: "navigate" },
-                { label: "Tech Accessories", href: "#", action: "navigate" },
-                { label: "Travel Gear", href: "#", action: "navigate" },
-                { label: "Home & Office", href: "#", action: "navigate" },
-              ],
-            },
-            {
-              label: "Apparel",
-              href: "#",
-              hasSubmenu: true,
-              submenu: [
-                { label: "← Back", icon: "↩️", action: "back" },
-                { label: "Men's Clothing", href: "#", action: "navigate" },
-                { label: "Women's Clothing", href: "#", action: "navigate" },
-                { label: "Sportswear", href: "#", action: "navigate" },
-                { label: "Footwear", href: "#", action: "navigate" },
-              ],
-            },
-            { label: "Lifestyle", href: "#", action: "navigate" },
-            { label: "Collectibles", href: "#", action: "navigate" },
-          ],
-        },
-        { label: "Watches", href: "#", action: "navigate" },
-        { label: "Bags & Luggage", href: "#", action: "navigate" },
-        { label: "Heritage", href: "#", action: "navigate" },
-        { label: "Vehicle Accessories", href: "#", action: "navigate" },
-        { label: "Eyewear", href: "#", action: "navigate" },
-      ],
-    };
+    this.isOpen = true;
+    this.currentMenu = "Porsche Shop"; // Start with main menu
+    this.menuHistory = []; // Track navigation history
+    this.menuData = [
+      {
+        label: "Sample1",
+        href: "#",
+        submenu: [
+          { label: "New Arrivals", href: "#" },
+          { label: "Best Sellers", href: "#" },
+          { label: "Sale Items", href: "#" },
+          { label: "Limited Edition", href: "#" },
+        ],
+      },
+      {
+        label: "sample2",
+        href: "#",
+      },
+      {
+        label: "sample3",
+        href: "#",
+        submenu: [
+          { label: "New Arrivals", href: "#" },
+          { label: "Best Sellers", href: "#" },
+          { label: "Sale Items", href: "#" },
+          { label: "Limited Edition", href: "#" },
+        ],
+      },
+    ];
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.renderTemplate();
-    this.updateOpenState();
+    this.addEventListener("menu-item", event => {
+      const clickedEmitter = event.detail.emitter;
+      this.handleMenuNavigation(clickedEmitter);
+    });
+    this.addEventListener("toggle-panel", event => {
+      const panelName = event.detail.panel;
+      if (panelName === "hamburgerPanelClose") {
+        this.toggleOpen();
+      }
+      if (panelName === "previousMenu") {
+        this.goBack();
+      }
+    });
+  }
+
+  handleMenuNavigation(clickedItem) {
+    const currentMenuItems = this.getCurrentMenuItems();
+
+    const menuItem = currentMenuItems.find(item => item.label === clickedItem);
+
+    if (menuItem && menuItem.submenu) {
+      this.menuHistory.push(this.currentMenu);
+      this.currentMenu = clickedItem;
+      this.renderTemplate();
+    }
+  }
+
+  goBack() {
+    if (this.menuHistory.length > 0) {
+      // Go back to previous menu
+      this.currentMenu = this.menuHistory.pop();
+      this.renderTemplate();
+    }
+  }
+
+  getCurrentMenuItems() {
+    if (this.currentMenu === "Porsche Shop") {
+      // Return main menu items
+      return this.menuData;
+    }
+    // Return submenu items
+    const parentMenu = this.menuData.find(item => item.label === this.currentMenu);
+    return parentMenu ? parentMenu.submenu.map(item => ({ ...item, isSubmenuItem: true })) : [];
   }
 
   toggleOpen() {
@@ -82,31 +97,47 @@ class HamBurgerPanel extends BaseComponent {
   }
 
   renderTemplate() {
-    const Menuitem = this.menuData.main
+    const currentMenuItems = this.getCurrentMenuItems();
+
+    const menuItems = currentMenuItems
       .map(item => {
-        const hasSubmenuAttr = item.hasSubmenu ? "has-submenu" : "";
-        return `<menu-item label="${item.label}" href="${item.href}" ${hasSubmenuAttr}></menu-item>`;
+        const submenuJson = item.submenu ? JSON.stringify(item.submenu) : "";
+        return `<menu-item label='${item.label}' submenu='${submenuJson}' emitter='${item.label}'></menu-item>`;
       })
       .join("");
 
     this.template = /* html */ `
-    <aside class="hamburger-panel ${this.isOpen ? "open" : ""}  bg-white px-5 py-4 absolute z-5000  h-full left-0 top-0">
-      <div class="flex justify-center items-center">
-        <h2>Porsche Shop</h2>
-        <icon-button id="close-button" icon="${cross}" class="absolute right-5"></icon-button>
-      </div>
-      <div>
-        ${Menuitem}
-      </div>
-    </aside>
+  <aside class="hamburger-panel ${this.isOpen ? "open" : ""} absolute h-full z-100 left-0 top-0 flex">
+
+    <div class="hamburger-panel-content bg-white  h-full w-full">
+
+      <div class="flex justify-between items-center px-4 mb-3">
+      <!-- top navigation section -->
+        <div class="flex-1">
+          ${this.currentMenu !== "Porsche Shop" ? `<icon-button id="back-button" icon="${arrow}" action="previousMenu" class="self-end hide-tablet hide-desktop"></icon-button>` : ""}
+          ${this.currentMenu !== "Porsche Shop" ? `<icon-button id="back-button" text='${this.currentMenu}' icon="${arrow}" action="previousMenu" class="self-end hide-mobile"></icon-button>` : ""}
+          </div>
+            <h3 class="flex-1 text-center heading-lg hide-tablet hide-desktop">${this.currentMenu}</h3>
+            <div class="flex-1 flex justify-end">
+            <icon-button id="close-button" icon="${cross}" action="hamburgerPanelClose" class="self-end hide-tablet hide-desktop"></icon-button>
+          </div>
+        </div>
+
+      <!-- menu section -->
+        <div class="px-6 flex flex-col gap-1">
+          ${menuItems}
+        </div>
+
+     </div>
+
+    <!-- Close button section -->
+    <div class="hide-mobile pt-3 pl-3">
+        <icon-button id="close-button" icon="${cross}" action="hamburgerPanelClose" class="self-end"></icon-button>
+    </div>
+  </aside>
   `;
 
     this.render();
-
-    const closeButton = this.querySelector("#close-button");
-    if (closeButton) {
-      closeButton.addEventListener("click", () => this.toggleOpen());
-    }
   }
 }
 

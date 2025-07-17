@@ -1,13 +1,15 @@
 import "./menu-item.css";
+import { chevron } from "@assets";
 
 class MenuItem extends BaseComponent {
   static get observedAttributes() {
-    return ["label", "has-submenu", "href"];
+    return ["label", "submenu", "href", "emitter"];
   }
 
   constructor() {
     super();
     this.hasSubmenu = false;
+    this.emitter = "";
     this.label = "";
     this.href = "#";
   }
@@ -15,6 +17,15 @@ class MenuItem extends BaseComponent {
   connectedCallback() {
     super.connectedCallback();
     this.updateTemplate();
+    this.addEventListener("click", event => {
+      event.preventDefault(); // Prevent default link behavior
+      this.dispatchEvent(
+        new CustomEvent("menu-item", {
+          bubbles: true,
+          detail: { emitter: this.emitter },
+        })
+      );
+    });
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -22,11 +33,14 @@ class MenuItem extends BaseComponent {
       if (name === "label") {
         this.label = newValue;
       }
-      if (name === "has-submenu") {
-        this.hasSubmenu = newValue !== null;
+      if (name === "submenu") {
+        this.hasSubmenu = newValue !== null && newValue;
       }
       if (name === "href") {
         this.href = newValue;
+      }
+      if (name === "emitter") {
+        this.emitter = newValue;
       }
       this.updateTemplate();
     }
@@ -34,13 +48,12 @@ class MenuItem extends BaseComponent {
 
   updateTemplate() {
     this.template = /* html */ `
-    <div class="text-h6 py-2">
-        <a href="${this.href || "#"} " class="flex justify-between">
+    <div class="body-sm py-2 hover-bg-accent rounded-sm px-1">
+        <a href="${this.href || "#"}" class="flex justify-between">
           <span>${this.label || ""}</span>
-          ${this.hasSubmenu ? "<span>></span>" : ""}
+          ${this.hasSubmenu ? `<img src="${chevron}">` : ""}
         </a>
     </div>
-  
     `;
     this.render();
   }
