@@ -1,122 +1,68 @@
 /* layout grid */
 .layout-grid {
   display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: 16px;
 }
 
-.col-span-2-sm {
-  grid-column: span 2;
+/* Mobile semantic patterns (now 2-column layout on mobile) */
+.col-full-sm {
+  grid-column: span 12;
 }
 
-.col-span-full-sm {
-  grid-column: span 2;
+.col-half-sm {
+  grid-column: span 6;
 }
 
+.col-third-sm {
+  grid-column: span 4;
+}
+
+.col-two-thirds-sm {
+  grid-column: span 8;
+}
+
+.col-quarter-sm {
+  grid-column: span 3;
+}
+
+.col-three-quarters-sm {
+  grid-column: span 9;
+}
+
+/* Tablet (≥768px) */
 @media (width >= 768px) {
-  .layout-grid {
-    grid-template-columns: repeat(6, 1fr);
+  .col-full-md {
+    grid-column: span 12;
   }
 
-  .col-span-1-md {
-    grid-column: span 1;
-  }
-
-  .col-span-2-md {
-    grid-column: span 2;
-  }
-
-  .col-span-3-md {
-    grid-column: span 3;
-  }
-
-  .col-span-4-md {
-    grid-column: span 4;
-  }
-
-  .col-span-5-md {
-    grid-column: span 5;
-  }
-
-  .col-span-6-md {
-    grid-column: span 6;
-  }
-
-  .col-span-full-md {
-    grid-column: span 6;
-  }
-
-  /* Tablet semantic patterns */
   .col-half-md {
-    grid-column: span 3;
+    grid-column: span 6;
   }
 
   .col-third-md {
-    grid-column: span 2;
+    grid-column: span 4;
   }
 
   .col-two-thirds-md {
-    grid-column: span 4;
-  }
-}
-
-@media (width >= 1024px) {
-  .layout-grid {
-    grid-template-columns: repeat(12, 1fr);
-  }
-
-  .col-span-1-lg {
-    grid-column: span 1;
-  }
-
-  .col-span-2-lg {
-    grid-column: span 2;
-  }
-
-  .col-span-3-lg {
-    grid-column: span 3;
-  }
-
-  .col-span-4-lg {
-    grid-column: span 4;
-  }
-
-  .col-span-5-lg {
-    grid-column: span 5;
-  }
-
-  .col-span-6-lg {
-    grid-column: span 6;
-  }
-
-  .col-span-7-lg {
-    grid-column: span 7;
-  }
-
-  .col-span-8-lg {
     grid-column: span 8;
   }
 
-  .col-span-9-lg {
+  .col-quarter-md {
+    grid-column: span 3;
+  }
+
+  .col-three-quarters-md {
     grid-column: span 9;
   }
+}
 
-  .col-span-10-lg {
-    grid-column: span 10;
-  }
-
-  .col-span-11-lg {
-    grid-column: span 11;
-  }
-
-  .col-span-12-lg {
+/* Desktop (≥1024px) */
+@media (width >= 1024px) {
+  .col-full-lg {
     grid-column: span 12;
   }
 
-  .col-span-full-lg {
-    grid-column: span 12;
-  }
-
-  /* Desktop semantic patterns */
   .col-half-lg {
     grid-column: span 6;
   }
@@ -137,5 +83,3 @@
     grid-column: span 9;
   }
 }
-
-/* component layout */
