@@ -1,7 +1,5 @@
 import "./dropdown-selection.css";
 import { chevron } from "@assets";
-import "@ui";
-import "../../../styles/index.css";
 
 class DropdownSelection extends BaseComponent {
   static get observedAttributes() {
@@ -20,36 +18,16 @@ class DropdownSelection extends BaseComponent {
       selectedOption: null,
     };
   }
+  /*
+  REASON of remove code: The following lifecycle and helper methods are temporarily commented out 
+  (`connectedCallback`, `attributeChangedCallback`, `applyWidth`, `setSelectedOption`)
+  to simplify testing and prevent unnecessary rerenders or attribute syncing during development.
 
-  connectedCallback() {
-    this.render();
-    this.initEventListeners();
-    this.applyWidth();
-    this.setSelectedOption(this.getAttribute("value"));
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue === newValue) return;
-
-    if (name === "width") {
-      this.applyWidth();
-    }
-    if (name === "value") {
-      this.setSelectedOption(newValue);
-    }
-    this.render();
-  }
-
-  setSelectedOption(value) {
-    this.state.selectedOption = this.state.options.find(opt => opt.value === value) || null;
-    this.render();
-  }
-
-  applyWidth() {
-    const width = this.getAttribute("width") || "320px";
-    this.style.width = width;
-    this.style.minWidth = width;
-  }
+  WHY?
+  - We're manually calling `render()` for now and hardcoding internal state.
+  - We're not yet supporting dynamic attribute updates like `setAttribute("value", ...)`.
+  - Styling (like width) is being handled via CSS or external layout for now.
+*/
 
   toggleDropdown() {
     this.setState({ isOpen: !this.state.isOpen });
