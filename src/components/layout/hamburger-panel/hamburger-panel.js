@@ -5,7 +5,7 @@ import "@ui";
 class HamBurgerPanel extends BaseComponent {
   constructor() {
     super();
-    this.isOpen = true;
+    this.isOpen = false;
     this.currentMenu = "Porsche Shop"; // Start with main menu
     this.menuHistory = []; // Track navigation history
     this.menuData = [

@@ -18,7 +18,6 @@ class HeaderToolbar extends BaseComponent {
     this.updateTemplate();
     this.addEventListener("toggle-panel", event => {
       const panelName = event.detail.panel;
-
       if (panelName === "search") {
         const searchPanel = this.querySelector("search-panel");
         if (searchPanel && typeof searchPanel.toggleOpen === "function") {
@@ -28,6 +27,11 @@ class HeaderToolbar extends BaseComponent {
         const hamburgerPanel = this.querySelector("hamburger-panel");
         if (hamburgerPanel && typeof hamburgerPanel.toggleOpen === "function") {
           hamburgerPanel.toggleOpen();
+        }
+      } else if (panelName === "profile") {
+        const profilePanel = this.querySelector("profile-panel");
+        if (profilePanel && typeof profilePanel.toggleOpen === "function") {
+          profilePanel.toggleOpen();
         }
       }
     });
@@ -67,12 +71,13 @@ class HeaderToolbar extends BaseComponent {
           <icon-button icon="${search}" class="show-tablet show-desktop" action="search"></icon-button>
           <icon-button icon="${heart}" class="show-tablet show-desktop"></icon-button>
           <icon-button icon="${cartEmpty}" class=""></icon-button>
-          <icon-button icon="${profile}" class=""></icon-button>
+          <icon-button icon="${profile}" action="profile" class="" ></icon-button>
       </div>
 
     <!-- hidden panel -->
       <hamburger-panel></hamburger-panel>
       <search-panel></search-panel>
+      <profile-panel></profile-panel>
     </div>
       
     `;
