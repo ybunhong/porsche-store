@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <script type="module" src="../main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+  </head>
+  <body class="bg-black">
+    <div class="bg-screen bg-white flex flex-col items-center justify-center">
+      <!-- login card  -->
+      <form class="login-card bg-white flex items-center justify-center px-5 py-5">
+        <div class="login-card-contents bg-white w-full">
+          <!-- header contents -->
+          <div class="flex flex-col items-center justify-center gap-5">
+            <img src="../src/assets/brand-logo/porsche-icon-text.svg" alt="logotext" />
+            <h3 class="heading-md">Welcome! Log in with your Porsche ID</h3>
+          </div>
+          <!-- body contents -->
+          <div class="flex flex-col items-start justify-start gap-5 w-full">
+            <p class="body-xs">Please enter the e-mail address you defined as your Porsche ID.</p>
+            <!-- input form -->
+            <div class="flex flex-col w-full gap-4">
+              <h1 style="color: red">Input form</h1>
+              <img src="../src/assets/brand-logo/porsche-icon-text.svg" />
+              <h1 style="color: red">Input form</h1>
+            </div>
+            <div class="flex flex-col w-full gap-5">
+              <base-button label="Login with password" variant="primary"></base-button>
+              <base-button label="Get login code via email" variant="secondary"></base-button>
+              <!-- divider-line -->
+              <div class="flex flex-row items-center w-full">
+                <div class="divider-line"></div>
+                <span class="body-xs pr-3 pl-3">OR</span>
+                <div class="divider-line"></div>
+              </div>
+              <base-button label="Create Porsche ID" variant="secondary"></base-button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- footer -->
+    <footer
+      class="flex flex-col justify-center footer bg-black body-3xs text-white px-5 py-4 text-center"
+    >
+      <p class="body-xs text-white max-w-screen-sm leading-relaxed">
+        © 2025 Porsche Sales & Marketplace, Inc. Legal Notice. Business and Human Rights. Privacy
+        Notice. California Privacy. Do Not Sell or Share My Personal Information. Cookie Policy.
+        Accessibility Statement. Open Source Software Notice.
+      </p>
+    </footer>
+  </body>
+</html>
