@@ -1,9 +1,43 @@
 import "./dropdown-selection.css";
 import { chevron } from "@assets";
 
+/**
+ * DropdownSelection Web Component
+ *
+ * A custom dropdown component with an optional floating legend and stylable appearance.
+ *
+ *Usage in HTML:
+ * <dropdown-selection
+ *   value="Mr."
+ *   placeholder="Select salutation"
+ *   width="200px"
+ * ></dropdown-selection>
+ *
+ * Attributes:
+ * - value (string): The selected value (optional).
+ * - placeholder (string): Placeholder when no option is selected (optional, defaults to "Salutation*").
+ * - width (string): Optional CSS width (handled externally).
+ *
+ * Events:
+ * - change: Fired when an option is selected.
+ *   event.detail = { value: string, label: string }
+ *
+ * Example:
+ * const dropdown = document.querySelector("dropdown-selection");
+ * dropdown.addEventListener("change", (e) => {
+ *   console.log("Selected:", e.detail.value);
+ * });
+ *
+ * Behavior:
+ * - Renders a fieldset with floating legend once a selection is made.
+ * - Toggles dropdown visibility on button click.
+ * - Closes dropdown when clicking outside.
+ * - Applies visual styles via `dropdown-selection.css`.
+ */
+
 class DropdownSelection extends BaseComponent {
   static get observedAttributes() {
-    return ["value", "placeholder", "disabled", "width"];
+    return ["value", "placeholder", "width"];
   }
 
   constructor() {
