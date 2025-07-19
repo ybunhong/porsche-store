@@ -1,0 +1,150 @@
+.image-list {
+  width: 115px;
+}
+
+.image-list .img-lst {
+  top: var(--offset-4);
+  height: 82.125px;
+  width: 100%;
+  cursor: pointer;
+  object-fit: cover;
+  border: var(--border-width-medium) var(--border-style-solid) transparent;
+  outline: none;
+}
+
+.image-list .img-lst:hover {
+  border: var(--border-width-medium) var(--border-style-solid) var(--color-gray-400);
+  transform: scale(1.1);
+}
+
+.image-list .img-lst.selected {
+  border-color: var(--border-color-default);
+}
+
+.main-image {
+  flex-grow: 1;
+  height: 100vh;
+}
+
+.img-main {
+  box-sizing: border-box;
+  height: 100vh;
+  cursor:
+    url("../../../assets/icons/interface-controll/cursorplus.svg") 16 16,
+    pointer;
+
+  /* transition: transform 0.3s ease; */
+}
+
+/* .main-image .img-main.zoomed {
+  transform: scale(1.5);
+  cursor: grab;
+} */
+
+.img-main.zoomed:active {
+  cursor: grabbing;
+}
+
+.cancel-button {
+  cursor: pointer;
+}
+
+.cancel-button .btn-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.cancel-button:hover .btn-img {
+  opacity: 0.6;
+}
+
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.rotate-left {
+  transform: rotate(90deg);
+}
+
+.main-image .img-main {
+  cursor:
+    url("${cursorplus}") 16 16,
+    zoom-in;
+}
+
+.main-image .img-main.zoomed {
+  transform: scale(1.5);
+  cursor: grab;
+}
+
+.rotate-right {
+  transform: rotate(270deg);
+}
+
+/* MOBILE STYLES + tablet */
+@media (width <= 1026px) {
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-image {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .main-image img {
+    width: 100%;
+    max-height: fit-content;
+    object-fit: contain;
+    border-radius: 0;
+  }
+
+  .gallery-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-2000);
+  }
+
+  .gallery-nav button {
+    border: none;
+    color: #000;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+
+    /* pointer-events: none; */
+
+    /* transition: opacity 0.2s; */
+    background-color: transparent;
+  }
+
+  .gallery-nav button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .gallery-nav .image-counter {
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+  }
+
+  .cancel-button {
+    top: 8px;
+    right: 8px;
+  }
+}

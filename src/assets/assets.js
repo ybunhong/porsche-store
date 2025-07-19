@@ -35,6 +35,8 @@ import plus from "./icons/interface-controll/plus.svg";
 import minus from "./icons/interface-controll/minus.svg";
 import cross from "./icons/interface-controll/cross.svg";
 import search from "./icons/interface-controll/search-.svg";
+import cursorminus from "./icons/interface-controll/cursorminus.svg";
+import cursorplus from "./icons/interface-controll/cursorplus.svg";
 
 // payments icons
 import americanExpressMd from "./icons/payments/american-express-md.svg";
@@ -129,4 +131,6 @@ export {
   truckFast,
   mountain,
   car,
+  cursorminus,
+  cursorplus,
 };
