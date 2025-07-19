@@ -2,7 +2,7 @@ import "./base-button.css";
 
 class BaseButton extends BaseComponent {
   static get observedAttributes() {
-    return ["label", "variant", "disabled"];
+    return ["label", "variant", "disabled", "type"];
   }
 
   constructor() {
@@ -10,6 +10,7 @@ class BaseButton extends BaseComponent {
     this.label = "";
     this.variant = "primary";
     this.disabled = false;
+    this.type = "button";
   }
 
   connectedCallback() {
@@ -25,14 +26,23 @@ class BaseButton extends BaseComponent {
       if (name === "variant") {
         this.variant = newValue;
       }
+      if (name === "type") {
+        this.type = newValue;
+      }
       this.updateTemplate();
     }
   }
 
   updateTemplate() {
-    let classes = "py-3 px-2 rounded-sm body-xs text-center heading-lg  w-full ";
+    let classes = "px-2 rounded-sm  text-center w-full ";
 
     classes += `button-${this.variant} `;
+
+    if (this.type === "button") {
+      classes += "py-3 heading-lg ";
+    } else if (this.type === "status") {
+      classes += "py-1 body-3xs ";
+    }
 
     this.template = `
       <button class="${classes}">${this.label}</button>
