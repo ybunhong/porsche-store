@@ -1,5 +1,58 @@
 import "./base-button.css";
 
+/**
+ * BaseButton Web Component
+ *
+ * Usage in HTML:
+ * <base-button
+ *   label="Click Me"
+ *   variant="primary"
+ *   type="button"
+ *   action="submit-form"
+ *   disabled
+ * ></base-button>
+ *
+ * Attributes:
+ * - label (string): Text displayed on the button.
+ * - variant (string): Visual style of the button (e.g. "primary", "secondary", etc.).
+ * - type (string): Affects styling; supported values: "button" (default), "status".
+ * - action (string): Custom identifier dispatched with "base-button" event on click.
+ * - disabled (boolean): If set, disables the button and blocks user interaction.
+ *
+ * Examples:
+ * <!-- Default button -->
+ * <base-button label="Submit" variant="primary"></base-button>
+ *
+ * <!-- Disabled secondary button -->
+ * <base-button label="Delete" variant="secondary" disabled></base-button>
+ *
+ * <!-- Status style -->
+ * <base-button label="Online" type="status" variant="success"></base-button>
+ *
+ * <!-- With action event -->
+ * <base-button label="Open Panel" action="side-panel"></base-button>
+ *
+ * In JavaScript:
+ * const btn = document.querySelector('base-button');
+ *
+ * // Listen for dispatched action
+ * btn.addEventListener("base-button", e => {
+ *   console.log("Button action triggered:", e.detail.action);
+ * });
+ *
+ * // Dynamically update attributes
+ * btn.setAttribute("label", "Updated Label");
+ * btn.setAttribute("disabled", "");
+ * btn.removeAttribute("disabled");
+ *
+ * Event:
+ * - "base-button": dispatched on click if 'action' is set.
+ *   Event.detail contains: { action: actionValue }
+ *
+ * Accessibility:
+ * - Disabled button prevents click interaction and stops event propagation.
+ */
+
 class BaseButton extends BaseComponent {
   static get observedAttributes() {
     return ["label", "variant", "disabled", "type", "action"];
