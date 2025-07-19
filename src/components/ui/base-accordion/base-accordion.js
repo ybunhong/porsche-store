@@ -1,6 +1,6 @@
 import "./base-accordion.css";
 import { plus, minus } from "@assets";
-import { sampleSets } from "../../../data/sample-data.js";
+import { sampleSets } from "../../../data/accordion-data.js";
 
 /**
  * BaseAccordion Web Component
@@ -66,6 +66,12 @@ class BaseAccordion extends BaseComponent {
     this.title = "Untitled";
     this.data = [];
     this.responsive = false;
+
+    // internal refs
+    this.accordionEl = null;
+    this.headEl = null;
+    this.contentEl = null;
+    this.toggleButtonEl = null;
   }
 
   connectedCallback() {
@@ -73,55 +79,44 @@ class BaseAccordion extends BaseComponent {
     this.loadData();
     this.updateTemplate();
     this.render();
+    this.cacheElements(); // store element refs
     this.setupToggle();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue) {
-      if (name === "title") {
-        this.title = newValue || "Untitled";
-      }
-      if (name === "data-key") {
-        this.loadData();
-      }
-      if (name === "responsive") {
-        this.responsive = this.hasAttribute("responsive");
-      }
+      if (name === "title") this.title = newValue || "Untitled";
+      if (name === "data-key") this.loadData();
+      if (name === "responsive") this.responsive = this.hasAttribute("responsive");
+
       this.updateTemplate();
       this.render();
+      this.cacheElements(); // update refs after render
       this.setupToggle();
     }
   }
 
-  // Loads data from sampleSets based on the 'data-key' attribute, or shows a warning if not found.
   loadData() {
     const key = this.getAttribute("data-key");
-    if (key && sampleSets[key]) {
-      this.data = sampleSets[key];
-    } else {
-      this.data = [];
+    this.data = sampleSets[key] || [];
+    if (!sampleSets[key]) {
       console.warn(`No data found for key: "${key}"`);
     }
   }
 
   updateTemplate() {
-    // Generate JSON data into actual HTML rows
     const rows = this.data
       .map(item => {
         const labelHtml = item["desc-label"]
-          ? // Determine the label content and class
-            `<div>${item["desc-label"]}</div>`
-          : // Default to 'label' class and 'label' property
-            `<div class="font-semibold body-xs">${item.label || ""}</div>`;
+          ? `<div>${item["desc-label"]}</div>`
+          : `<div class="font-semibold body-xs">${item.label || ""}</div>`;
 
         const valueHtml = item["desc-value"]
-          ? // If desc-value exists, split by semicolon and create a list
-            `<ul class="desc-value-list pl-3">${String(item["desc-value"])
+          ? `<ul class="desc-value-list pl-3">${String(item["desc-value"])
               .split(";")
               .map(val => `<li>${val.trim()}</li>`)
               .join("")}</ul>`
-          : // Default to 'value' class and 'value' property
-            `<div class="text-disable">${item.value || ""}</div>`;
+          : `<div class="text-disable">${item.value || ""}</div>`;
 
         return `<div class="row mb-4">${labelHtml}${valueHtml}</div>`;
       })
@@ -131,7 +126,7 @@ class BaseAccordion extends BaseComponent {
       <div class="accordion border-b">
         <div class="accordion-head flex justify-between items-center py-3 hover-bg-accent">
           <span class="font-semibold body-xs">${this.title}</span>
-          <icon-button class="accordion-toggle"
+          <icon-button class="accordion-toggle toggle-icon flex justify-center items-center"
             icon="${plus}"
             toggle-icon="${minus}"
             size="0.8"
@@ -147,19 +142,33 @@ class BaseAccordion extends BaseComponent {
     this.innerHTML = this.template;
   }
 
-  // Centralized click handler
+  cacheElements() {
+    this.accordionEl = this.firstElementChild;
+    if (!this.accordionEl) return;
+
+    const [headEl, contentEl] = this.accordionEl.children;
+    this.headEl = headEl;
+    this.contentEl = contentEl;
+
+    this.toggleButtonEl = this.headEl && this.headEl.querySelector("icon-button");
+  }
+
   setupToggle() {
-    const accordion = this.querySelector(".accordion");
-    const head = this.querySelector(".accordion-head");
-    const content = this.querySelector(".accordion-content");
-    const toggleButton = this.querySelector(".accordion-toggle");
+    if (!this.accordionEl || !this.headEl || !this.contentEl || !this.toggleButtonEl) return;
 
-    if (!head || !accordion || !toggleButton) return;
+    const toggleAccordion = () => {
+      this.accordionEl.classList.toggle("open");
+      ["pb-4", "mt-4"].forEach(cls => this.contentEl.classList.toggle(cls));
+    };
 
-    head.addEventListener("click", () => {
-      accordion.classList.toggle("open");
-      ["pb-4", "mt-4"].forEach(cls => content.classList.toggle(cls));
-      toggleButton.toggle(); // Call method from <icon-button>
+    this.headEl.addEventListener("click", () => {
+      toggleAccordion();
+      this.toggleButtonEl.toggle(); // toggle icon only when clicking accordion head
+    });
+
+    this.toggleButtonEl.addEventListener("click", e => {
+      e.stopPropagation();
+      toggleAccordion();
     });
   }
 }
