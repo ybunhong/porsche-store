@@ -4,3 +4,4 @@ import "./hamburger-panel/hamburger-panel";
 import "./search-panel/search-panel";
 import "./search-result-item/search-result-item";
 import "./profile-panel/profile-panel";
+import "./product-card/product-card";
