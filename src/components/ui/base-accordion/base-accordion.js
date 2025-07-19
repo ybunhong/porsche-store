@@ -9,22 +9,25 @@ import { sampleSets } from "../../../data/accordion-data.js";
  * <base-accordion
  *    title="your-title"
  *    responsive (optional)
- *    data-key="yout-data-key">
+ *    data-key="your-data-key">
  * </base-accordion>
  *
  * Attributes:
  * - title (string): Optional. Accordion heading (default: "Untitled").
  * - responsive (boolean): Optional. Adds responsive spacing if present.
- * - data-key (string): Required. Matches a key in your imported JSON (e.g., sampleSets).
- *
- * Data Source:
- * - Uses external JSON (e.g. sampleSets["productDetails"]) from your JS module.
- * - Avoids inline JSON to reduce clutter and prevent HTML validation errors.
+ * - data-key (string): Required. Matches a key in your imported JSON-like data
+ *    (e.g., In accordion-data.js,
+ *    your data-key would be "productDetails" or "shippingInfo").
  *
  * Supported Row Types:
- * - { "label": "Label Text", "value": "Value Text" }
- * - { "desc-label": "Label Text", "desc-value": "Item 1; Item 2; Item 3" }
- *    → desc-value is split by semicolon and rendered as a list.
+ * - { label: "Label-Text", value: "Value-Text" } (This is one row)
+ * - { "desc-label": "Label-Text", "desc-value": "Item 1; Item 2; Item 3" } (This is one row)
+ *
+ *  label (font-weight: 600)
+ *  value (font-weight: 400, color: #6b6b6b)
+ *  "desc-label" (font-weight: 400)
+ *  "desc-value" is split by semicolon to make a list. (font-weight: 400)
+ *                (e.g., "Item 1; Item 2; Item 3")
  *
  * Example:
  *
@@ -42,7 +45,7 @@ import { sampleSets } from "../../../data/accordion-data.js";
  *        responsive>
  *    </base-accordion>
  *
- * //In your sample-data.js file
+ * //In your JS data file (e.g., accordion-data.js...etc)
  *
  *    export const sampleSets = {
  *      productDetails: [
@@ -124,7 +127,7 @@ class BaseAccordion extends BaseComponent {
 
     this.template = `
       <div class="accordion border-b">
-        <div class="accordion-head flex justify-between items-center py-3 hover-bg-accent">
+        <div class="accordion-head flex justify-between items-center py-3 px-1 hover-bg-primary">
           <span class="font-semibold body-xs">${this.title}</span>
           <icon-button class="accordion-toggle toggle-icon flex justify-center items-center"
             icon="${plus}"
@@ -133,7 +136,7 @@ class BaseAccordion extends BaseComponent {
             action="accordion-toggle"
           ></icon-button>
         </div>
-        <div class="accordion-content ${this.responsive ? "responsive" : ""}">${rows}</div>
+        <div class="accordion-content ${this.responsive ? "responsive" : ""} px-1">${rows}</div>
       </div>
     `;
   }
@@ -151,6 +154,7 @@ class BaseAccordion extends BaseComponent {
     this.contentEl = contentEl;
 
     this.toggleButtonEl = this.headEl && this.headEl.querySelector("icon-button");
+    if (this.headEl) this.headEl.style.cursor = "pointer";
   }
 
   setupToggle() {
