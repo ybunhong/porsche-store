@@ -1,225 +1,181 @@
 /**
  * ProductGallery Web Component
  *
- * A responsive image gallery component for product detail pages with:
- * - Thumbnail list for quick navigation
- * - Main image viewer with zoom-in/zoom-out toggle
- * - Previous/next navigation controls
- * - Close button to exit gallery overlay
+ * Usage:
+ * <product-gallery images='[...]' index="2" zoom="2"></product-gallery>
  *
- * Usage in HTML:
- * <product-gallery></product-gallery>
- *
- * Attributes:
- * (Currently, this implementation uses internal data from `sampleProductDataList`.)
- * Future enhancement: Add support for custom `data` attribute or JSON via `src` URL.
- *
- * Features:
- * - Thumbnail hover preview
- * - Click thumbnail to switch image
- * - Click main image to zoom (toggle between zoom-in and zoom-out)
- * - Zoomed view supports panning on mouse move
- * - Previous/Next buttons with disabled states when at bounds
- * - Close button clears and hides the overlay
- *
- * Dependencies:
- * - Import required assets (icons and cursors):
- *   import { cross, cursorminus, cursorplus, arrow } from "@assets";
- *
- * Example:
- * // HTML
- * <div id="gallery-overlay" style="display:block;">
- *   <product-gallery></product-gallery>
- * </div>
- *
- * // JavaScript
+ * JS:
  * import "./product-gallery.js";
  *
- * Notes:
- * - Ensure #gallery-overlay is present for the close button to work properly
- * - Adjust CSS in "product-gallery.css" for layout and responsiveness
+ * const overlay = document.getElementById("gallery-overlay");
+ * const gallery = overlay.querySelector("product-gallery");
  *
- * Accessibility:
- * - Buttons have aria-label attributes
- * - Image alt attributes provided where possible
+ * gallery.addEventListener("close-gallery", () => {
+ *   overlay.style.display = "none";
+ * });
+ *
+ * Optional attributes:
+ * - images: JSON string of image objects to override default images
+ * - index: initial image index (number)
+ * - zoom: zoom scale factor (number, default 1.5)
+ *
+ * Features:
+ * - Hover thumbnails to preview
+ * - Click thumbnail to select image
+ * - Click main image to toggle zoom + pan
+ * - Prev/Next buttons with disabled state
+ * - Close button triggers 'close-gallery' event
  */
 
-import { cross, cursorminus, cursorplus, arrow } from "@assets";
-
+import { cross, cursorminus, cursorplus, arrow } from "../../../assets/assets";
 import "./product-gallery.css";
 import { sampleProductDataList } from "../../../data/sample-data";
 
-export class ProductGallery extends HTMLElement {
+class ProductGallery extends BaseComponent {
+  static get observedAttributes() {
+    return ["images", "index", "zoom"];
+  }
+
   constructor() {
     super();
     const [firstItem] = sampleProductDataList;
-    this.sampleProductDataList = firstItem;
-    this.productImages = this.sampleProductDataList.images || [];
+    this.productImages = firstItem.images || [];
     this.currentIndex = 0;
+    this.zoomScale = 1.5;
+    this.isZoomed = false;
   }
 
   connectedCallback() {
-    this.render();
+    super.connectedCallback();
+    this.updateTemplate();
+    // Handle clicks (as before)
+    this.addEventListener("click", this.onClick.bind(this));
+    // Handle mouse move for zoom panning (as before)
+    this.addEventListener("mousemove", this.onMouseMove.bind(this));
+    // Add mouseenter on thumbnails container to detect hover on thumbnails
+    this.addEventListener("mouseover", e => {
+      const { target } = e;
+      if (target.dataset.role === "thumb") {
+        const idx = Number(target.dataset.index);
+        if (!Number.isNaN(idx) && idx !== this.currentIndex) {
+          this.currentIndex = idx;
+          this.isZoomed = false; // reset zoom on hover change
+          this.updateTemplate();
+        }
+      }
+    });
   }
 
-  render() {
-    this.innerHTML = `
-      <link rel="stylesheet" href="./product-gallery.css" />
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue !== newValue) {
+      if (name === "images") {
+        try {
+          this.productImages = JSON.parse(newValue) || this.productImages;
+        } catch (error) {
+          console.warn("Invalid images JSON", error);
+        }
+      }
+      if (name === "index") {
+        const idx = parseInt(newValue, 10);
+        if (!Number.isNaN(idx)) this.currentIndex = idx;
+      }
+      if (name === "zoom") {
+        const z = parseFloat(newValue);
+        if (!Number.isNaN(z) && z > 0) this.zoomScale = z;
+      }
+      this.updateTemplate();
+    }
+  }
+
+  onClick(e) {
+    const target = e.target.closest("[data-role]");
+    if (!target) return;
+    const { role, index } = target.dataset;
+
+    if (role === "close") {
+      this.dispatchEvent(new CustomEvent("close-gallery", { bubbles: true }));
+    }
+
+    if (role === "prev" && this.currentIndex > 0) {
+      this.currentIndex -= 1;
+      this.updateTemplate();
+    }
+
+    if (role === "next" && this.currentIndex < this.productImages.length - 1) {
+      this.currentIndex += 1;
+      this.updateTemplate();
+    }
+
+    if (role === "thumb") {
+      this.currentIndex = parseInt(index, 10);
+      this.isZoomed = false;
+      this.updateTemplate();
+    }
+
+    if (role === "main-img") {
+      this.isZoomed = !this.isZoomed;
+      this.updateTemplate();
+    }
+  }
+
+  onMouseMove(e) {
+    if (!this.isZoomed) return;
+    const container = e.currentTarget.querySelector(".pg-main-view");
+    const img = e.currentTarget.querySelector(".pg-main-img");
+    if (!container || !img) return;
+
+    const rect = container.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 40;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 40;
+    img.style.transform = `scale(${this.zoomScale}) translate(${x}%, ${y}%)`;
+  }
+
+  updateTemplate() {
+    const img = this.productImages[this.currentIndex];
+    const isFirst = this.currentIndex === 0;
+    const isLast = this.currentIndex === this.productImages.length - 1;
+
+    this.template = `
       <section class="product-gallery w-full h-screen overflow-hidden relative">
-        <div class="pg-container flex items-start h-screen hide-mobile">
-          <div
-            class="pg-thumbnails hide-tablet hide-mobile flex flex-col items-start gap-2 p-2 max-h-screen overflow-hidden top-4 absolute z-2000"
-          >
+        <div class="pg-container flex items-start h-screen">
+          <div class="pg-thumbnails ${this.isZoomed ? "pg-thumbnails-zoomed" : ""}} flex flex-col gap-2 p-2 hide-mobile hide-tablet">
             ${this.productImages
               .map(
                 ({ src, alt }, i) => `
               <img
                 src="${src}"
-                alt="${alt || "Porsche product"}"
-                class="${i === 0 ? "pg-active" : ""} pg-thumb top-4 transition-smooth w-full"
+                alt="${alt || "Thumbnail"}"
+                class="pg-thumb ${i === this.currentIndex ? "pg-active" : ""}"
+                data-role="thumb"
                 data-index="${i}"
               />
             `
               )
               .join("")}
           </div>
-          <div
-            class="pg-main-view w-full h-full flex items-center justify-center overflow-hidden z-1000"
-          >
+             
+          <div class="pg-main-view w-full flex items-center justify-center">
             <img
-              id="main-img"
-              src="${this.productImages[0].src}"
-              alt="${this.productImages[0].alt || "Main product image"}"
-              class="pg-main-img rounded-md h-screen h-full transition-transform duration-300 ease-in-out bottom-0 block left-0 right-0 top-0 transition-smooth"
+              src="${img.src}"
+              alt="${img.alt || "Main Image"}"
+              class="pg-main-img ${this.isZoomed ? "pg-zoomed" : ""}"
+              data-role="main-img"
+              style="cursor: url('${this.isZoomed ? cursorminus : cursorplus}') 16 16, ${this.isZoomed ? "zoom-out" : "zoom-in"};
+                transform: scale(${this.isZoomed ? this.zoomScale : 1})"
             />
           </div>
-          <div
-            class="pg-nav hide-desktop d-flex justify-around items-center m-4 w-full relative bottom-0 left-0 z-2000"
-          >
-            <button
-              class="show-tablet prev-img"
-              id="prev-img"
-              aria-label="Previous image"
-              ${this.productImages.length <= 1 ? "disabled" : ""}
-            >
-              <img src="${arrow}" alt="Previous" class="pg-btn-icon pg-arrow-left" />
-            </button>
+
+          <div class="pg-nav hide-desktop">
+            <icon-button icon="${arrow}" class="pg-btn-icon pg-arrow-left ${isFirst ? "disabled" : ""}" data-role="prev"></icon-button>
             <span class="pg-counter">${this.currentIndex + 1}/${this.productImages.length}</span>
-            <button
-              class="show-tablet next-img"
-              id="next-img"
-              aria-label="Next image"
-              ${this.productImages.length <= 1 ? "disabled" : ""}
-            >
-              <img src="${arrow}" alt="Next" class="pg-btn-icon pg-arrow-right" />
-            </button>
+            <icon-button icon="${arrow}" class="pg-btn-icon pg-arrow-right ${isLast ? "disabled" : ""}" data-role="next"></icon-button>
           </div>
 
-          <button
-            class="pg-close-btn bg-secondary border-2 border-black bg-transparent rounded-md p-3 self-start absolute top-4 right-4 z-2000"
-            aria-label="Close Gallery"
-          >
-            <img src="${cross}" alt="Close" class="block pg-btn-icon" />
-          </button>
+          <icon-button icon="${cross}" class="pg-close-btn" data-role="close"></icon-button>
         </div>
       </section>
     `;
-
-    this.setupEvents();
-  }
-
-  setupEvents() {
-    const mainImage = this.querySelector("#main-img");
-    const thumbnails = this.querySelectorAll(".pg-thumbnails img");
-    const container = this.querySelector(".pg-main-view");
-    const counter = this.querySelector(".pg-counter");
-    const prevButton = this.querySelector("#prev-img");
-    const nextButton = this.querySelector("#next-img");
-    const cancelButton = this.querySelector(".pg-close-btn");
-
-    if (cancelButton) {
-      cancelButton.addEventListener("click", () => {
-        const overlay = this.closest("#gallery-overlay");
-        if (overlay instanceof HTMLElement) {
-          overlay.style.display = "none";
-          overlay.innerHTML = ""; // Clear content
-        }
-      });
-    }
-
-    const updateImage = index => {
-      const image = this.productImages[index];
-      if (!image) return;
-      mainImage.src = image.src;
-      mainImage.alt = image.alt || "Product image";
-      thumbnails.forEach(img => img.classList.remove("pg-active"));
-      const selectedThumb = this.querySelector(`.pg-thumbnails img[data-index="${index}"]`);
-      if (selectedThumb) selectedThumb.classList.add("pg-active");
-      if (counter) {
-        counter.textContent = `${index + 1}/${this.productImages.length}`;
-      }
-      if (this.productImages.length > 1) {
-        prevButton.disabled = index === 0;
-        nextButton.disabled = index === this.productImages.length - 1;
-      }
-    };
-
-    thumbnails.forEach(thumb => {
-      thumb.addEventListener("click", () => {
-        this.currentIndex = parseInt(thumb.dataset.index, 10);
-        updateImage(this.currentIndex);
-        mainImage.classList.remove("pg-zoomed");
-        mainImage.style.transform = "scale(1)";
-      });
-
-      thumb.addEventListener("mouseover", () => {
-        mainImage.src = thumb.src;
-        mainImage.alt = thumb.alt;
-        mainImage.classList.remove("pg-zoomed");
-        mainImage.style.transform = "scale(1)";
-      });
-    });
-
-    mainImage.addEventListener("click", () => {
-      mainImage.classList.toggle("pg-zoomed");
-      if (mainImage.classList.contains("pg-zoomed")) {
-        mainImage.style.transform = "scale(1.5)";
-        mainImage.style.cursor = `url('${cursorminus}') 16 16, zoom-out`;
-      } else {
-        mainImage.style.transform = "scale(1)";
-        mainImage.style.cursor = `url('${cursorplus}') 16 16, zoom-in`;
-      }
-    });
-
-    container.addEventListener("mousemove", e => {
-      if (mainImage.classList.contains("pg-zoomed")) {
-        const rect = container.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const xPercent = (x / rect.width - 0.5) * 100;
-        const yPercent = (y / rect.height - 0.5) * 100;
-        mainImage.style.transform = `scale(1.5) translate(${xPercent * 0.2}%, ${yPercent * 0.2}%)`;
-      }
-    });
-
-    container.addEventListener("mouseleave", () => {
-      if (mainImage.classList.contains("pg-zoomed")) {
-        mainImage.style.transform = "scale(1.5)";
-      }
-    });
-
-    if (this.productImages.length > 1) {
-      prevButton.addEventListener("click", () => {
-        this.currentIndex =
-          (this.currentIndex - 1 + this.productImages.length) % this.productImages.length;
-        updateImage(this.currentIndex);
-      });
-
-      nextButton.addEventListener("click", () => {
-        this.currentIndex = (this.currentIndex + 1) % this.productImages.length;
-        updateImage(this.currentIndex);
-      });
-    }
+    this.render();
   }
 }
 
