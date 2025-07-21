@@ -29,7 +29,7 @@ class CategoryCard extends BaseComponent {
         <div class="cards flex relative w-full h-full rounded-lg overflow-hidden">
           <img class="card-image w-full h-full relative top-0 left-0 bottom-0 z-0" alt="card-image" />
           <div class="text-area w-full h-fit flex absolute top-0 left-0 z-100 p-3">
-            <div class="text w-fit h-fit">
+            <div class="texts w-fit h-fit">
                 <span class="title-text">Text</span>
             </div>
             <div class="icon-arrow flex">

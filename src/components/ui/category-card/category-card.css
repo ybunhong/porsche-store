@@ -26,15 +26,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding-top: var(--padding-2);
 }
 
-.text-area .text,
+.text-area .texts,
 .text-area .icon {
   display: flex;
   align-items: center;
 }
 
-.cards .text {
+.cards .texts {
   font-style: var(--font-primary);
   font-size: var(--font-size-p4);
   font-weight: bold;
