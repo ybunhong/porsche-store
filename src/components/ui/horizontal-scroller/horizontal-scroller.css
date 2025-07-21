@@ -1,0 +1,104 @@
+.delivery-scroller {
+  position: relative;
+  min-width: 225px;
+  max-width: 100%;
+  padding: var(--padding-2) 9px;
+}
+
+.delivery-scroller base-button {
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+.delivery-scroll-area {
+  gap: var(--gap-3);
+  padding: 0 var(--padding-5);
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.delivery-scroll-area base-button {
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.delivery-scroll-area::-webkit-scrollbar {
+  display: none;
+}
+
+.action-prev,
+.action-next {
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background: var(--color-gray-300);
+  cursor: pointer;
+  box-shadow: var(--shadow-medium);
+  border-radius: var(--radius-md);
+  transform: translateY(-50%);
+  border: none;
+  align-items: center;
+
+  /* Add blur effect */
+  backdrop-filter: blur(4px); /* For Safari support */
+}
+
+base-button:hover {
+  background-color: var(--color-gray-200);
+}
+
+.action-prev {
+  left: 0;
+  cursor: pointer;
+}
+
+.action-next {
+  right: 0;
+  cursor: pointer;
+}
+
+.action-next icon-button {
+  right: 0;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.action-prev icon-button {
+  transform: rotate(180deg);
+  pointer-events: none;
+}
+
+.action-prev icon-button,
+.action-next icon-button {
+  z-index: var(--z-5000);
+  cursor: pointer; /* Also apply cursor here */
+  width: 100%;
+  height: 100%;
+}
+
+.action-prev icon-button base-button,
+.action-next icon-button base-button {
+  z-index: var(--z-5000);
+  cursor: pointer; /* Also apply cursor here */
+  width: 100%;
+  height: 100%;
+}
+
+base-button[disabled] {
+  background-color: var(--color-gray-200);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Hide action buttons at screen width 380px or less */
+@media (width <= 380px) {
+  .action-prev,
+  .action-next {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
