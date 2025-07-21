@@ -46,22 +46,12 @@ class DropdownSelection extends BaseComponent {
       isOpen: false,
       options: [
         { value: "Mr.", label: "Mr." },
-        { value: "Mis.", label: "Mis." },
+        { value: "Mrs.", label: "Mrs." },
         { value: "Ms.", label: "Ms." },
       ],
       selectedOption: null,
     };
   }
-  /*
-  REASON of remove code: The following lifecycle and helper methods are temporarily commented out 
-  (`connectedCallback`, `attributeChangedCallback`, `applyWidth`, `setSelectedOption`)
-  to simplify testing and prevent unnecessary rerenders or attribute syncing during development.
-
-  WHY?
-  - We're manually calling `render()` for now and hardcoding internal state.
-  - We're not yet supporting dynamic attribute updates like `setAttribute("value", ...)`.
-  - Styling (like width) is being handled via CSS or external layout for now.
-*/
 
   toggleDropdown() {
     this.setState({ isOpen: !this.state.isOpen });
