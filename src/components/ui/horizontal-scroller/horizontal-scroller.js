@@ -1,31 +1,31 @@
 /**
- * DeliveryScroller Web Component
+ * HorizontalScroller Web Component
  *
- * A horizontal scroll container with previous and next buttons.
+ * A customizable horizontal scroll container with left and right navigation buttons.
  *
- * Usage Example in HTML:
- *
- * <delivery-scroller>
- *   <base-button label="HIHIDGHjag"></base-button>
- *   <base-button label="HIHIDGHjag"></base-button>
- *   <base-button label="HIHIDGHjag"></base-button>
- *   <!-- Add any child elements that should scroll horizontally -->
- * </delivery-scroller>
+ * Usage:
+ * <horizontal-scroller>
+ *   <base-button label="Item 1"></base-button>
+ *   <base-button label="Item 2"></base-button>
+ *   <base-button label="Item 3"></base-button>
+ *   <!-- Any child elements will be placed in the scrollable area -->
+ * </horizontal-scroller>
  *
  * Features:
- * - Automatically wraps the slotted content inside a scrollable area.
- * - Left and right navigation buttons for smooth scrolling.
- * - Buttons hide automatically if scrolling is not possible.
+ * - Wraps slotted content inside a scrollable container.
+ * - Provides left/right navigation buttons with smooth scrolling.
+ * - Navigation buttons auto-hide when scrolling isn't needed.
  *
  * Attributes:
- * - `scroll-step`: Optional. Set a custom scroll step (default: half of container width).
+ * - `scroll-step`: Optional. Specifies custom scroll distance in pixels
+ *   (default: half of the container's width).
  *
  * Example with custom scroll step:
- * <delivery-scroller scroll-step="300">
- *    <base-button label="HIHIDGHjag"></base-button>
- *    <base-button label="HIHIDGHjag"></base-button>
- *    <base-button label="HIHIDGHjag"></base-button>
- * </delivery-scroller>
+ * <horizontal-scroller scroll-step="300">
+ *   <base-button label="Item 1"></base-button>
+ *   <base-button label="Item 2"></base-button>
+ *   <base-button label="Item 3"></base-button>
+ * </horizontal-scroller>
  */
 
 import "./horizontal-scroller.css";
