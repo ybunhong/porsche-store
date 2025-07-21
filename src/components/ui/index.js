@@ -8,3 +8,4 @@ import "./search-input/search-input.js";
 import "./toggle-color/toggle-color.js";
 import "./product-gallery/product-gallery.js";
 import "./base-accordion/base-accordion.js";
+import "./legend-textbox/legend-textbox.js";

@@ -1,0 +1,15 @@
+.textbox-fieldset:focus-within {
+  border-color: var(--color-black); /* border color on click/focus */
+  border-width: var(--border-width-medium); /* thicker border on click/focus */
+}
+
+.textbox-legend {
+  top: -14px;
+  left: 10px;
+}
+
+.textbox-input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
