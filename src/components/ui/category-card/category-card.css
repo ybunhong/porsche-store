@@ -1,4 +1,4 @@
-.card {
+.cards {
   width: 100%;
   height: 100%;
   box-shadow: var(--shadow-medium);
@@ -14,15 +14,15 @@
   transition: transform 0.3s ease;
 }
 
-.card:hover {
+.cards:hover {
   cursor: pointer;
 }
 
-.card:hover .card-image {
+.cards:hover .card-image {
   transform: scale(1.05);
 }
 
-.card .text-area {
+.cards .text-area {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -34,14 +34,14 @@
   align-items: center;
 }
 
-.card .text {
+.cards .text {
   font-style: var(--font-primary);
   font-size: var(--font-size-p4);
   font-weight: bold;
   max-width: 70%;
 }
 
-.card .icon-arrow {
+.cards .icon-arrow {
   width: 20px;
   align-items: center;
   justify-content: center;
