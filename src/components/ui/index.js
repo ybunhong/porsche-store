@@ -13,3 +13,4 @@ import "./legend-textbox/legend-textbox.js";
 import "./footer/footer-type-b.js";
 import "./footer/footer-type-a.js";
 import "./footer/footer-type-c.js";
+import "./dropdown-selection/dropdown-selection.js";
