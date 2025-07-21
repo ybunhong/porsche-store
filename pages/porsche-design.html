@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="stylesheet" href="/src/styles/pages/porsche-design.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Porsche Design</title>
+  </head>
+  <body>
+    <div class="bg-black w-full">
+      <!-- Header -->
+      <base-header class="porsche-design-header w-full"></base-header>
+      <!-- Hero section -->
+      <div
+        class="hero w-full h-full flex justify-center items-center flex-col relative text-center"
+      >
+        <div class="hero-bg absolute z-0"></div>
+        <div class="title flex w-full flex-col justify-center items-center gap-10 relative z-100">
+          <img class="w-full" src="/src/assets/image/porsche-design.svg" alt="" />
+          <div class="btn">
+            <base-button class="w-full" label="Shop now" variant="ghost"></base-button>
+          </div>
+        </div>
+      </div>
+      <!-- Roaster Aluminum -->
+      <div class="roaster w-full flex justify-center items-center flex-col text-center relative">
+        <div class="background w-full h-full absolute z-0"></div>
+        <div class="title flex w-full flex-col justify-center items-center gap-4 relative z-100">
+          <div>
+            <h1>The Roadster Aluminum</h1>
+          </div>
+          <div>
+            <span>Manufactured like a porsche. Made for Racers</span>
+          </div>
+          <div class="btn flex flex-row gap-4 w-fit">
+            <base-button label="To the collection" variant="white"></base-button>
+            <base-button label="Discover now" variant="ghost"></base-button>
+          </div>
+        </div>
+      </div>
+      <!-- text section -->
+      <div class="text w-full h-fit text-center">
+        <h2>
+          Set new standards: discover minimalist aesthetics and innovative precision – with Porsche
+          Design products.
+        </h2>
+      </div>
+      <!-- card category-1 -->
+      <div class="porsche-card w-full layout-grid">
+        <div class="porsche-box1">
+          <category-card
+            title="Discover Eyewear"
+            image="/src/assets/image/glasses-man.jpg"
+          ></category-card>
+        </div>
+        <div class="porsche-box2">
+          <category-card title="Ready to Wear" image="/src/assets/card/mansit.jpg"></category-card>
+        </div>
+        <div class="porsche-box3">
+          <category-card
+            title="Chronograph 1 - PCA Member Edition"
+            image="/src/assets/card/bluewatch.jpg"
+          ></category-card>
+        </div>
+      </div>
+      <!-- banner card -->
+      <div class="banner-grid layout-grid py-6">
+        <div class="banner-card">
+          <category-card
+            class="banner-content"
+            title="Discover the Porsche Design Seasonal Sale"
+            image="/src/assets/image/two-man.jpg"
+          ></category-card>
+        </div>
+      </div>
+      <!-- video section -->
+      <div
+        class="video-show w-full h-fit flex justify-center items-center flex-col text-center relative"
+      >
+        <div class="video w-full h-full absolute z-0"></div>
+        <div class="title flex w-full flex-col justify-center items-center gap-4 relative z-100">
+          <div>
+            <h1>Speed wins races. Time creates legends.</h1>
+          </div>
+          <div class="btn flex flex-row gap-4 w-fit">
+            <base-button label="Shop now" variant="white"></base-button>
+            <base-button label="Discover now" variant="ghost"></base-button>
+          </div>
+        </div>
+        <div class="button w-fit absolute right-4 bottom-0">
+          <icon-button
+            class="icon"
+            toggle-icon="/src/assets/icons/interface-controll/play.svg"
+            size="1.2"
+            icon="/src/assets/icons/interface-controll/pause.svg"
+          ></icon-button>
+        </div>
+      </div>
+      <!-- carousel section -->
+
+      <!--  -->
+      <!-- For your next trip banner section -->
+      <div class="roaster w-full flex justify-center items-center flex-col text-center relative">
+        <div class="trip-background w-full h-full absolute z-0"></div>
+        <div class="title flex w-full flex-col justify-center items-center gap-4 relative z-100">
+          <div>
+            <h1>For your next trip</h1>
+          </div>
+          <div class="btn flex flex-row gap-4 w-fit">
+            <base-button label="Shop now" variant="white"></base-button>
+            <base-button label="Discover now" variant="ghost"></base-button>
+          </div>
+        </div>
+      </div>
+      <!-- sign up banner -->
+      <div class="roaster w-full flex justify-center items-center flex-col text-center relative">
+        <div class="signup-background w-full h-full absolute z-0"></div>
+        <div class="title flex w-full flex-col justify-center items-center gap-4 relative z-100">
+          <div>
+            <h1>Sign up for our Porsche Design newsletter and receive exclusive offers.</h1>
+          </div>
+          <div class="btn flex flex-row gap-4 w-fit">
+            <base-button class="w-full" label="Register now" variant="ghost"></base-button>
+          </div>
+        </div>
+      </div>
+      <!-- card category-2 -->
+      <div class="text-2 layout-grid py-4 mt-4 w-full h-fit">
+        <h2>The ambition to go beyond</h2>
+      </div>
+      <div class="porsche-card w-full layout-grid">
+        <div class="porsche-box1 w-full">
+          <category-card title="About us" image="/src/assets/image/glasses-man.jpg"></category-card>
+        </div>
+        <div class="porsche-box2 w-full">
+          <category-card
+            title="Porsche Design Tower"
+            image="/src/assets/image/tower.jpeg"
+          ></category-card>
+        </div>
+        <div class="porsche-box3 w-full">
+          <category-card
+            title="Find your store"
+            image="/src/assets/image/find-store.avif"
+          ></category-card>
+        </div>
+      </div>
+      <div class="text-3 layout-grid w-full h-fit">
+        <span>Not all pictured items are available at sale prices</span>
+      </div>
+      <!-- footer -->
+      <div class="w-full">
+        <footer-a></footer-a>
+      </div>
+      <div class="carousel"></div>
+    </div>
+    <script src="/porsche-design.js"></script>
+  </body>
+</html>
