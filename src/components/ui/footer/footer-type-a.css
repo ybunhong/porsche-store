@@ -1,0 +1,10 @@
+.flex p::first-line {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-grey-300);
+}
+
+.footer .rounded-xl {
+  width: 45px;
+  height: 45px;
+  border-radius: 9999px;
+}

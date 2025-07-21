@@ -1,0 +1,14 @@
+.footer .region {
+  color: var(--color-gray-300);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+h2 {
+  color: var(--color-gray-300);
+}
+
+.square {
+  width: 60px;
+  height: 40px;
+}
