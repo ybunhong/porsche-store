@@ -1,0 +1,34 @@
+.info-warning {
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  line-height: calc(6px + 2.125ex);
+  color: #333;
+}
+
+.info-warning p {
+  font-size: 16px;
+}
+
+.info-warning-strong {
+  font-size: 16px;
+}
+
+.info-warning-link {
+  color: var(--color-info-content);
+  text-decoration: underline;
+}
+
+.info-warning-link:hover {
+  text-decoration: none;
+}
+
+.info-warning-flex {
+  display: flex;
+  align-items: center;
+}
+
+.info-warning-icon {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}

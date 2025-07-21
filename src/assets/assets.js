@@ -23,6 +23,7 @@ import lock from "./icons/indicator/lock.svg";
 import mountain from "./icons/indicator/mountain.svg";
 import car from "./icons/indicator/car.svg";
 import truckFast from "./icons/indicator/truck-fast.svg";
+import warning from "./icons/indicator/warning-line.svg";
 
 // interface control icons
 import expand from "./icons/interface-controll/expand.svg";
@@ -137,4 +138,5 @@ export {
   cursorminus,
   cursorplus,
   ukFlag,
+  warning,
 };
