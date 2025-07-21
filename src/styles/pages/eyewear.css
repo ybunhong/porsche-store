@@ -1,0 +1,342 @@
+@import url("../index.css");
+
+body {
+  color: white;
+  background-color: black;
+}
+
+.section-spacing-bottom {
+  margin-top: clamp(48px, 3vw + 38px, 96px);
+}
+
+button {
+  padding: 16px 24px;
+  font: var(--font-heading-xs);
+  font-weight: var(--font-weight-regular);
+  border-radius: var(--radius-md);
+  height: 57.66px;
+  border: none;
+}
+
+/* .banner {
+    aspect-ratio: auto;
+    height: calc(100svh - (2.375rem + 2.75rem + 4.125rem));
+}
+
+.banner img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.banner section {
+    gap: clamp(16px,1.25vw + 12px,36px)
+} */
+
+.grid-container {
+  --safe-zone: max(22px, 10.625vw - 12px);
+
+  display: grid;
+  grid-gap: clamp(16px, 1.25vw + 12px, 36px);
+  padding: 0 calc(50vw - 1280px);
+  max-width: 2560px;
+  min-width: 320px;
+  grid-template-columns:
+    [full-start]
+    minmax(0, calc(var(--safe-zone) - clamp(16px, 1.25vw + 12px, 36px)))
+    [wide-start extended-start basic-start narrow-start]
+    repeat(6, minmax(0, 1fr))
+    [narrow-end basic-end extended-end wide-end]
+    minmax(0, calc(var(--safe-zone) - clamp(16px, 1.25vw + 12px, 36px)))
+    [full-end];
+}
+
+.grid-col-2-pics {
+  grid-column: basic-start / basic-end;
+}
+
+.grid-col-1-pic {
+  grid-column: basic-start / basic-end;
+}
+
+.grid-col {
+  grid-column: basic-start / basic-end;
+}
+
+.first-img-container {
+  margin-top: 50px;
+  grid-column: span 5 / full-end;
+
+  /* position: relative; */
+  z-index: 2;
+  grid-row: 2 / 3;
+}
+
+.first-img-container-1 {
+  will-change: transform;
+
+  /* position: relative; */
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.first-img-container-2 {
+  /* position: absolute; */
+  height: 100%;
+  width: 100%;
+
+  /* inset: 0px; */
+  object-fit: cover;
+
+  /* object-position: 50% 50%; */
+  overflow: clip;
+}
+
+.second-img-container {
+  grid-column: full-start / 6;
+
+  /* position: relative; */
+
+  /* align-self: start; */
+  grid-row: 2 / 3;
+}
+
+.second-img-container-1 {
+  will-change: transform;
+  transform: translateY(5.5133%);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.second-img-container-2 {
+  /* position: absolute; */
+  height: 100%;
+
+  /* width: 100%;
+    inset: 0px; */
+  object-fit: cover;
+
+  /* object-position: 50% 50%; */
+  overflow: clip;
+}
+
+.img-container {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  grid-column: full-start / full-end;
+}
+
+.img {
+  /* position: absolute; */
+  height: 100%;
+  width: 100%;
+
+  /* inset: 0px; */
+  object-fit: cover;
+  object-position: 84.8024% 52.051%;
+
+  /* color: transparent; */
+}
+
+@media (width >= 760px) {
+  .grid-container {
+    --safe-zone: calc(5vw - 16px);
+
+    grid-template-columns:
+      [full-start]
+      minmax(0, calc(var(--safe-zone) - clamp(16px, 1.25vw + 12px, 36px)))
+      [wide-start]
+      minmax(0, 1fr)
+      [extended-start]
+      minmax(0, 1fr)
+      [basic-start]
+      repeat(2, minmax(0, 1fr))
+      [narrow-start]
+      repeat(8, minmax(0, 1fr))
+      [narrow-end]
+      repeat(2, minmax(0, 1fr))
+      [basic-end]
+      minmax(0, 1fr)
+      [extended-end]
+      minmax(0, 1fr)
+      [wide-end]
+      minmax(0, calc(var(--safe-zone) - clamp(16px, 1.25vw + 12px, 36px)))
+      [full-end];
+  }
+
+  .first-img-container {
+    margin: 0;
+    grid-column: span 7 / wide-end;
+    grid-row: 1 / 3;
+  }
+
+  .grid-col-2-pics {
+    grid-column: extended-start / span 6;
+  }
+
+  .grid-col-1-pic {
+    grid-column: 11 / span 7;
+  }
+
+  .grid-col {
+    grid-column: 5 / span 10;
+  }
+
+  .second-img-container {
+    grid-row: 2 / 3;
+    grid-column: 5 / span 8;
+  }
+
+  .img-container {
+    grid-column: full-start / span 9;
+    border-radius: var(--radius-lg);
+  }
+}
+
+.scroller-container {
+  position: relative;
+
+  /* overflow: hidden; */
+  grid-column: full-start / full-end;
+  height: 600px;
+}
+
+.scroller {
+  position: relative;
+  overflow-x: scroll;
+  height: 100%;
+  cursor: grab;
+}
+
+.scroller-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  overflow-x: auto;
+}
+
+.scroller-image img {
+  object-fit: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  /* inset: 0px; */
+
+  /* color: transparent; */
+}
+
+.scroller-btn {
+  position: absolute;
+
+  /* z-index: 2; */
+  bottom: clamp(16px, 1.25vw + 12px, 36px);
+  max-width: 375px;
+  padding: 0 clamp(16px, 1.25vw + 12px, 36px);
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.icon-btn {
+  display: inline-block;
+
+  /* vertical-align: top !important; */
+
+  /* outline: 0px !important; */
+
+  /* border-radius: 4px !important; */
+
+  /* color-scheme: light dark !important; */
+
+  /* text-align: center; */
+  padding: 16px 24px;
+
+  /* height: fit-content;
+    width: fit-content; */
+  background-color: white;
+  border-radius: 4px;
+}
+
+.icon-btn icon-button {
+  height: 24px;
+}
+
+.banner-test {
+  position: relative;
+
+  /* overflow: hidden; */
+
+  /* transform: translateZ(0); */
+  aspect-ratio: 3 / 4;
+
+  /* align-content: center;
+    text-align: center;
+    margin-top: 0; */
+}
+
+.banner-test img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  /* inset: 0px; */
+
+  /* color: transparent; */
+  object-fit: cover;
+
+  /* z-index: -2; */
+
+  /* object-position: 34.568056253139126% 41.867469879518076%; */
+
+  /* overflow-clip-margin: content-box; */
+
+  /* overflow: clip; */
+
+  /* text-align: center; */
+}
+
+.banner-text-btn {
+  gap: clamp(16px, 1.25vw + 12px, 36px);
+  justify-content: center;
+  align-items: center;
+
+  /* padding-block: clamp(48px, 3vw + 38px, 96px); */
+
+  /* padding-inline: 0; */
+  display: flex;
+  flex-direction: column;
+
+  /* width: 100%; */
+
+  /* margin: 0 auto; */
+  position: relative;
+
+  /* max-width: 1536px; */
+
+  /* box-sizing: border-box; */
+  grid-column: extended-start / extended-end;
+  text-align: center;
+}
+
+.banner-test::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    black 0%,
+    rgb(0 0 0 / 0%) 15%,
+    rgb(0 0 0 / 0%) 85%,
+    black 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+base-header header-toolbar {
+  background-color: aliceblue;
+}
