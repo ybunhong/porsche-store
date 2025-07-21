@@ -40,7 +40,7 @@ class FooterTypeC extends BaseComponent {
       .map(
         item => `<div class="flex items-center gap-5">
           <span class="bg-white square flex items-center justify-center">
-          <icon-button icon="${item.label}" size= "2"class=""></icon-button>
+          <icon-button icon="${item.label}" size= "1.8" class=""></icon-button>
           </span>
           </div>`
       )
@@ -51,21 +51,21 @@ class FooterTypeC extends BaseComponent {
         <h2 class="">Current Region/ Language</h2>
         <div class="flex items-center gap-4 ">
            <span class="bg-white rounded-xl flex items-center justify-center">
-           <icon-button icon="${ukFlag}" size= "2"class=""></icon-button>
+           <icon-button icon="${ukFlag}" size= "1.5" class=""></icon-button>
            </span>
            <p class="">United States/ English</p>
            <p class="region">Change</p>
          </div>
 
       <!--icon payment-->
-      <section class="layout-grid">
-        <div class="col-span-2-md col-span-3-lg w-full">
+      <section class="flex gap-5">
+        <div class="col-span-4-md col-span-4-lg w-full">
           <h2 class="">Payment methods</h2>
           <div class="flex flex-row flex-wrap gap-6">
               ${iconList}
           </div>
         </div>
-          <div class="col-span-2-md col-span-3-lg w-full">
+          <div class="full">
           <h2 class="">Service and Help</h2>
           <p>My Active Subscriptions</p>
           <p>My orders</p>

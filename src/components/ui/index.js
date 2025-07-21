@@ -8,18 +8,7 @@ import "./search-input/search-input.js";
 import "./toggle-color/toggle-color.js";
 import "./product-gallery/product-gallery.js";
 import "./base-accordion/base-accordion.js";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import "./legend-textbox/legend-textbox.js";
-=======
-=======
 import "./footer/footer-type-b.js";
 import "./footer/footer-type-a.js";
 import "./footer/footer-type-c.js";
->>>>>>> f286db8 (feat(footer): create footer type b)
->>>>>>> 0ede64a (feat(footer): create footer type b)
-=======
-import "./footer/footer-type-b.js";
-import "./footer/footer-type-a.js";
-import "./footer/footer-type-c.js";
->>>>>>> 15ec5dc (perf: restructure css code in scroll-product)

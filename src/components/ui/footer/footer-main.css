@@ -13,6 +13,16 @@
   font-size: var(--font-size-p2);
 }
 
+.footer #more-info {
+  color: white;
+}
+
+.footer a {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media (width >=759px) {
   .footer {
     padding-right: var(--padding-5);

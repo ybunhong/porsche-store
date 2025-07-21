@@ -38,7 +38,7 @@ class FooterTypeA extends BaseComponent {
       .map(
         item => `<div class="flex items-center gap-4">
           <span class="bg-white rounded-xl flex items-center justify-center">
-          <icon-button icon="${item.label}" size= "2"class=""></icon-button>
+          <icon-button icon="${item.label}" size= "1.5" class=""></icon-button>
           </span>
           <p class="px-4">${item.text}</p>
           </div>`
@@ -56,16 +56,17 @@ class FooterTypeA extends BaseComponent {
          
          <div class="flex items-center gap-4 ">
            <span class="bg-white rounded-xl flex items-center justify-center">
-           <icon-button icon="${ukFlag}" size= "2"class=""></icon-button>
+           <icon-button icon="${ukFlag}" size= "1.5" class=""></icon-button>
            </span>
            <p class="">North America/ United States</p>
          </div>
 
          <div class="">
-         <p>waiting phal component</p>
-         <p>waiting phal component</p>
-         <p>waiting phal component</p>
-         <p>waiting phal component</p>
+         <base-accordion id="more-info" title="Newsletter" data-key="newsLetter"></base-accordion>
+         <base-accordion id="more-info" title="Contact us" data-key="contactUs"></base-accordion>
+         <base-accordion id="more-info" title="Social Media" data-key="socialMedia"></base-accordion>
+         <base-accordion id="more-info" title="Simple payment" data-key="simplePayment"></base-accordion>
+         <base-accordion id="more-info" title="Legal Service" data-key="legalService"></base-accordion>
          </div>
        </div>
     `;
