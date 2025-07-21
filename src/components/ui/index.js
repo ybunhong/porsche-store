@@ -10,3 +10,4 @@ import "./product-gallery/product-gallery.js";
 import "./base-accordion/base-accordion.js";
 import "./horizontal-scroller/horizontal-scroller.js";
 import "./legend-textbox/legend-textbox.js";
+import "./horizontal-scroller/horizontal-scroller.js";
