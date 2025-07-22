@@ -35,21 +35,12 @@
 .first-img-container {
   margin-top: 50px;
   grid-column: span 5 / full-end;
-  z-index: 2;
   grid-row: 2 / 3;
 }
 
 .first-img-container-1 {
   will-change: transform;
-  overflow: hidden;
   aspect-ratio: 3 / 4;
-}
-
-.first-img-container-2 {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  overflow: clip;
 }
 
 /* Second Image Container */
@@ -62,83 +53,38 @@
   will-change: transform;
   transform: translateY(5.5133%);
   aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-
-.second-img-container-2 {
-  height: 100%;
-  object-fit: cover;
-  overflow: clip;
 }
 
 /* Image Container */
 .img-container {
-  position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   grid-column: full-start / full-end;
 }
 
-.img {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: 84.8024% 52.051%;
-  color: transparent;
-}
-
 /* Scroller */
 .scroller-container {
-  position: relative;
-  overflow: hidden;
   grid-column: full-start / full-end;
   height: 600px;
 }
 
 .scroller {
-  position: relative;
   overflow-x: scroll;
-  height: 100%;
   cursor: grab;
 }
 
 .scroller-image {
-  position: relative;
   aspect-ratio: 16 / 9;
-  height: 100%;
-  overflow-x: auto;
-}
-
-.scroller-image img {
-  object-fit: cover;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  inset: 0;
-  color: transparent;
-  overflow: clip;
 }
 
 .scroller-btn {
-  position: absolute;
-  z-index: 2;
   bottom: clamp(16px, 1.25vw + 12px, 36px);
   max-width: 375px;
-  padding: 0 clamp(16px, 1.25vw + 12px, 36px);
   left: 0;
   right: 0;
-  text-align: center;
 }
 
 /* Icon Button + Base Button */
-.icon-btn {
-  display: inline-block;
-  padding: 16px 24px;
-  background-color: white;
-  border-radius: 4px;
-}
-
 .icon-btn icon-button {
   height: 24px;
 }
@@ -149,15 +95,7 @@ base-button button {
 
 /* Banner */
 .banner {
-  position: relative;
   aspect-ratio: 3 / 4;
-}
-
-.banner img {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
 }
 
 .banner::after {
@@ -171,24 +109,49 @@ base-button button {
     rgb(0 0 0 / 0%) 85%,
     black 100%
   );
-  z-index: 1;
   pointer-events: none;
 }
 
 .banner-text-btn {
   gap: clamp(16px, 1.25vw + 12px, 36px);
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  position: relative;
   grid-column: extended-start / extended-end;
-  text-align: center;
+}
+
+.hero-banner {
+  height: calc(100svh - 10.125rem);
+}
+
+.hero-banner img {
+  object-fit: cover;
+}
+
+.btn-text-group {
+  grid-column: extended-start / extended-end;
+  gap: clamp(16px, 1.25vw + 12px, 36px);
 }
 
 /* Header Toolbar */
-base-header header-toolbar {
-  background-color: aliceblue;
+base-header header-toolbar div div:nth-child(1),
+base-header header-toolbar div div:nth-child(3) {
+  filter: brightness(0) invert(1);
+}
+
+/* object-fit: cover; */
+.first-img-container-2,
+.second-img-container-2,
+.scroller-image img,
+.img,
+.banner img {
+  object-fit: cover;
+}
+
+/* Unordered list */
+.promo-lists li {
+  list-style: square;
+}
+
+.promo-lists li::marker {
+  font-size: 0.75rem;
 }
 
 /* Media Queries */
@@ -230,6 +193,7 @@ base-header header-toolbar {
 
   .grid-col-1-pic {
     grid-column: 11 / span 7;
+    align-self: center;
   }
 
   .grid-col {
@@ -263,5 +227,24 @@ base-header header-toolbar {
     width: auto;
     left: clamp(16px, 1.25vw + 12px, 36px);
     right: auto;
+  }
+
+  base-header header-toolbar div div:nth-child(2) {
+    filter: brightness(0) invert(1);
+  }
+}
+
+@media (width >= 1300px) {
+  .grid-col-1-pic {
+    grid-column: 11 / span 5;
+  }
+
+  .banner {
+    aspect-ratio: 16 / 9;
+  }
+
+  .banner img {
+    object-position: 34% 41%;
+    object-fit: cover;
   }
 }
