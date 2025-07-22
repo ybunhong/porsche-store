@@ -4,6 +4,7 @@ import img3 from "../assets/image/3.avif";
 import img4 from "../assets/image/4.avif";
 import img5 from "../assets/image/5.avif";
 import img6 from "../assets/image/6.avif";
+import img7 from "../assets/hero-section.avif";
 
 export const sampleProductDataList = [
   {
@@ -26,6 +27,14 @@ export const sampleProductDataList = [
       { src: img4, alt: "Image 4" },
       { src: img5, alt: "Image 5" },
       { src: img6, alt: "Image 6" },
+      {
+        src: img7,
+        alt: "Image 1",
+      },
+      {
+        src: "https://shop.porsche.com/_next/image?url=https%3A%2F%2Fassets-prod.porsche.com%2Fassets%2F8d0cb7ae-a456-43ad-98bc-8bb18b392770.webp&w=1200&q=75",
+        alt: "Image 2",
+      },
     ],
   },
   {
@@ -173,6 +182,10 @@ export const sampleProductDataList = [
     deliveryButtons: ["Ship to home", "Pick up at Porsche Center"],
     shippingInfo: "Shipping within 2 to 3 working days",
     sellerInfo: "Porsche Apparel",
-    images: [{ src: "https://example.com/images/hoodie1.jpg", alt: "Porsche Hoodie" }],
+    images: [
+      { src: "https://example.com/images/hoodie1.jpg", alt: "Porsche Hoodie" },
+      { src: img1, alt: "Classic Tee Front" },
+      { src: img1, alt: "Classic Tee Back" },
+    ],
   },
 ];
