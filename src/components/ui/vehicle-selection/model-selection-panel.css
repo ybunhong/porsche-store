@@ -36,7 +36,8 @@
   transform: scale(1.05);
 }
 
-base-button {
+.model-view base-button,
+.vehicle-view base-button {
   width: 155px;
   transition: 0.3s ease;
   display: block;
