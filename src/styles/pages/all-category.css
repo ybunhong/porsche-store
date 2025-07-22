@@ -1,0 +1,57 @@
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.category-card-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  color: white;
+}
+
+.category-card-wrapper > category-card {
+  width: 100%;
+  height: 100%;
+}
+
+@media (width >= 1000px) {
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .container {
+    padding: 90px;
+  }
+
+  .text-boxs {
+    padding-left: 90px;
+  }
+}
+
+@media (width <= 999px) and (width >= 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .category-card-wrapper:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .container {
+    padding: 60px;
+  }
+
+  .text-boxs {
+    padding-left: 60px;
+  }
+}
+
+@media (width <= 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
