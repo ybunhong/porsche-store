@@ -3,24 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Hello</title>
     <script type="module" src="../main.js"></script>
     <link rel="stylesheet" href="../src/styles/pages/eyewear.css" />
   </head>
-  <body>
+  <body class="bg-black text-white">
     <base-header></base-header>
-    <!-- <div class="grid-container banner flex justify-center items-center">
-        <img src="../src/assets/eyewear-page/guy-standing-in-front-of-a-car.jpeg" alt="">
-        <section class="grid-col flex flex-col items-center text-center">
-            <h1>A new perspective on performance.</h1>
-            <button>Shop now</button>
-        </section>
-    </div> -->
-    <section class="banner-test grid-container">
+
+    <section class="banner grid-container">
       <img src="../src/assets/eyewear-page/guy-standing-in-front-of-a-car.jpeg" alt="" />
       <div class="banner-text-btn">
         <h1>A new perspective on performance.</h1>
-        <button>View product</button>
+        <base-button class="bg-white rounded-sm" label="Shop now" variant="secondary"></base-button>
       </div>
     </section>
 
@@ -28,12 +22,16 @@
       <div class="grid-col-2-pics mb-4">
         <h3 class="mb-4">Timeless. Technical. Targa.</h3>
         <p class="text-p2">
-          The P'8954 Iconic 911 Targa 60Y sunglasses – a homage to the legendary Porsche 911 Targa.
+          The P'8954 Iconic 911 Targa 60Y sunglasses - a homage to the legendary Porsche 911 Targa.
           With its precise titanium construction and stunning design elements, it combines style and
           innovation. Limited to 911 units.
         </p>
-        <div class="mt-4">
-          <button>View product</button>
+        <div class="flex mt-4">
+          <base-button
+            class="bg-white rounded-sm"
+            label="View product"
+            variant="secondary"
+          ></base-button>
         </div>
       </div>
       <div class="first-img-container">
@@ -68,12 +66,16 @@
           lenses, ushered in an era of innovation in 1978. This heritage is reflected in every
           frame, combining technological excellence and minimalist design.
         </p>
-        <div class="mt-4">
-          <button>View product</button>
+        <div class="flex mt-4">
+          <base-button
+            class="bg-white rounded-sm"
+            label="View product"
+            variant="secondary"
+          ></base-button>
         </div>
       </div>
       <div class="first-img-container">
-        <div class="first-img-container-1 rounded-md">
+        <div class="first-img-container-1 rounded-xl">
           <img
             class="first-img-container-2"
             src="../src/assets/eyewear-page/a-guy-2.jpeg"
@@ -121,8 +123,12 @@
           the bars, which take up the striking design language of the rear spoiler and thus
           impressively underline the dynamism of the series.
         </p>
-        <div class="mt-4">
-          <button>Shop now</button>
+        <div class="flex mt-4">
+          <base-button
+            class="bg-white rounded-sm"
+            label="Shop now"
+            variant="secondary"
+          ></base-button>
         </div>
       </div>
     </section>
@@ -140,8 +146,12 @@
           three-component temple completes the design, striking a balance between flexibility and
           comfort.
         </p>
-        <div class="mt-4">
-          <button>Shop now</button>
+        <div class="flex mt-4">
+          <base-button
+            class="bg-white rounded-sm"
+            label="Shop now"
+            variant="secondary"
+          ></base-button>
         </div>
       </div>
     </section>
@@ -165,12 +175,13 @@
           </div>
         </div>
         <div class="scroller-btn">
-          <div class="icon-btn">
+          <div class="icon-btn hover-bg-accent">
             <icon-button
               class="flex items-center"
               text="Sunglasses"
               icon="../src/assets/icons/indicator/tag.svg"
-            ></icon-button>
+            >
+            </icon-button>
           </div>
         </div>
       </div>
@@ -204,20 +215,24 @@
           <p class="text-p2 col-full-sm">Find out more in the video and brochure.</p>
         </div>
         <div class="flex gap-4 mt-4">
-          <button>Watch now</button>
-          <base-button label="Discover now" variant="ghost"></base-button>
+          <base-button
+            class="bg-white rounded-sm"
+            label="Shop now"
+            variant="secondary"
+          ></base-button>
+          <base-button class="hover-bg-accent" label="Discover now" variant="ghost"></base-button>
         </div>
       </div>
     </section>
 
-    <section class="banner-test grid-container">
+    <section class="banner grid-container">
       <img
         src="../src/assets/eyewear-page/man-wearing-porsche-design-jacket-and-cap-looking-on-ground-striped-background.jpeg"
         alt=""
       />
       <div class="banner-text-btn">
         <h1>Sign up for our Porsche Design newsletter and recieve exclusive offers.</h1>
-        <base-button label="Register now" variant="ghost"></base-button>
+        <base-button class="hover-bg-accent" label="Register now" variant="ghost"></base-button>
       </div>
     </section>
 
