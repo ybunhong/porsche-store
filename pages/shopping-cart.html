@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="stylesheet" href="/src/styles/pages/shopping-cart.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart | PORSCHE</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <base-header></base-header>
+
+    <!-- Back Navigation -->
+    <div class="p-1 flex justify-center w-fit items-center">
+      <icon-button
+        icon="../src/assets/icons/navigation/arrow.svg"
+        style="transform: rotate(90deg)"
+      ></icon-button>
+      <p class="body-xs"><a href="../index.html">Go Back</a></p>
+    </div>
+
+    <!-- Cart Title -->
+    <div class="gap-5 w-fit px-5">
+      <p class="text-h3 font-bold">My shopping carts</p>
+      <p class="body-xs">
+        Sold by
+        <a href="#" style="text-decoration: underline">Porsche Design of America, Inc.</a>
+      </p>
+    </div>
+
+    <!-- Shopping Cart Layout -->
+    <div class="layout-wrapper">
+      <div class="product-wrapper">
+        <shopping-product></shopping-product>
+      </div>
+
+      <!-- Summary Box -->
+      <div class="summary-box border border-small rounded-md p-4 flex flex-col gap-3">
+        <div class="flex justify-between">
+          <p>Total amount</p>
+          <p>$500.00</p>
+        </div>
+
+        <p class="body-xs">incl. Tax</p>
+        <p class="body-xs">
+          <a style="text-decoration: underline" href="#">Login to redeem voucher</a>
+        </p>
+
+        <div class="proceed-checkout">
+          <base-button class="w-full" label="proceed to checkout" variant="primary"></base-button>
+        </div>
+
+        <div class="flex justify-between">
+          <p class="body-xs">2 product(s)</p>
+          <p class="body-xs">$500.00</p>
+        </div>
+
+        <div class="flex justify-between">
+          <p class="body-xs">Packaging & delivery</p>
+          <p class="body-xs">Calculated at next step</p>
+        </div>
+
+        <!-- Mobile Only (SSL inside summary box) -->
+        <div class="flex items-center gap-4 hide-desktop hide-tablet">
+          <span class="bg-gray-200 flex items-center justify-center rounded-full w-8 h-8">
+            <icon-button icon="../src/assets/icons/indicator/lock.svg"></icon-button>
+          </span>
+          <div class="flex flex-col">
+            <p class="px-2 body-xs">SSL encryption</p>
+            <p class="px-2 body-xs">Your data is secure</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-between p-3">
+      <div class="flex justify-center items-center">
+        <icon-button icon="../src/assets/icons/indicator/information.svg"></icon-button>
+        <p class="body-xs">Products in your shopping cart are not reserved.</p>
+      </div>
+
+      <!-- Desktop/Tablet (SSL outside summary box) -->
+      <div class="flex items-center gap-4 hide-mobile">
+        <span class="bg-gray-200 flex items-center justify-center rounded-full w-8 h-8">
+          <icon-button icon="../src/assets/icons/indicator/lock.svg"></icon-button>
+        </span>
+        <div class="flex flex-col">
+          <p class="px-2 body-xs">SSL encryption</p>
+          <p class="px-2 body-xs">Your data is secure</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warning Info -->
+    <info-warning></info-warning>
+
+    <!-- Footer -->
+    <footer-a></footer-a>
+  </body>
+</html>

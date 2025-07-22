@@ -1,0 +1,29 @@
+.layout-wrapper {
+  display: flex;
+  flex-direction: column; /* default for mobile */
+  gap: 1rem;
+  margin: 1.25rem;
+}
+
+.product-wrapper,
+.summary-box {
+  width: 100%; /* full width on mobile */
+}
+
+.warned {
+  width: 45%;
+  height: fit-content;
+}
+
+/* ✅ Side-by-side on 768px and up */
+@media (width >= 768px) {
+  .layout-wrapper {
+    flex-direction: row; /* horizontal layout */
+    align-items: flex-start;
+  }
+
+  .product-wrapper,
+  .summary-box {
+    width: 48%;
+  }
+}
