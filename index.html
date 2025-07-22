@@ -4,11 +4,96 @@
     <meta charset="UTF-8" />
     <script type="module" src="/main.js"></script>
     <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="stylesheet" href="./index.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
+
   <body>
     <base-header></base-header>
-    <hero-banner></hero-banner>
+
+    <section class="flex flex-col gap-6 p-5">
+      <!-- Waiting thida component -->
+
+      <!-- Category Section 1 -->
+      <section class="category-root">
+        <div class="porsche-card w-full layout-grid">
+          <div class="porsche-box1">
+            <category-card title="Vehicle Accessories"></category-card>
+          </div>
+          <div class="porsche-box2">
+            <category-card
+              title="Clothing"
+              image="/src/assets/image/root-image10.avif"
+            ></category-card>
+          </div>
+          <div class="porsche-box3">
+            <category-card
+              title="Home & Lifestyle"
+              image="/src/assets/image/root-image9.avif"
+            ></category-card>
+          </div>
+        </div>
+
+        <!-- Waiting thida component -->
+      </section>
+
+      <!-- Category Section 2 -->
+      <section class="category-root">
+        <div class="porsche-card w-full layout-grid">
+          <div class="porsche-box1">
+            <category-card
+              title="Vehicle Accessories"
+              image="/src/assets/image/root-image2.avif"
+            ></category-card>
+          </div>
+          <div class="porsche-box2">
+            <category-card
+              title="Clothing"
+              image="/src/assets/image/root-image3.avif"
+            ></category-card>
+          </div>
+          <div class="porsche-box3">
+            <category-card
+              title="Home & Lifestyle"
+              image="/src/assets/image/root-image4.avif"
+            ></category-card>
+          </div>
+        </div>
+
+        <!-- Waiting thida component -->
+        <scroll-product></scroll-product>
+
+        <!-- Waiting thida component -->
+        <scroll-product></scroll-product>
+
+        <scroll-product></scroll-product>
+
+        <section class="category-root2">
+          <div class="porsche-card w-full layout-grid">
+            <div class="porsche-box1">
+              <category-card
+                title="Vehicle Accessories"
+                image="/src/assets/image/root-image6.avif"
+              ></category-card>
+            </div>
+            <div class="porsche-box2">
+              <category-card
+                title="Clothing"
+                image="/src/assets/image/root-image8.avif"
+              ></category-card>
+            </div>
+          </div>
+        </section>
+
+        <model-selection-panel></model-selection-panel>
+
+        <hr />
+
+        <show-more-card content="3"></show-more-card>
+      </section>
+    </section>
+
+    <footer-a></footer-a>
   </body>
 </html>
