@@ -1,0 +1,92 @@
+.tabs button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tabs .active {
+  border-bottom: 2px solid var(--color-black);
+  font-weight: bold;
+}
+
+.instruction {
+  font-size: 1rem;
+  padding: 0 var(--padding-2);
+}
+
+.car-grid {
+  padding: 0 var(--padding-3);
+}
+
+.car img,
+.login-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.car img {
+  width: 100%;
+  max-width: 820px;
+  transition: transform 0.3s ease;
+}
+
+.car img:hover {
+  transform: scale(1.05);
+}
+
+base-button {
+  width: 155px;
+  transition: 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-img {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+/* Laptop */
+@media (width >= 1000px) {
+  .tabs {
+    gap: var(--gap-2);
+  }
+
+  .tabs button {
+    font-size: 0.95rem;
+    padding: var(--padding-2) var(--padding-3);
+  }
+
+  .instruction {
+    font-size: 0.95rem;
+  }
+
+  .car-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gap-4);
+  }
+}
+
+/* Mobile Phones and Tablet */
+@media (width <= 999px) {
+  .tabs button {
+    font-size: 0.9rem;
+    padding: var(--padding-2) var(--padding-3);
+  }
+
+  .car-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-2);
+  }
+
+  base-button {
+    width: 80%;
+    font-size: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

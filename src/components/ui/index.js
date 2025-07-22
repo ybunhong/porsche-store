@@ -17,3 +17,4 @@ import "./dropdown-selection/dropdown-selection.js";
 import "./filter-button/filter-button.js";
 import "./warning-info/warning-info.js";
 import "./pop-up/popup.js";
+import "./vehicle-selection/model-selection-panel.js";
