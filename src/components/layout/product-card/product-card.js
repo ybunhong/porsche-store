@@ -59,7 +59,7 @@ class ProductCard extends BaseComponent {
     <div class="product-card bg-gray-100 p-4 flex flex-col items-center h-96">
       <div class="flex items-center justify-between w-full">
         <base-button label="Out of stock" type="status"></base-button>
-        <icon-button icon="${heart}" toggle-icon='${heartFilled}'></icon-button>
+        <icon-button icon="${heart}" toggle-icon="${heartFilled}"></icon-button>
       </div>
       
       <div class="flex-1 flex items-center justify-center my-4">
