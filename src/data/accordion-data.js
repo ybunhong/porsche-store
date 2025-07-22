@@ -67,8 +67,15 @@ const navList = navItems
 
 export const sampleSets = {
   productDetails: [
-    { "desc-label": "Weight", "desc-value": "Light; Compact; Durable" },
-    { label: "Size", value: "Medium" },
+    {
+      "desc-label":
+        "Road trip meets lifestyle: the AHEAD Collection combines pioneering spirit and a thirst for adventure with iconic design. The canvas bag is a functional bag and fashionable accessory in one. The zip and integrated luggage strap to prevent the suitcase from tipping over are practical features. The AHEAD embroidery on the front and the badges on the back are details that underline the stylish look of the bag.",
+    },
+    {
+      "desc-value":
+        "AHEAD embroidery on the front.; Badges and luggage strap on the back.; Practical canvas bag with zip.",
+    },
+    { "desc-label": "Item no.: WAP0350010SAHD" },
   ],
   shippingInfo: [
     { "desc-label": "Delivery", "desc-value": "1–3 Days; Local Only" },

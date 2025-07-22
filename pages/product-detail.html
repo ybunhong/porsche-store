@@ -9,8 +9,23 @@
   </head>
   <body>
     <base-header></base-header>
-    <product-detail></product-detail>
-    <h1>Phal</h1>
-    <h1>Warning component</h1>
+    <product-detail data-product-id="1"></product-detail>
+    <pop-up></pop-up>
+    <section class="section-spacing appear">
+      <base-accordion title="Description" data-key="productDetails"></base-accordion>
+      <base-accordion title="Dimensions and weight" data-key="productDetails"></base-accordion>
+      <base-accordion
+        title="Mateial and care instructions"
+        data-key="productDetails"
+      ></base-accordion>
+      <base-accordion title="General characteristics" data-key="productDetails"></base-accordion>
+    </section>
+    <info-warning></info-warning>
+    <section class="section-spacing">
+      <scroll-product></scroll-product>
+      <scroll-product></scroll-product>
+      <scroll-product></scroll-product>
+    </section>
+    <footer-a class="disappear"></footer-a>
   </body>
 </html>

@@ -1,165 +1,164 @@
+/**
+ * ProductDetail Web Component
+ *
+ * Usage in HTML:
+ * <product-detail data-product-id="0"></product-detail>
+ * <!-- OR -->
+ * <product-detail data-product='{"name": "Product", "images": [], ...}'></product-detail>
+ *
+ * Attributes:
+ * - data-product-id (string|number): Unique ID of the product from sampleProductDataList.
+ * - data-product (string): JSON string of product data.
+ *
+ * Examples:
+ * <product-detail data-product-id="1"></product-detail>
+ * <product-detail data-product='{"name": "Jacket", "price": "$99", "images": [{"src": "img.jpg", "alt": "Image"}], "sizes": ["S", "M"]}'></product-detail>
+ *
+ * In JavaScript:
+ * const productDetail = document.querySelector("product-detail");
+ * productDetail.setAttribute("data-product-id", "2");
+ * productDetail.setAttribute("data-product", JSON.stringify({ name: "Shirt", price: "$49" }));
+ *
+ * const overlay = document.getElementById("gallery-overlay");
+ * overlay.addEventListener("close-gallery", () => console.log("Gallery closed"));
+ *
+ * Features:
+ * - Displays product details, images, sizes, and delivery options.
+ * - Opens/closes image gallery overlay on image click, Escape key, or close button.
+ * - Keyboard-accessible size selection and gallery navigation.
+ *
+ * Events:
+ * - Listens for "close-gallery" from product-gallery to close overlay.
+ */
+
 import "./product-details.css";
+import { cartEmpty, heart, warning } from "@assets";
 import { sampleProductDataList } from "../../../data/sample-data";
-import { cartEmpty, heart } from "../../../assets/assets";
 import "../../ui/index";
 
 class ProductDetail extends BaseComponent {
+  static get observedAttributes() {
+    return ["data-product-id", "data-product"];
+  }
+
   constructor() {
     super();
     this.product = null;
     this.selectedSize = "None";
-    this.handleSizeSelection = this.handleSizeSelection.bind(this);
-    this.handleImageClick = this.handleImageClick.bind(this);
-    this.handleCloseGallery = this.handleCloseGallery.bind(this);
-    this.handleEscapeKey = this.handleEscapeKey.bind(this);
+    this.onEvent = this.onEvent.bind(this);
   }
 
-  static get observedAttributes() {
-    return ["data-product-index", "data-product"];
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "data-product-index" && newValue) {
-      this.product = sampleProductDataList[parseInt(newValue, 10)] || null;
-    } else if (name === "data-product" && newValue) {
-      try {
-        this.product = JSON.parse(newValue);
-      } catch (error) {
-        console.error("Invalid JSON for data-product:", error);
+  attributeChangedCallback(name, _, value) {
+    if (!value) return;
+    try {
+      if (name === "data-product-id") {
+        this.product = sampleProductDataList.find(p => p.id === +value) || null; // +value convert string "0" to a number to match the id number
+      } else if (name === "data-product") {
+        // Parse JSON string from 'data-product' attribute to allow custom product data.
+        this.product = JSON.parse(value);
       }
+    } catch (e) {
+      console.error("Invalid product data:", e);
+      // Log errors for invalid JSON or ID to aid debugging.
     }
     this.render();
   }
 
   connectedCallback() {
-    if (!this.product) {
-      this.product = sampleProductDataList[0] || null;
-    }
-    this.ensureOverlayExists();
+    this.product = this.product || sampleProductDataList[0] || null; // Set default product (first in list) if none is set.
+    this.ensureOverlay();
     this.render();
-    this.handleScroll();
-    window.addEventListener("scroll", this.handleScroll.bind(this));
+    this.addEventListener("click", this.onEvent);
+    this.addEventListener("keydown", this.onEvent);
+    const overlay = document.getElementById("gallery-overlay");
+    if (overlay) {
+      // Listen for 'close-gallery' event from ProductGallery component to close the overlay when the close button is clicked.
+      overlay.addEventListener("close-gallery", this.closeGallery.bind(this));
+    }
   }
 
   disconnectedCallback() {
-    this.removeEventListeners();
+    this.removeEventListener("click", this.onEvent);
+    this.removeEventListener("keydown", this.onEvent);
     const overlay = document.getElementById("gallery-overlay");
     if (overlay) {
-      overlay.removeEventListener("click", this.handleCloseGallery);
-
-      this.removeEventListeners();
-      window.removeEventListener("scroll", this.handleScroll);
+      // Remove 'close-gallery' listener to avoid memory leaks when component is removed.
+      overlay.removeEventListener("close-gallery", this.closeGallery.bind(this));
     }
+    document.removeEventListener("keydown", this.onEvent);
   }
 
-  ensureOverlayExists() {
-    let overlay = document.getElementById("gallery-overlay");
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.id = "gallery-overlay";
-      overlay.className = "gallery-overlay";
-      document.body.appendChild(overlay);
-    }
-    overlay.addEventListener("click", this.handleCloseGallery);
-  }
-
-  handleCloseGallery(event) {
-    if (event.target.id === "gallery-overlay") {
-      const overlay = document.getElementById("gallery-overlay");
-      overlay.style.display = "none";
-      overlay.innerHTML = "";
-      document.removeEventListener("keydown", this.handleEscapeKey);
-    }
-  }
-
-  addEventListeners() {
-    const sizeItems = this.querySelectorAll(".size-selector-item");
-    sizeItems.forEach(item => {
-      item.addEventListener("click", this.handleSizeSelection);
-    });
-
-    const images = this.querySelectorAll(".product-detail-image-scroll img");
-    images.forEach((img, index) => {
-      img.addEventListener("click", () => this.handleImageClick(index));
-      img.addEventListener("keydown", e => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          this.handleImageClick(index);
-        }
+  ensureOverlay() {
+    if (!document.getElementById("gallery-overlay")) {
+      const div = document.createElement("div");
+      div.id = "gallery-overlay";
+      div.className = "gallery-overlay";
+      // Add click listener to close gallery when clicking overlay background.
+      div.addEventListener("click", e => {
+        if (e.target.id === "gallery-overlay") this.closeGallery();
       });
-    });
+      document.body.appendChild(div); // Append overlay to body for full-screen gallery.
+    }
   }
 
-  removeEventListeners() {
-    const sizeItems = this.querySelectorAll(".size-selector-item");
-    sizeItems.forEach(item => {
-      item.removeEventListener("click", this.handleSizeSelection);
-    });
-
-    const images = this.querySelectorAll(".product-detail-image-scroll img");
-    images.forEach((img, index) => {
-      img.removeEventListener("click", () => this.handleImageClick(index));
-      img.removeEventListener("keydown", e => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          this.handleImageClick(index);
-        }
-      });
-    });
+  onEvent(e) {
+    const key = e.key || ""; // Only handle specific keys (Enter, Escape, Space) for keyboard accessibility.
+    if (e.type === "keydown" && key !== "Enter" && key !== "Escape" && key !== " ") return;
+    if (key === "Escape") {
+      this.closeGallery(); // Close gallery on Escape key for accessibility.
+      return;
+    }
+    const sizeItem = e.target.closest(".size-selector-item");
+    if (sizeItem) {
+      this.selectedSize = sizeItem.textContent.trim(); // Update selected size and re-render.
+      this.render();
+    }
+    const img = e.target.closest(".product-detail-image-scroll img");
+    if (img) this.openGallery(img.dataset.index); // Open gallery when clicking an image.
   }
 
-  handleSizeSelection(event) {
-    const clickedSize = event.target.textContent.trim();
-    this.selectedSize = clickedSize;
-    this.render();
-  }
-
-  handleImageClick(index) {
+  openGallery(index = 0) {
     const overlay = document.getElementById("gallery-overlay");
-    if (!overlay) {
-      console.error("Overlay element '#gallery-overlay' not found in DOM");
+    if (
+      // heck for valid product, images, overlay, and ProductGallery component before opening.
+      !this.product ||
+      !Array.isArray(this.product.images) ||
+      !this.product.images.length ||
+      !overlay ||
+      !customElements.get("product-gallery")
+    )
       return;
-    }
-
-    if (!customElements.get("product-gallery")) {
-      console.error("Custom element 'product-gallery' is not defined");
-      return;
-    }
-
-    if (this.product && Array.isArray(this.product.images) && this.product.images.length > 0) {
-      overlay.innerHTML = "";
-
-      const gallery = document.createElement("product-gallery");
-      gallery.setAttribute("images", JSON.stringify(this.product.images));
-      gallery.setAttribute("index", index.toString());
-      gallery.setAttribute("zoom", "1.5"); // Optional: set default zoom level
-
-      // Listen for close-gallery event from ProductGallery
-      gallery.addEventListener("close-gallery", () => {
-        overlay.style.display = "none";
-        overlay.innerHTML = "";
-        document.removeEventListener("keydown", this.handleEscapeKey);
-      });
-
-      overlay.appendChild(gallery);
-      overlay.style.display = "block";
-
-      // Add keyboard support for closing (Escape key)
-      document.addEventListener("keydown", this.handleEscapeKey);
-    } else {
-      console.error("No valid images found in product data");
-    }
+    // Set ProductGallery component with images and initial index in overlay.
+    overlay.innerHTML = `<product-gallery images='${JSON.stringify(this.product.images)}' index="${index}" zoom="1.5"></product-gallery>`;
+    overlay.style.display = "block";
+    document.addEventListener("keydown", this.onEvent);
   }
 
-  handleEscapeKey(event) {
-    if (event.key === "Escape") {
-      const overlay = document.getElementById("gallery-overlay");
-      if (overlay) {
-        overlay.style.display = "none";
-        overlay.innerHTML = "";
-      }
-      document.removeEventListener("keydown", this.handleEscapeKey);
+  closeGallery() {
+    const overlay = document.getElementById("gallery-overlay");
+    if (overlay) {
+      overlay.style.display = "none"; // Hide overlay.
+      overlay.innerHTML = ""; // Clear overlay to remove ProductGallery.
     }
+    document.removeEventListener("keydown", this.onEvent); // Remove keydown listener.
+  }
+
+  static getDefaultProduct() {
+    return {
+      images: [],
+      category: "",
+      name: "",
+      price: "",
+      normalPrice: "",
+      discountPrice: "",
+      priceNote: "",
+      description: "",
+      sizes: [],
+      deliveryOption: "",
+      deliveryButtons: [],
+      shippingInfo: "",
+      sellerInfo: "",
+    };
   }
 
   render() {
@@ -167,138 +166,76 @@ class ProductDetail extends BaseComponent {
       this.innerHTML = "<p>No product data available</p>";
       return;
     }
-
-    const {
-      images = [],
-      category = "Unknown Category",
-      name = "Unnamed Product",
-      price = "$0",
-      normalPrice = price,
-      discountPrice = "",
-      priceNote = "",
-      description = "No description available",
-      sizes = [],
-      deliveryOption = "Standard Delivery",
-      deliveryButtons = [],
-      shippingInfo = "No shipping info available",
-      sellerInfo = "Unknown Seller",
-    } = this.product;
-
-    const validImages = images.filter(
-      img => typeof img === "string" || (typeof img === "object" && img.src)
-    );
+    const defaultProduct = this.constructor.getDefaultProduct();
+    const p = { ...defaultProduct, ...this.product };
+    const imgs = p.images.length
+      ? p.images
+          .map(
+            (img, i) =>
+              `<img src="${typeof img === "string" ? img : img.src}" alt="${img.alt || "Product"}" loading="lazy" data-index="${i}" tabindex="0" role="button"/>`
+          )
+          .join("")
+      : "<p>No images available</p>";
+    const sizes = p.sizes.length
+      ? `<div class="product-info-sizes"><span>Size:</span><span class="font-bold">${this.selectedSize}</span>
+         <div class="size-selector">${p.sizes.map(s => `<div class="size-selector-item ${s === this.selectedSize ? "selected" : ""}">${s}</div>`).join("")}</div>
+         <div class="warning-text-icon flex"><icon-button icon="${warning}"></icon-button><span>UK sizes may vary</span></div></div>`
+      : "";
+    const delivery = p.deliveryButtons.length
+      ? p.deliveryButtons
+          .map(d => `<base-button label="${d}" variant="secondary"></base-button>`)
+          .join("")
+      : "<p>No delivery options available</p>";
 
     this.innerHTML = `
-      <section class="product-detail">
-        <div class="product-fixed sticky-top flex z-5000 justify-content-between w-full">
-          <div class="product-btn">
+      <section class="product-detail flex justify-between min-h-screen">
+        <div class="product-fixed sticky-top flex justify-between w-full p-3 z-999 box-border">
+          <div class="product-btn flex">
             <icon-button text="New"></icon-button>
-            <icon-button text="comming soom"></icon-button>
+            <icon-button text="Coming soon" class="mr-4"></icon-button>
           </div>
-          <div class="product-heart">
-            <icon-button icon="${heart}"></icon-button>
+          <div class="product-heart"><icon-button icon="${heart}"></icon-button></div>
+        </div>
+        <div class="product-detail-image w-45 mr-5 line-height-0 float-left">
+          <div class="product-detail-image-scroll relative overflow-hidden cursor-pointer cursor-plus">
+            ${imgs}
           </div>
         </div>
-        <div class="product-detail-image">
-          <div class="product-detail-image-scroll">
-            ${
-              validImages.length > 0
-                ? validImages
-                    .map(
-                      (img, index) => `
-                        <img 
-                          src="${typeof img === "string" ? img : img.src}" 
-                          alt="${typeof img === "object" && img.alt ? img.alt : "Product Image"}" 
-                          loading="lazy"
-                          data-index="${index}"
-                          role="button"
-                          tabindex="0"
-                          aria-label="View larger image"
-                        />`
-                    )
-                    .join("")
-                : "<p>No images available</p>"
-            }
-          </div>
-        </div>
-        <div class="product-detail-info p-4">
-          <div class="product-info gap-3">
-            <div class="product-info-description">
-              <div class="product-info-breadcrumb mb-2">
-                <p>${category}</p>
-              </div>
-              <div class="product-info-title mb-3">
-                <h1 class="product-info-name">${name}</h1>
-                <div class="product-info-price gap-2">
-                  <span class="price">${price}</span>
-                  ${discountPrice ? `<span class="price-discount">${discountPrice}</span>` : ""}
-                  ${normalPrice ? `<span class="normal-price">${normalPrice}</span>` : ""}
-                  ${priceNote ? `<span class="price-note">${priceNote}</span>` : ""}
-                </div>
-              </div>
-              <div class="product-info-short-description mb-4">
-                <p>${description}</p>
-              </div>
+        <div class="product-detail-info w-55 sticky top-0 h-screen flex items-center justify-center p-3">
+          <div class="product-info max-w-400 w-full flex flex-col">
+            <div class="product-info-breadcrumb inline-flex gap-2 items-center cursor-pointer hover:bg-gray-200 hover:rounded-sm">
+              <p class="font-p1">${p.category}</p>
             </div>
-            ${
-              sizes.length > 0
-                ? `
-                  <div class="product-info-sizes py-3">
-                    <span>Size: </span>
-                    <span id="selectedSizeDisplay" class="font-bold">${this.selectedSize}</span>
-                    <div class="size-selector gap-1">
-                    ${sizes
-                      .map(
-                        size => `
-                        <div class="size-selector-item ${this.selectedSize === size ? "selected" : ""}" data-size="${size}">
-                        ${size}
-                        </div>
-                    `
-                      )
-                      .join("")}
-                    </div>
-                  </div>
-                `
-                : ""
-            }
-            <div class="product-info-delivery-options py-3">
-                <div class="delivery-header gap-2 mb-3">
-                    <h3>Delivery:</h3>
-                    <span>${deliveryOption}</span>
-                </div>
-                <horizontal-scroller>
-                    ${
-                      deliveryButtons.length > 0
-                        ? deliveryButtons
-                            .map(
-                              label =>
-                                `<base-button label="${label}" variant="secondary"></base-button>`
-                            )
-                            .join("")
-                        : "<p>No delivery options available</p>"
-                    }
-                </horizontal-scroller>
+            <h1 class="product-info-name font-semibold text-clamp-1-27-0-51vw-1-16rem-1-78rem leading-calc-6px-2-125ex">${p.name}</h1>
+            <div class="product-info-price">
+              <span class="price line-through">${p.price}</span> &nbsp;
+              ${p.discountPrice ? `<span class="text-error ml-2">${p.discountPrice}</span> &nbsp;` : ""}
+              ${p.normalPrice ? `<span>${p.normalPrice}</span>&nbsp;` : ""}
+              ${p.priceNote ? `<span class="text-disable ml-2">${p.priceNote}</span>` : ""}
             </div>
-            <div class="product-action flex flex-col gap-3 pt-4">
-              <icon-button icon="${cartEmpty}" size="0.6" action="add-to-cart"></icon-button>
-              <div class="product-action-line green-line hide-tablet hide-desktop"></div>
+            <p>${p.description}</p>
+            ${sizes}
+            <div class="product-info-delivery-options py-3 border-b border-gray-300">
+              <div class="flex gap-1 product-info-flex items-center">
+                <h5>Delivery:</h5>
+                <span>${p.deliveryOption}</span>
+              </div>
+              <horizontal-scroller>${delivery}</horizontal-scroller>
+            </div>
+            <div class="product-action flex flex-col gap-3 pt-4 text-p2 text-black font-bold">
+              <icon-button icon="${cartEmpty}" action="add-to-cart" text="Add to cart"></icon-button>
               <div class="product-action-info flex items-start gap-2">
-                <div class="product-action-line green-line hide-mobile"></div>
-                <div class="product-action-shipping-text">${shippingInfo}</div>
+                <span class="product-action-line gray-line w-4 h-6 rounded-2"></span>
+                <span class="product-action-shipping-text">${p.shippingInfo}</span>
               </div>
               <div class="product-action-info flex items-start gap-2">
-                <div class="product-action-line gray-line hide-mobile"></div>
-                <div class="product-action-seller-text">
-                  Sold by <a href="#">${sellerInfo}</a>
-                </div>
+                <span class="product-action-line green-line w-4 h-6 rounded-2"></span>
+                <span class="product-action-shipping-text"></span>Sold by <a href="#">${p.sellerInfo}</a>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    `;
-
-    this.addEventListeners();
+      </section>`;
   }
 }
 
