@@ -1,13 +1,7 @@
-/* Base styles */
-
 .tabs button {
   background: none;
   border: none;
   padding: 10px 20px;
-
-  /* font-size: 1rem; */
-
-  /* cursor: pointer; */
   border-bottom: 2px solid transparent;
   transition: all 0.2s ease;
 }
@@ -26,7 +20,6 @@
   padding: 0 var(--padding-3);
 }
 
-/* Shared styles to avoid specificity conflict */
 .car img,
 .login-img img {
   max-width: 100%;
@@ -77,7 +70,7 @@ base-button {
   }
 }
 
-/* Mobile Phones */
+/* Mobile Phones and Tablet */
 @media (width <= 999px) {
   .tabs button {
     font-size: 0.9rem;

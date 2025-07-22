@@ -1,14 +1,11 @@
-// Import styles and car image asset
-import "./vehicle-selection.css";
+import "./model-selection-panel.css";
 import carImage from "../../../assets/Cayenne.png";
 
-// Define the custom element for the vehicle/model selection panel
 class ModelSelectionPanel extends BaseComponent {
   constructor() {
     super();
-    this.isModelTab = true; // Default tab is "With model selection"
+    this.isModelTab = true;
 
-    // 🚗 Array of car models (currently using the same image for all)
     this.models = [
       { src: carImage },
       { src: carImage },
@@ -19,20 +16,16 @@ class ModelSelectionPanel extends BaseComponent {
     ];
   }
 
-  // Called automatically when the element is added to the page
   connectedCallback() {
     this.render();
   }
 
-  // Toggle between the two tabs: model selection and vehicle login
   switchTab(isModel) {
     this.isModelTab = isModel;
-    this.render(); // Re-render based on selected tab
+    this.render();
   }
 
-  // Render the entire HTML of the component
   render() {
-    // 🚘 Create HTML for each model image
     const carsHtml = this.models
       .map(
         card => `
@@ -43,9 +36,9 @@ class ModelSelectionPanel extends BaseComponent {
       )
       .join("");
 
-    // 🖼 Main structure with conditionally rendered tab content
-    this.innerHTML = /* html */ `
-      <!-- 🔁 Tab buttons -->
+    // Main structure with conditionally rendered tab content
+    this.innerHTML = `
+      <!-- Tab buttons -->
       <div class="tabs flex flex-wrap gap-5 mb-5 justify-center">
         <button id="modelTab" class="${this.isModelTab ? "active" : ""}">
           With model selection
@@ -55,11 +48,11 @@ class ModelSelectionPanel extends BaseComponent {
         </button>
       </div>
 
-      <!-- 📦 Panel content based on selected tab -->
+      <!-- Panel content based on selected tab -->
       ${
         this.isModelTab
           ? `
-            <!-- 🔧 Model selection panel -->
+            <!-- Model selection panel -->
             <div class="model-view">
               <p class="instruction text-center mb-5">
                 Are you looking for a suitable product for your vehicle?<br />
@@ -72,7 +65,7 @@ class ModelSelectionPanel extends BaseComponent {
             </div>
           `
           : `
-            <!-- 🔒 Vehicle login panel -->
+            <!-- Vehicle login panel -->
             <div class="vehicle-view">
               <p class="login-title gap-5 text-center mb-5">
                 Not logged in yet?<br />
@@ -87,7 +80,7 @@ class ModelSelectionPanel extends BaseComponent {
       }
     `;
 
-    // 🧠 Add tab switching event listeners
+    // Add tab switching event listeners
     const modelTab = this.querySelector("#modelTab");
     if (modelTab) modelTab.addEventListener("click", () => this.switchTab(true));
 
@@ -96,5 +89,4 @@ class ModelSelectionPanel extends BaseComponent {
   }
 }
 
-// ✅ Register the component as a custom HTML tag
 customElements.define("model-selection-panel", ModelSelectionPanel);
