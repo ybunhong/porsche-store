@@ -38,7 +38,7 @@
 
 @media (width >= 501px) and (width <= 1050px) {
   .bg-screen {
-    background-image: url("../../assets/hero-section.avif");
+    background-image: url("../../assets/image/bgAuthPage.webp");
     background-size: cover;
     background-position: center;
     min-height: 90vh;
@@ -51,9 +51,7 @@
 
 @media (width >= 1051px) {
   .bg-screen {
-    background-image: url("../../assets/hero-section.avif");
-    background-size: cover;
-    background-position: center;
+    background-image: url("../../assets/image/bgAuthPage.webp");
     min-height: 93vh;
   }
 

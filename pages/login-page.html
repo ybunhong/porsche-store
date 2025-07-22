@@ -15,7 +15,12 @@
         <div class="login-card-contents bg-white w-full">
           <!-- header contents -->
           <div class="flex flex-col items-center justify-center gap-5">
-            <img src="../src/assets/brand-logo/porsche-icon-text.svg" alt="logotext" />
+            <img
+              src="../src/assets/brand-logo/porsche-icon-text.svg"
+              alt="logotext"
+              width="150"
+              height="auto"
+            />
             <h3 class="heading-md">Welcome! Log in with your Porsche ID</h3>
           </div>
           <!-- body contents -->
@@ -23,9 +28,30 @@
             <p class="body-xs">Please enter the e-mail address you defined as your Porsche ID.</p>
             <!-- input form -->
             <div class="flex flex-col w-full gap-4">
-              <h1 style="color: red">Input form</h1>
-              <img src="../src/assets/brand-logo/porsche-icon-text.svg" />
-              <h1 style="color: red">Input form</h1>
+              <legend-textbox placeholder="Porsche ID" width="303px" height="auto"></legend-textbox>
+              <div
+                style="
+                  width: auto;
+                  height: 150px;
+                  border: 1px solid #ccc;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  overflow: hidden;
+                  background-color: --color-gray-300;
+                "
+              >
+                <img
+                  src="../src/assets/image/captcha.svg"
+                  alt="logotext"
+                  style="max-width: 100%; max-height: 100%; height: auto"
+                />
+              </div>
+              <legend-textbox
+                placeholder="Enter the code shown above"
+                width="303px"
+                height="auto"
+              ></legend-textbox>
             </div>
             <div class="flex flex-col w-full gap-5">
               <base-button label="Login with password" variant="primary"></base-button>
@@ -42,15 +68,6 @@
         </div>
       </form>
     </div>
-    <!-- footer -->
-    <footer
-      class="flex flex-col justify-center footer bg-black body-3xs text-white px-5 py-4 text-center"
-    >
-      <p class="body-xs text-white max-w-screen-sm leading-relaxed">
-        © 2025 Porsche Sales & Marketplace, Inc. Legal Notice. Business and Human Rights. Privacy
-        Notice. California Privacy. Do Not Sell or Share My Personal Information. Cookie Policy.
-        Accessibility Statement. Open Source Software Notice.
-      </p>
-    </footer>
+    <footer-b></footer-b>
   </body>
 </html>
