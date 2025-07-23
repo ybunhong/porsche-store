@@ -12,91 +12,34 @@
   <body>
     <!-- Header -->
     <base-header></base-header>
-
-    <!-- Back Navigation -->
-    <div class="p-1 flex justify-center w-fit items-center">
-      <icon-button
-        icon="../src/assets/icons/navigation/arrow.svg"
-        style="transform: rotate(90deg)"
-      ></icon-button>
-      <p class="body-xs"><a href="../index.html">Go Back</a></p>
-    </div>
-
-    <!-- Cart Title -->
-    <div class="gap-5 w-fit px-5">
-      <p class="text-h3 font-bold">My shopping carts</p>
-      <p class="body-xs">
-        Sold by
-        <a href="#" style="text-decoration: underline">Porsche Design of America, Inc.</a>
-      </p>
-    </div>
-
-    <!-- Shopping Cart Layout -->
-    <div class="layout-wrapper">
-      <div class="product-wrapper">
-        <shopping-product></shopping-product>
+    <section class="flex flex-col gap-8 p-6 m-6 h-full">
+      <div class="flex flex-col gap-4 pt-5 pb-5">
+        <icon-button
+          class="flex justify-center"
+          icon="../src/assets/icons/indicator/mountain.svg"
+          size="3"
+        ></icon-button>
+        <p class="flex justify-center font-bold body-lg">Your shopping cart is empty</p>
+        <p class="flex justify-center body-xs">Enjoy the view and be inspired by our range.</p>
       </div>
-
-      <!-- Summary Box -->
-      <div class="summary-box border border-small rounded-md p-4 flex flex-col gap-3">
-        <div class="flex justify-between">
-          <p>Total amount</p>
-          <p>$500.00</p>
+      <div class="flex flex-col gap-2">
+        <div class="flex justify-center w-full items-center gap-3">
+          <base-button label="Continue shopping" variant="primary"></base-button>
+          <base-button
+            class="hide-mobile"
+            label="Discover our new offers"
+            variant="secondary"
+          ></base-button>
         </div>
-
-        <p class="body-xs">incl. Tax</p>
-        <p class="body-xs">
-          <a style="text-decoration: underline" href="#">Login to redeem voucher</a>
-        </p>
-
-        <div class="proceed-checkout">
-          <base-button class="w-full" label="proceed to checkout" variant="primary"></base-button>
-        </div>
-
-        <div class="flex justify-between">
-          <p class="body-xs">2 product(s)</p>
-          <p class="body-xs">$500.00</p>
-        </div>
-
-        <div class="flex justify-between">
-          <p class="body-xs">Packaging & delivery</p>
-          <p class="body-xs">Calculated at next step</p>
-        </div>
-
-        <!-- Mobile Only (SSL inside summary box) -->
-        <div class="flex items-center gap-4 hide-desktop hide-tablet">
-          <span class="bg-gray-200 flex items-center justify-center rounded-full w-8 h-8">
-            <icon-button icon="../src/assets/icons/indicator/lock.svg"></icon-button>
-          </span>
-          <div class="flex flex-col">
-            <p class="px-2 body-xs">SSL encryption</p>
-            <p class="px-2 body-xs">Your data is secure</p>
-          </div>
+        <div class="flex justify-around w-full">
+          <base-button
+            class="show-mobile"
+            label="Discover our new offers"
+            variant="secondary"
+          ></base-button>
         </div>
       </div>
-    </div>
-
-    <div class="flex justify-between p-3">
-      <div class="flex justify-center items-center">
-        <icon-button icon="../src/assets/icons/indicator/information.svg"></icon-button>
-        <p class="body-xs">Products in your shopping cart are not reserved.</p>
-      </div>
-
-      <!-- Desktop/Tablet (SSL outside summary box) -->
-      <div class="flex items-center gap-4 hide-mobile">
-        <span class="bg-gray-200 flex items-center justify-center rounded-full w-8 h-8">
-          <icon-button icon="../src/assets/icons/indicator/lock.svg"></icon-button>
-        </span>
-        <div class="flex flex-col">
-          <p class="px-2 body-xs">SSL encryption</p>
-          <p class="px-2 body-xs">Your data is secure</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Warning Info -->
-    <info-warning></info-warning>
-
+    </section>
     <!-- Footer -->
     <footer-a></footer-a>
   </body>
