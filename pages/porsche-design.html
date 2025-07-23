@@ -20,7 +20,12 @@
         <div class="title flex w-full flex-col justify-center items-center gap-10 relative z-100">
           <img class="w-full" src="/src/assets/image/porsche-design.svg" alt="" />
           <div class="btn">
-            <base-button class="w-full" label="Shop now" variant="ghost"></base-button>
+            <base-button
+              href="/pages/product-list.html"
+              class="w-full"
+              label="Shop now"
+              variant="ghost"
+            ></base-button>
           </div>
         </div>
       </div>
@@ -35,7 +40,12 @@
             <span>Manufactured like a porsche. Made for Racers</span>
           </div>
           <div class="btn flex flex-row gap-4 w-fit">
-            <base-button label="To the collection" variant="white"></base-button>
+            <base-button
+              href="/pages/product-list.html"
+              class="w-full"
+              label="To the collection"
+              variant="white"
+            ></base-button>
             <base-button label="Discover now" variant="ghost"></base-button>
           </div>
         </div>
@@ -50,10 +60,12 @@
       <!-- card category-1 -->
       <div class="porsche-card w-full layout-grid">
         <div class="porsche-box1">
-          <category-card
-            title="Discover Eyewear"
-            image="/src/assets/image/glasses-man.jpg"
-          ></category-card>
+          <a href="/pages/eyewear.html">
+            <category-card
+              title="Discover Eyewear"
+              image="/src/assets/image/glasses-man.jpg"
+            ></category-card>
+          </a>
         </div>
         <div class="porsche-box2">
           <category-card title="Ready to Wear" image="/src/assets/card/mansit.jpg"></category-card>
@@ -109,7 +121,12 @@
             <h1>For your next trip</h1>
           </div>
           <div class="btn flex flex-row gap-4 w-fit">
-            <base-button label="Shop now" variant="white"></base-button>
+            <base-button
+              class="w-full"
+              href="/pages/product-list.html"
+              label="Shop now"
+              variant="white"
+            ></base-button>
             <base-button label="Discover now" variant="ghost"></base-button>
           </div>
         </div>
