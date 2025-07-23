@@ -19,22 +19,6 @@ h1 {
   }
 }
 
-/* header section */
-.porsche-design-header {
-  color: white;
-}
-
-.porsche-design-header base-header header-toolbar :nth-child(1),
-header-toolbar :nth-child(3) {
-  filter: brightness(0) invert(1);
-}
-
-@media (width > 760px) {
-  .porsche-design-header header-toolbar :nth-child(2) {
-    filter: brightness(0) invert(1);
-  }
-}
-
 /* hero section */
 .hero {
   background-size: cover;

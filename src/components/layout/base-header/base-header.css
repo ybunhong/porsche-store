@@ -1,0 +1,13 @@
+base-header[mode="dark"] main-navigation {
+  background-color: black;
+  color: white;
+}
+
+base-header[mode="dark"] header-toolbar {
+  background-color: black;
+}
+
+base-header[mode="dark"] header-toolbar icon-button:not(.porsche-icon),
+base-header[mode="dark"] main-navigation icon-button:not(.porsche-icon) {
+  filter: brightness(0) invert(1);
+}
