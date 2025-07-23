@@ -1,0 +1,84 @@
+.login-card-contents {
+  width: 100%;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.login-card {
+  width: 40vw;
+  min-width: 400px;
+}
+
+.bg-screen {
+  min-height: 100vh;
+}
+
+.left-side-image {
+  display: none;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+}
+
+.captcha-class {
+  width: auto;
+  height: 150px;
+  border: 1px solid;
+}
+
+.brand-logo {
+  width: 150px;
+  height: auto;
+}
+
+@media (width <= 500px) {
+  .bg-screen {
+    min-height: 100vh;
+    min-width: 500px;
+  }
+
+  .login-card {
+    width: auto;
+  }
+}
+
+@media (width >= 501px) and (width <= 1050px) {
+  .bg-screen {
+    background-image: url("../../assets/image/bgAuthPage.webp");
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh;
+  }
+
+  .login-card {
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+  }
+}
+
+@media (width >= 1051px) {
+  .bg-screen {
+    flex-direction: row;
+    min-height: 93vh;
+    align-items: stretch;
+  }
+
+  .left-side-image {
+    display: block;
+    width: 100%;
+  }
+
+  .left-side-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .login-card {
+    width: 65vw;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
