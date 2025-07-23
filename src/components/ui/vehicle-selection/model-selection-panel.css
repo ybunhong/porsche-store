@@ -83,7 +83,8 @@
     gap: var(--gap-2);
   }
 
-  base-button {
+  .classic-model base-button,
+  .login base-button {
     width: 80%;
     font-size: 1rem;
     display: block;

@@ -34,10 +34,10 @@
     <!-- Product Category -->
     <div class="category pb-3 w-full">
       <horizontal-scroller>
-        <base-button label="All products" variant="black"></base-button>
-        <base-button label="Children's clothes" variant="secondary"></base-button>
-        <base-button label="Men" variant="secondary"></base-button>
-        <base-button label="Women" variant="secondary"></base-button>
+        <base-button class="w-fit" label="All products" variant="black"></base-button>
+        <base-button class="w-fit" label="Children's clothes" variant="secondary"></base-button>
+        <base-button class="w-fit" label="Men" variant="secondary"></base-button>
+        <base-button class="w-fit" label="Women" variant="secondary"></base-button>
       </horizontal-scroller>
     </div>
     <!-- filter section -->
@@ -56,56 +56,96 @@
 
     <!-- product display section -->
     <div class="product-display gap-2 w-full h-fit mt-4">
-      <a href="/product/123" class="block w-full h-full">
-        <div class="product-card">
-          <product-card description="Reversible jacket" price="$529.00"> </product-card>
-        </div>
-      </a>
-      <a href="/product/123" class="block w-full h-full">
-        <div class="product-card">
-          <product-card description="Reversible jacket" price="$529.00"> </product-card>
-        </div>
-      </a>
-      <a href="/product/123" class="block w-full h-full">
-        <div class="product-card">
-          <product-card description="Reversible jacket" price="$529.00"> </product-card>
-        </div>
-      </a>
-      <a href="/product/123" class="block w-full h-full">
-        <div class="product-card">
-          <product-card description="Reversible jacket" price="$529.00"> </product-card>
-        </div>
-      </a>
-      <a href="/product/123" class="block w-full h-full">
-        <div class="product-card">
-          <product-card description="Reversible jacket" price="$529.00"> </product-card>
-        </div>
-      </a>
-      <a href="/product/123" class="block w-full h-full">
-        <div class="product-card">
-          <product-card description="Reversible jacket" price="$529.00"> </product-card>
-        </div>
-      </a>
-      <a href="/product/123" class="block w-full h-full">
-        <div class="product-card">
-          <product-card description="Reversible jacket" price="$529.00"> </product-card>
-        </div>
-      </a>
-      <a href="/product/123" class="block w-full h-full">
-        <div class="product-card">
-          <product-card description="Reversible jacket" price="$529.00"> </product-card>
-        </div>
-      </a>
-      <a href="/product/123" class="block w-full h-full">
-        <div class="product-card">
-          <product-card description="Reversible jacket" price="$529.00"> </product-card>
-        </div>
-      </a>
-      <a href="/product/123" class="block w-full h-full">
-        <div class="product-card">
-          <product-card description="Reversible jacket" price="$529.00"> </product-card>
-        </div>
-      </a>
+      <div class="product-card-list">
+        <product-card
+          class="product-card-content"
+          description="Reversible jacket"
+          price="$529.00"
+          src="/src/assets/card/green-shirt.avif"
+        >
+        </product-card>
+      </div>
+      <div class="product-card-list">
+        <product-card
+          class="product-card-content"
+          description="Reversible jacket"
+          price="$529.00"
+          src="/src/assets/card/white-shirt.avif"
+        >
+        </product-card>
+      </div>
+      <div class="product-card-list">
+        <product-card
+          class="product-card-content"
+          description="Reversible jacket"
+          price="$529.00"
+          src="/src/assets/card/shirt-3.avif"
+        >
+        </product-card>
+      </div>
+      <div class="product-card-list">
+        <product-card
+          class="product-card-content"
+          description="Reversible jacket"
+          price="$529.00"
+          src="/src/assets/card/shirt-4.avif"
+        >
+        </product-card>
+      </div>
+      <div class="product-card-list">
+        <product-card
+          class="product-card-content"
+          description="Reversible jacket"
+          price="$529.00"
+          src="/src/assets/card/shirt-5.avif"
+        >
+        </product-card>
+      </div>
+      <div class="product-card-list">
+        <product-card
+          class="product-card-content"
+          description="Reversible jacket"
+          price="$529.00"
+          src="/src/assets/card/shirt-6.avif"
+        >
+        </product-card>
+      </div>
+      <div class="product-card-list">
+        <product-card
+          class="product-card-content"
+          description="Reversible jacket"
+          price="$529.00"
+          src="/src/assets/card/shirt-7.avif"
+        >
+        </product-card>
+      </div>
+      <div class="product-card-list">
+        <product-card
+          class="product-card-content"
+          description="Reversible jacket"
+          price="$529.00"
+          src="/src/assets/card/shirt-8.avif"
+        >
+        </product-card>
+      </div>
+      <div class="product-card-list">
+        <product-card
+          class="product-card-content"
+          description="Reversible jacket"
+          price="$529.00"
+          src="/src/assets/card/shirt-9.avif"
+        >
+        </product-card>
+      </div>
+      <div class="product-card-list">
+        <product-card
+          class="product-card-content"
+          description="Reversible jacket"
+          price="$529.00"
+          src="/src/assets/card/shirt-10.avif"
+        >
+        </product-card>
+      </div>
     </div>
     <!-- load more section -->
     <div class="load-more flex justify-center items-center flex-col gap-3 mt-4 ml-10 mr-10 pb-6">
@@ -114,6 +154,7 @@
         <!-- <base-button label="Load more products" variant="primary"></base-button> -->
         <div class="load-more-button">
           <base-button
+            class="w-full"
             id="load-more-btn"
             label="Load more products"
             variant="primary"
