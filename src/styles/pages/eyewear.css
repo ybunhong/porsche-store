@@ -94,29 +94,6 @@ base-button button {
 }
 
 /* Banner */
-.banner {
-  aspect-ratio: 3 / 4;
-}
-
-.banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    black 0%,
-    rgb(0 0 0 / 0%) 15%,
-    rgb(0 0 0 / 0%) 85%,
-    black 100%
-  );
-  pointer-events: none;
-}
-
-.banner-text-btn {
-  gap: clamp(16px, 1.25vw + 12px, 36px);
-  grid-column: extended-start / extended-end;
-}
-
 .hero-banner {
   height: calc(100svh - 10.125rem);
 }
@@ -141,7 +118,7 @@ base-header header-toolbar div div:nth-child(3) {
 .second-img-container-2,
 .scroller-image img,
 .img,
-.banner img {
+.promo-banner img {
   object-fit: cover;
 }
 
@@ -237,14 +214,5 @@ base-header header-toolbar div div:nth-child(3) {
 @media (width >= 1300px) {
   .grid-col-1-pic {
     grid-column: 11 / span 5;
-  }
-
-  .banner {
-    aspect-ratio: 16 / 9;
-  }
-
-  .banner img {
-    object-position: 34% 41%;
-    object-fit: cover;
   }
 }
