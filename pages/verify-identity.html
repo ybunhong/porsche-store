@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="stylesheet" href="../src/styles/pages/login-page.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify Identity</title>
+  </head>
+  <body class="bg-black">
+    <div class="bg-screen bg-white flex flex-col items-center justify-center">
+      <!-- Left image shown only on large screens -->
+      <div class="left-side-image">
+        <img src="../src/assets/image/bgAuthPage.webp" alt="Porsche promotional background" />
+      </div>
+      <!-- login card  -->
+      <form class="login-card bg-white flex flex-row items-center justify-center px-5 py-5">
+        <div class="login-card-contents bg-white w-full">
+          <!-- header contents -->
+          <div class="flex flex-col items-center justifycenter">
+            <img
+              class="brand-logo"
+              src="../src/assets/brand-logo/porsche-icon-text.svg"
+              alt="logotext"
+            />
+          </div>
+          <div class="flex flex-col items-start justify-start mt-6 mb-6">
+            <h3 class="heading-sm">Verify Your Identity</h3>
+          </div>
+          <!-- body contents -->
+          <div class="flex flex-col items-start justify-start gap-5 w-full">
+            <div class="flex flex-col items-start justify-start w-full">
+              <h6 class="body-xs">
+                We have sent you an email with your code. If you did not receive it, please check if
+                the email address you entered is your Porsche ID. If not, you can create a new
+                Porsche ID on the main page.
+              </h6>
+            </div>
+            <!-- input form -->
+            <div class="flex flex-col w-full gap-2">
+              <legend-textbox placeholder="Porsche ID" value="Example07@gmail.com"></legend-textbox>
+              <legend-textbox placeholder="Enter the code"></legend-textbox>
+            </div>
+            <div class="flex flex-col w-full gap-5">
+              <base-button label="Continue" variant="primary"></base-button>
+            </div>
+            <div class="flex items-center justify-center w-full px-1">
+              <h6 class="body-xs">Didn't receive an email?</h6>
+              <icon-button class="signup" text="Resend Back"></icon-button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- footer -->
+    <footer-b></footer-b>
+  </body>
+</html>
