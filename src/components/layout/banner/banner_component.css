@@ -93,3 +93,8 @@
     width: auto;
   }
 }
+
+.overlay a,
+.overlay base-button {
+  pointer-events: auto;
+}

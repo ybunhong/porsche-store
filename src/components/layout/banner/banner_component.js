@@ -54,13 +54,13 @@ class BannerComponent extends BaseComponent {
       "paragraph",
       "button-label",
       "button-variant",
-      "button-href", // NEW
+      "button-href",
       "secondary-button-label",
       "secondary-button-variant",
-      "secondary-button-href", // NEW
+      "secondary-button-href",
       "primary-button-label",
       "primary-button-variant",
-      "primary-button-href", // NEW
+      "primary-button-href",
     ];
   }
 
@@ -75,13 +75,13 @@ class BannerComponent extends BaseComponent {
       paragraph: "",
       buttonLabel: "",
       buttonVariant: "primary",
-      buttonHref: "", // NEW
+      buttonHref: "",
       secondaryButtonLabel: "",
       secondaryButtonVariant: "",
-      secondaryButtonHref: "", // NEW
+      secondaryButtonHref: "",
       primaryButtonLabel: "",
       primaryButtonVariant: "",
-      primaryButtonHref: "", // NEW
+      primaryButtonHref: "",
     };
   }
 
@@ -177,39 +177,62 @@ class BannerComponent extends BaseComponent {
       secondaryButtonHref,
     } = this.props;
 
-    const renderButton = (label, variant, href) => {
-      if (!label) return "";
-      const button = `<base-button label="${label}" variant="${variant}"></base-button>`;
-      return href ? `<a href="${href}">${button}</a>` : button;
-    };
-
     this.template = `
       <div class="banner relative m-5 overflow-hidden">
         ${
           backgroundMobile || backgroundDesktop
-            ? `<picture>
-                ${
-                  backgroundDesktop
-                    ? `<source srcset="${backgroundDesktop}" media="(min-width: 768px)">`
-                    : ""
-                }
-                ${
-                  backgroundMobile
-                    ? `<img src="${backgroundMobile}" alt="Banner Image" class="w-full h-auto object-cover">`
-                    : ""
-                }
-              </picture>`
+            ? `
+          <picture>
+            ${backgroundDesktop ? `<source srcset="${backgroundDesktop}" media="(min-width: 768px)">` : ""}
+            ${backgroundMobile ? `<img src="${backgroundMobile}" alt="Banner Image" class="w-full h-auto object-cover">` : ""}
+          </picture>
+        `
             : ""
         }
 
-        <div class="overlay absolute inset-0 flex flex-col justify-center items-center text-center p-5 bg-black/30">
-          ${logoSrc ? `<img src="${logoSrc}" alt="Logo" class="mb-5 max-w-[180px]">` : ""}
-          ${heading ? `<h1>${heading}</h1>` : ""}
-          ${paragraph ? `<p class="p font-bold text-p1">${paragraph}</p>` : ""}
-          ${renderButton(buttonLabel, buttonVariant, buttonHref)}
+        <div class="overlay absolute inset-0 flex flex-col justify-center items-center text-center p-5 bg-black/30 pointer-events-none">
+          ${logoSrc ? `<img src="${logoSrc}" alt="Logo" class="mb-5 max-w-[180px] pointer-events-auto">` : ""}
+          ${heading ? `<h1 class="pointer-events-auto">${heading}</h1>` : ""}
+          ${paragraph ? `<p class="p font-bold text-p1 pointer-events-auto">${paragraph}</p>` : ""}
+
+          ${
+            buttonLabel
+              ? `
+            <base-button
+              label="${buttonLabel}"
+              variant="${buttonVariant}"
+              href="${buttonHref || "#"}"
+              class="pointer-events-auto"
+            ></base-button>
+          `
+              : ""
+          }
+
           <div class="button-group flex gap-2 mt-2">
-            ${renderButton(primaryButtonLabel, primaryButtonVariant, primaryButtonHref)}
-            ${renderButton(secondaryButtonLabel, secondaryButtonVariant, secondaryButtonHref)}
+            ${
+              primaryButtonLabel
+                ? `
+              <base-button
+                label="${primaryButtonLabel}"
+                variant="${primaryButtonVariant}"
+                href="${primaryButtonHref || "#"}"
+                class="pointer-events-auto"
+              ></base-button>
+            `
+                : ""
+            }
+            ${
+              secondaryButtonLabel
+                ? `
+              <base-button
+                label="${secondaryButtonLabel}"
+                variant="${secondaryButtonVariant}"
+                href="${secondaryButtonHref || "#"}"
+                class="pointer-events-auto"
+              ></base-button>
+            `
+                : ""
+            }
           </div>
         </div>
       </div>

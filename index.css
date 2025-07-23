@@ -1,0 +1,74 @@
+.root {
+  width: 220px;
+  height: 320px;
+}
+
+/* card category */
+.category-root .porsche-card {
+  color: black;
+}
+
+.category-root2 .porsche-card {
+  color: white;
+}
+
+.porsche-box1 {
+  grid-column: 2 / 7;
+}
+
+.porsche-box2 {
+  grid-column: 7 / 12;
+}
+
+.porsche-box3 {
+  grid-column: 2 / 12;
+}
+
+/* Full-Sized Sunglass Hero (No Scroll) */
+.sunglass-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  grid-column: full-start / full-end;
+}
+
+.sunglass-hero-image {
+  object-fit: cover;
+}
+
+.sunglass-hero-btn {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.category-root .overlay {
+  pointer-events: auto; /* allow clicks inside overlay */
+}
+
+@media (width > 1000px) {
+  .porsche-card {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    align-items: stretch;
+  }
+
+  .porsche-box1,
+  .porsche-box2,
+  .porsche-box3 {
+    min-width: 216px;
+  }
+
+  .porsche-box1 {
+    grid-column: 2;
+  }
+
+  .porsche-box2 {
+    grid-column: 3;
+  }
+
+  .porsche-box3 {
+    grid-column: 4;
+  }
+}
