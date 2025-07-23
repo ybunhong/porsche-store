@@ -1,8 +1,9 @@
 import "@ui";
+import "./base-header.css";
 
 class BaseHeader extends BaseComponent {
   static get observedAttributes() {
-    return ["label"];
+    return ["label", "mode"];
   }
 
   constructor() {
