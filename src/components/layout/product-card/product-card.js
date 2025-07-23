@@ -6,7 +6,7 @@ import "@layout";
 
 class ProductCard extends BaseComponent {
   static get observedAttributes() {
-    return ["title", "description", "price", "section", "discount"];
+    return ["title", "src", "description", "price", "section", "discount"];
   }
 
   constructor() {
@@ -16,6 +16,7 @@ class ProductCard extends BaseComponent {
     this.price = "";
     this.section = "";
     this.discount = "";
+    this.src = "";
   }
 
   connectedCallback() {
@@ -46,6 +47,10 @@ class ProductCard extends BaseComponent {
           this.discount = newValue || "";
           break;
         }
+        case "src": {
+          this.src = newValue || "";
+          break;
+        }
         default: {
           break;
         }
@@ -63,7 +68,7 @@ class ProductCard extends BaseComponent {
       </div>
       
       <div class="flex-1 flex items-center justify-center my-4">
-          <img src="${productCard}" class="product-card-image w-full h-full object-cover max-h-48">
+          <img src="${this.src}" class="product-card-image w-full h-full object-cover max-h-48">
       </div>
       
       <div class="text-center mt-auto">
