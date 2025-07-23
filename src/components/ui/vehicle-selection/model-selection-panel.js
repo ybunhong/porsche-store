@@ -61,7 +61,7 @@ class ModelSelectionPanel extends BaseComponent {
               <div class="car-grid layout-grid mb-8 items-center">
                 ${carsHtml}
               </div>
-              <base-button label="Classic models" variant="secondary"></base-button>
+              <base-button class="classic-model" label="Classic models" variant="secondary"></base-button>
             </div>
           `
           : `
@@ -74,7 +74,7 @@ class ModelSelectionPanel extends BaseComponent {
               <div class="login-img flex">
                 <img src="${carImage}" alt="Vehicles" />
               </div>
-              <base-button label="Login"></base-button>
+              <base-button class="log-in" label="Login"></base-button>
             </div>
           `
       }

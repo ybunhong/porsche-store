@@ -95,12 +95,8 @@
   max-width: 371px;
 }
 
-.product-card {
+.product-card-content .product-card {
   border-radius: var(--radius-xl);
-}
-
-category-card {
-  color: white;
 }
 
 /* load-more section */
