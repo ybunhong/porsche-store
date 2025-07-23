@@ -16,7 +16,7 @@ class ProductCard extends BaseComponent {
     this.price = "";
     this.section = "";
     this.discount = "";
-    this.src = "";
+    this.src = productCard;
   }
 
   connectedCallback() {
@@ -48,7 +48,7 @@ class ProductCard extends BaseComponent {
           break;
         }
         case "src": {
-          this.src = newValue || "";
+          this.src = newValue || productCard;
           break;
         }
         default: {
@@ -69,7 +69,7 @@ class ProductCard extends BaseComponent {
       
       <div class="flex-1 flex items-center justify-center my-4">
           <a href="/pages/product_list.html">
-            <img src="${this.src}" class="product-card-image w-full h-full object-cover max-h-48" />
+            <img src="${this.src || productCard}" class="product-card-image w-full h-full object-cover max-h-48" />
           </a>
       </div>
       

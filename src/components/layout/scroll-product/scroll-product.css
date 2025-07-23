@@ -10,7 +10,7 @@
 .card {
   width: 220px;
   flex-shrink: 0;
-  background-color: white;
+  background-color: transparent;
   padding: 12px;
   display: flex;
   flex-direction: column;
