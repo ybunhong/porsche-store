@@ -9,6 +9,7 @@ import "./base-button.css";
  *   variant="primary"
  *   type="button"
  *   action="submit-form"
+ *   href="your-path"
  *   disabled
  * ></base-button>
  *
@@ -32,6 +33,9 @@ import "./base-button.css";
  *
  * <!-- With action event -->
  * <base-button label="Open Panel" action="side-panel"></base-button>
+ *
+ * <!-- With href -->
+ * <base-button label="Open Panel" href="../pages/product-list.html"></base-button>
  *
  * In JavaScript:
  * const btn = document.querySelector('base-button');
