@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <!-- 🧭 Header -->
     <base-header></base-header>
 
     <section class="flex flex-col gap-6">
@@ -20,36 +21,45 @@
         heading="An iconic product that never stand still"
         primary-button-variant="tertiary"
         primary-button-label="Our collection"
+        primary-button-href="./pages/product-list.html"
         secondary-button-variant="secondary"
         secondary-button-label="Learn more"
+        secondary-button-href="./pages/product-list.html"
       ></banner-component>
 
       <!-- Category Section 1 -->
       <section class="category-root">
         <div class="porsche-card w-full layout-grid">
           <div class="porsche-box1">
-            <category-card title="Vehicle Accessories"></category-card>
+            <category-card
+              title="Vehicle Accessories"
+              href="./pages/product-list.html"
+            ></category-card>
           </div>
           <div class="porsche-box2">
             <category-card
               title="Clothing"
               image="/src/assets/image/root-image10.avif"
+              href="./pages/product-list.html"
             ></category-card>
           </div>
           <div class="porsche-box3">
             <category-card
               title="Home & Lifestyle"
               image="/src/assets/image/root-image9.avif"
+              href="./pages/product-list.html"
             ></category-card>
           </div>
         </div>
 
+        <!-- Promo Banner -->
         <banner-component
           background-mobile="./src/assets/image/root-image11-m.avif"
           background-desktop="./src/assets/image/root-image11.avif"
           variant="primary"
           button-variant="tertiary"
           button-label="Discover now"
+          button-href="./pages/product-list.html"
         ></banner-component>
       </section>
 
@@ -60,22 +70,26 @@
             <category-card
               title="Vehicle Accessories"
               image="/src/assets/image/root-image2.avif"
+              href="./pages/product-list.html"
             ></category-card>
           </div>
           <div class="porsche-box2">
             <category-card
               title="Clothing"
               image="/src/assets/image/root-image3.avif"
+              href="./pages/product-list.html"
             ></category-card>
           </div>
           <div class="porsche-box3">
             <category-card
               title="Home & Lifestyle"
               image="/src/assets/image/root-image4.avif"
+              href="./pages/product-list.html"
             ></category-card>
           </div>
         </div>
 
+        <!-- Sunglasses Hero Section -->
         <div class="section-spacing-top grid-container pt-3 pb-3">
           <div class="sunglass-hero relative">
             <img
@@ -96,44 +110,75 @@
           </div>
         </div>
 
-        <!-- Waiting thida component -->
-        <scroll-product></scroll-product>
+        <!-- Scroll Product 1 -->
+        <div class="scroll-wrapper px-4 py-6">
+          <scroll-product
+            data="
+              <product-card title='Porsche Jacket' description='Performance wear with iconic design.' price='4500' discount='200' section='Motorsport' src='./src/assets/card/shirt-5.avif'></product-card>
+              <product-card title='Urban Backpack' description='Sleek and functional for every day.' price='3100' section='Lifestyle' src='./src/assets/card/shirt-9.avif'></product-card>
+              <product-card title='Vintage Cap' description='Classic look with modern edge.' price='1900' section='Heritage' src='./src/assets/card/shirt-4.avif'></product-card>
+              <product-card title='Driving Gloves' description='Grip and elegance on the road.' price='2700' discount='180' section='Accessories' src='./src/assets/card/shirt-6.avif'></product-card>
+              <product-card title='Carrera Sunglasses' description='Luxury eyewear, timeless silhouette.' price='5200' section='Eyewear' src='./src/assets/card/shirt-10.avif'></product-card>
+              <product-card title='Tech Tee' description='Breathable and stylish.' price='2200' discount='120' section='Activewear' src='./src/assets/card/shirt-3.avif'></product-card>
+              <product-card title='Porsche Chronograph' description='Precision and performance in one.' price='8700' section='Watches' src='./src/assets/card/white-shirt.avif'></product-card>
+              <product-card title='Padded Vest' description='Layered warmth with sleek design.' price='3500' discount='160' section='Outerwear' src='./src/assets/card/shirt-9.avif'></product-card>
+              <product-card title='Sport Duffel' description='Spacious, stylish, and durable.' price='3900' section='Bags' src='./src/assets/card/green-shirt.avif'></product-card>
+            "
+          ></scroll-product>
+        </div>
 
+        <!-- Banner -->
         <banner-component
           background-mobile="./src/assets/image/root-image13-m.avif"
           background-desktop="./src/assets/image/root-image13.avif"
           variant="secondary"
-          heading="The journey begin with Porsche"
+          heading="The journeay begin with Porsche"
           button-variant="tertiary"
           button-label="Go to products"
+          button-href="./pages/product-list.html"
         ></banner-component>
-        <scroll-product></scroll-product>
 
-        <scroll-product></scroll-product>
-
-        <section class="category-root2">
-          <div class="porsche-card w-full layout-grid">
-            <div class="porsche-box1">
-              <category-card
-                title="Vehicle Accessories"
-                image="/src/assets/image/root-image6.avif"
-              ></category-card>
-            </div>
-            <div class="porsche-box2">
-              <category-card
-                title="Clothing"
-                image="/src/assets/image/root-image8.avif"
-              ></category-card>
-            </div>
-          </div>
-        </section>
-
-        <model-selection-panel></model-selection-panel>
-
-        <hr />
-
-        <show-more-card content="3"></show-more-card>
+        <!-- Scroll Product 2 -->
+        <div class="scroll-wrapper px-4 py-6">
+          <scroll-product
+            data="
+              <product-card title='Urban Backpack' description='Luxury gear for bold lifestyles.' price='3600' section='Lifestyle' src='./src/assets/card/shirt-4.avif'></product-card>
+              <product-card title='Driving Gloves' description='Grip and elegance on the road.' price='2900' discount='120' section='Accessories' src='./src/assets/card/shirt-6.avif'></product-card>
+              <product-card title='Sport Duffel' description='Sleek, durable, and travel-ready.' price='4200' section='Bags' src='./src/assets/card/shirt-8.avif'></product-card>
+              <product-card title='Porsche Chronograph' description='Engineered for precision and elegance.' price='8900' discount='300' section='Watches' src='./src/assets/card/shirt-9.avif'></product-card>
+              <product-card title='Tech Tee' description='Lightweight comfort for everyday use.' price='2400' section='Activewear' src='./src/assets/card/shirt-10.avif'></product-card>
+              <product-card title='Vintage Cap' description='Timeless Porsche branding.' price='1950' discount='100' section='Heritage' src='./src/assets/card/shirt-7.avif'></product-card>
+              <product-card title='Porsche Jacket' description='Performance wear with iconic design.' price='4700' section='Motorsport' src='./src/assets/card/shirt-3.avif'></product-card>
+              <product-card title='Padded Vest' description='Sleek insulation for cold days.' price='3500' discount='180' section='Outerwear' src='./src/assets/card/shirt-5.avif'></product-card>
+              <product-card title='Carrera Sunglasses' description='Stylish protection for bright drives.' price='5100' section='Eyewear' src='./src/assets/card/white-shirt.avif'></product-card>
+            "
+          ></scroll-product>
+        </div>
       </section>
+
+      <!-- Final Categories -->
+      <section class="category-root2">
+        <div class="porsche-card w-full layout-grid">
+          <div class="porsche-box1">
+            <category-card
+              title="Vehicle Accessories"
+              image="/src/assets/image/root-image6.avif"
+              href="#"
+            ></category-card>
+          </div>
+          <div class="porsche-box2">
+            <category-card
+              title="Clothing"
+              image="/src/assets/image/root-image8.avif"
+              href="./pages/product-list.html"
+            ></category-card>
+          </div>
+        </div>
+      </section>
+
+      <model-selection-panel></model-selection-panel>
+      <hr />
+      <show-more-card content="3"></show-more-card>
     </section>
 
     <footer-a></footer-a>

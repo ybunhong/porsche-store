@@ -43,6 +43,10 @@
   z-index: 10;
 }
 
+.category-root .overlay {
+  pointer-events: auto; /* allow clicks inside overlay */
+}
+
 @media (width > 1000px) {
   .porsche-card {
     display: grid;
