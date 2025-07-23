@@ -1,12 +1,12 @@
 .banner {
   position: relative;
-  margin: 1.25rem; /* m-5 */
+  margin: var(--margin-5, 1.25rem); /* fallback to 1.25rem */
   overflow: hidden;
 }
 
 .banner picture,
 .banner img {
-  width: 100%;
+  width: var(--size-full, 100%);
   height: auto;
   object-fit: cover;
   display: block;
@@ -15,30 +15,30 @@
 /* Overlay covers entire banner and centers content */
 .overlay {
   position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
-  background-color: rgb(0 0 0 / 30%); /* semi-transparent dark overlay */
+  inset: 0;
+  background-color: rgb(0 0 0 / 30%); /* semi-transparent black */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center; /* horizontal centering */
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 1.25rem; /* p-5 */
-  gap: 20px;
-  color: white; /* text color */
+  padding: var(--padding-5, 1.25rem);
+  gap: var(--gap-5, 1.25rem); /* fallback ~20px */
+  color: var(--color-white, #fff);
   user-select: none;
 }
 
 /* Logo */
 .overlay img {
-  width: 100%; /* responsive */
-  height: auto; /* maintain aspect ratio */
-  max-width: 600px; /* optional max width */
+  width: var(--size-full, 100%);
+  height: auto;
+  max-width: 600px; /* fixed max width */
 }
 
 /* Heading */
 .overlay h1 {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: var(--font-size-h3, 2rem);
+  font-weight: var(--font-weight-medium, 500);
   margin: 0;
   line-height: 1;
   width: auto;
@@ -46,7 +46,7 @@
 
 /* Paragraph */
 .overlay p {
-  font-size: 1rem;
+  font-size: var(--font-size-p1, 1rem);
   margin: 0;
 }
 
@@ -59,11 +59,11 @@
 /* Actual button inside base-button */
 .overlay base-button button {
   padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  border-radius: 4px;
+  font-weight: var(--font-weight-semibold, 600);
+  border-radius: var(--radius-md, 4px);
   cursor: pointer;
   white-space: nowrap;
-  min-width: 120px; /* consistent size */
+  min-width: 120px;
   box-sizing: border-box;
   transition:
     background-color 0.3s ease,
@@ -73,21 +73,20 @@
 
 /* Buttons container: side by side */
 .button-group {
-  display: inline;
-  justify-content: center; /* center horizontally */
-  align-items: center; /* align vertically */
-  gap: 1rem; /* space between buttons */
-  margin-top: 1rem;
+  display: flex; /* flex needed for gap */
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-4, 1rem);
 }
 
-/* Responsive adjustments for larger screens */
+/* Responsive adjustments */
 @media (width >= 768px) {
   .overlay h1 {
-    font-size: 50px;
+    font-size: var(--font-size-h1, clamp(2.5rem, 2vw + 1rem, 3.125rem)); /* fallback clamp */
   }
 
   .overlay p {
-    font-size: 20px;
+    font-size: var(--font-size-p0, clamp(1.25rem, 1vw + 0.75rem, 1.25rem));
   }
 
   .overlay base-button {

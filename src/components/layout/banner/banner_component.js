@@ -1,31 +1,32 @@
-// banner-component.js
 /**
- * BaseBanner Web Component
  *
- * Usage:
- * <base-banner variant="primary"></base-banner>
+ * 1. Use a single banner by setting attributes in HTML:
+ *    <banner-component
+ *      variant="primary"
+ *      background-mobile="img/mobile.jpg"
+ *      background-desktop="img/desktop.jpg"
+ *      logo-src="img/logo.svg"
+ *      heading="Porsche Design"
+ *      paragraph="Timeless style, new collection"
+ *      button-label="Shop Now"
+ *      button-variant="primary"
+ *    ></banner-component>
  *
- * JS:
- * import "./banner-component.js";
+ * 2. Available `variant` options:
+ *    - "primary": image + logo + heading + button
+ *    - "secondary": image + heading
+ *    - "tertiary": image + heading + button
+ *    - "quaternary": image + heading + paragraph + button
+ *    - most be have ("quinary": image + heading + primary & secondary buttons)
  *
- * Description:
- * Dynamically displays a responsive banner with optional logo, headline, paragraph, and button.
- * The layout and content change based on the `variant` attribute.
- *
- * Available Variants:
- * - "primary": Shows background image, logo, headline, and button
- * - "secondary": Background + headline only
- * - "tertiary": Background + headline + button
- * - "quaternary": Background + headline + paragraph + button
- *
- * Attributes:
- * - variant (string): One of the four predefined styles
- *
- * Features:
- * - Responsive image loading (mobile/desktop)
- * - Optional logo, headline (h1), paragraph (p), and button
- * - Button supports variant style via `<base-button>` system
- * - Overlay with centered, stacked layout
+ * 3. Responsive behavior:
+ *    - for img it have two reponsive img (  background-mobile)(background-desktop)
+ *     so make sure you put this two img to make your banner look great
+ *     .background-mobile(<760px)
+ *     .background-desktop(>760px)
+ * 4. Buttons usage:
+ *    - Primary button controlled by `primary-button-label` and `primary-button-variant` or `button-label` and `button-variant`.
+ *    - Secondary button controlled by `secondary-button-label` and `secondary-button-variant`.
  */
 
 import "./banner_component.css";
@@ -69,87 +70,76 @@ class BannerComponent extends BaseComponent {
 
   connectedCallback() {
     super.connectedCallback();
-    // Load attribute values to props
-    this.constructor.observedAttributes.forEach(attr => {
-      const prop = this.constructor.toCamelCase(attr);
-      const value = this.getAttribute(attr);
-      if (value !== null) {
-        this.props[prop] = value;
-      }
-    });
-
-    this.setDefaults(); // fill in missing defaults
+    this.loadAttributes();
+    this.setDefaults();
     this.updateTemplate();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    // Removed console.log for ESLint no-console
     if (oldValue !== newValue) {
-      const propName = this.constructor.toCamelCase(name);
+      const propName = BannerComponent.toCamelCase(name);
       this.props[propName] = newValue;
       this.updateTemplate();
     }
   }
 
-  setDefaults() {
-    const { variant } = this.props;
-
-    switch (variant) {
-      case "primary":
-        if (!this.props.backgroundMobile)
-          this.props.backgroundMobile = "../../../../src/assets/img/boy2.jpeg";
-        if (!this.props.backgroundDesktop)
-          this.props.backgroundDesktop = "../../../../src/assets/img/boy1.jpeg";
-        if (!this.props.logoSrc) this.props.logoSrc = "../../../../src/assets/img/download (1).svg";
-        if (!this.props.buttonLabel) this.props.buttonLabel = "Discover now";
-        break;
-
-      case "secondary":
-        if (!this.props.backgroundMobile)
-          this.props.backgroundMobile = "../../../../src/assets/img/camping2.jpeg";
-        if (!this.props.backgroundDesktop)
-          this.props.backgroundDesktop = "../../../../src/assets/img/camping1.jpeg";
-        if (!this.props.heading) this.props.heading = "Porsche outdoor equipment";
-        break;
-
-      case "tertiary":
-        if (!this.props.backgroundMobile)
-          this.props.backgroundMobile = "../../../../src/assets/img/camping2.jpeg";
-        if (!this.props.backgroundDesktop)
-          this.props.backgroundDesktop = "../../../../src/assets/img/camping1.jpeg";
-        if (!this.props.heading) this.props.heading = "Porsche 911 Spirit 70 Collection";
-        if (!this.props.buttonLabel) this.props.buttonLabel = "Discover now";
-        break;
-
-      case "quaternary":
-        if (!this.props.backgroundMobile)
-          this.props.backgroundMobile = "../../../../src/assets/img/girl2.jpeg";
-        if (!this.props.backgroundDesktop)
-          this.props.backgroundDesktop = "../../../../src/assets/img/girl1.jpeg";
-        if (!this.props.heading)
-          this.props.heading = "Some things were pretty cool. Time to bring them back.";
-        if (!this.props.paragraph) this.props.paragraph = "Porsche 911 Spirit 70 Collection";
-        if (!this.props.buttonLabel) this.props.buttonLabel = "Discover now";
-        break;
-
-      case "quinary":
-        if (!this.props.backgroundMobile)
-          this.props.backgroundMobile = "../../../../src/assets/img/girl2.jpeg";
-        if (!this.props.backgroundDesktop)
-          this.props.backgroundDesktop = "../../../../src/assets/img/sh.jpeg";
-        if (!this.props.heading) this.props.heading = "An Design that never stands still";
-        if (!this.props.primaryButtonLabel) this.props.primaryButtonLabel = "ok";
-        if (!this.props.secondaryButtonLabel) this.props.secondaryButtonLabel = "ok";
-        break;
-
-      default:
-        // no defaults
-        break;
-    }
+  loadAttributes() {
+    this.constructor.observedAttributes.forEach(attr => {
+      const prop = BannerComponent.toCamelCase(attr);
+      const value = this.getAttribute(attr);
+      if (value !== null) {
+        this.props[prop] = value;
+      }
+    });
   }
 
   static toCamelCase(attr) {
     return attr.replace(/-([a-z])/g, (_, char) => char.toUpperCase());
+  }
+
+  setDefaults() {
+    const variantDefaults = {
+      primary: {
+        backgroundMobile: "../../../../src/assets/img/boy2.jpeg",
+        backgroundDesktop: "../../../../src/assets/img/boy1.jpeg",
+        logoSrc: "../../../../src/assets/img/download (1).svg",
+        buttonLabel: "Discover now",
+      },
+      secondary: {
+        backgroundMobile: "../../../../src/assets/img/camping2.jpeg",
+        backgroundDesktop: "../../../../src/assets/img/camping1.jpeg",
+        heading: "Porsche outdoor equipment",
+      },
+      tertiary: {
+        backgroundMobile: "../../../../src/assets/img/camping2.jpeg",
+        backgroundDesktop: "../../../../src/assets/img/camping1.jpeg",
+        heading: "Porsche 911 Spirit 70 Collection",
+        buttonLabel: "Discover now",
+      },
+      quaternary: {
+        backgroundMobile: "../../../../src/assets/img/girl2.jpeg",
+        backgroundDesktop: "../../../../src/assets/img/girl1.jpeg",
+        heading: "Some things were pretty cool. Time to bring them back.",
+        paragraph: "Porsche 911 Spirit 70 Collection",
+        buttonLabel: "Discover now",
+      },
+      quinary: {
+        backgroundMobile: "../../../../src/assets/img/shoes3.jpeg",
+        backgroundDesktop: "../../../../src/assets/img/shoes.jpeg",
+        heading: "A Design that never stands still",
+        primaryButtonLabel: "Our collection",
+        secondaryButtonLabel: "Learn more",
+      },
+    };
+
+    const defaults = variantDefaults[this.props.variant];
+    if (!defaults) return;
+
+    Object.entries(defaults).forEach(([key, value]) => {
+      if (!this.props[key]) {
+        this.props[key] = value;
+      }
+    });
   }
 
   updateTemplate() {
@@ -161,15 +151,14 @@ class BannerComponent extends BaseComponent {
       paragraph,
       buttonLabel,
       buttonVariant,
-      secondaryButtonLabel,
-      secondaryButtonVariant,
       primaryButtonLabel,
       primaryButtonVariant,
+      secondaryButtonLabel,
+      secondaryButtonVariant,
     } = this.props;
 
     this.template = `
       <div class="banner relative m-5 overflow-hidden">
-
         ${
           backgroundMobile || backgroundDesktop
             ? `<picture>
@@ -196,7 +185,7 @@ class BannerComponent extends BaseComponent {
               ? `<base-button label="${buttonLabel}" variant="${buttonVariant}"></base-button>`
               : ""
           }
-          <div class="button-group">
+          <div class="button-group flex gap-2 mt-2">
             ${
               primaryButtonLabel
                 ? `<base-button label="${primaryButtonLabel}" variant="${primaryButtonVariant}"></base-button>`
