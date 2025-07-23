@@ -1,7 +1,7 @@
 .login-card-contents {
   width: 100%;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 320px;
+  max-width: 320px;
 }
 
 .login-card {
@@ -81,4 +81,21 @@
     margin-left: auto;
     margin-right: 0;
   }
+}
+
+/* login password page */
+.signup .button-text {
+  text-decoration: underline;
+}
+
+/* sigup page */
+.salutation {
+  z-index: 1000;
+}
+
+/* Style checkboxes with class checkboxlogin */
+.checkboxlogin {
+  accent-color: #007bff;
+  width: 13px;
+  height: 13px;
 }
