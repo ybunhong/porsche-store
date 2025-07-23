@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease;
+  container-type: inline-size;
 }
 
 .card-image {
@@ -37,7 +38,7 @@
 
 .cards .texts {
   font-style: var(--font-primary);
-  font-size: var(--font-size-p4);
+  font-size: clamp(16px, 5cqi, 21px);
   font-weight: bold;
   max-width: 70%;
 }
