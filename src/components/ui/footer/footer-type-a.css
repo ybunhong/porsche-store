@@ -1,4 +1,4 @@
-.flex p::first-line {
+.cricle-badge .flex p::first-line {
   font-weight: var(--font-weight-bold);
   color: var(--color-grey-300);
 }
