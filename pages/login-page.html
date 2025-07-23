@@ -14,7 +14,7 @@
         <img src="../src/assets/image/bgAuthPage.webp" alt="Porsche promotional background" />
       </div>
       <!-- login card  -->
-      <form class="login-card bg-white flex items-center justify-center px-5 py-5">
+      <form class="login-card bg-white flex flex-row items-center justify-center px-5 py-5">
         <div class="login-card-contents bg-white w-full">
           <!-- header contents -->
           <div class="flex flex-col items-center justify-center gap-5">
@@ -23,16 +23,24 @@
               src="../src/assets/brand-logo/porsche-icon-text.svg"
               alt="logotext"
             />
-            <h3 class="heading-md">Welcome! Log in with your Porsche ID</h3>
           </div>
+          <div class="flex flex-col items-start justify-start mt-6 mb-4">
+            <h3 class="heading-sm">
+              Welcome! Log in with your<br />
+              Porsche ID
+            </h3>
+          </div>
+
           <!-- body contents -->
           <div class="flex flex-col items-start justify-start gap-5 w-full">
-            <p class="body-xs">Please enter the e-mail address you defined as your Porsche ID.</p>
+            <h6 class="body-xs mt-6">
+              Please enter the e-mail address you defined as your Porsche ID.
+            </h6>
             <!-- input form -->
-            <div class="flex flex-col w-full gap-4">
+            <div class="flex flex-col w-full gap-3">
               <legend-textbox placeholder="Porsche ID" width="303px" height="auto"></legend-textbox>
               <div class="captcha-class flex items-center justify-center">
-                <img class="captcha" src="../src/assets/image/captcha.svg" alt="captcha" />
+                <img src="../src/assets/image/captcha.svg" alt="captcha" />
               </div>
               <legend-textbox
                 placeholder="Enter the code shown above"
