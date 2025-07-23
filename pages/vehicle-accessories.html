@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="stylesheet" href="../src/styles/pages/vehicle-accessories.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- header -->
+    <base-header></base-header>
+    <!-- title -->
+    <h1 class="pt-6 pb-4">Vehicle accessories</h1>
+
+    <!-- model-selection-panel section -->
+    <model-selection-panel></model-selection-panel>
+
+    <!-- scroller section -->
+    <div class="py-6">
+      <horizontal-scroller
+        ><base-button variant="secondary" label="All products"></base-button>
+        <base-button variant="secondary" label="Baby Carriers & Child Seats"></base-button>
+        <base-button variant="secondary" label="Car Covers"></base-button>
+        <base-button variant="secondary" label="Car Cover & Protection"></base-button>
+        <base-button variant="secondary" label="Charging Equipment"></base-button>
+        <base-button variant="secondary" label="Floor Mats & Luggage Compartment"></base-button>
+        <base-button variant="secondary" label="Models"></base-button>
+        <base-button variant="secondary" label="Others Vehicle Accessories"></base-button>
+        <base-button variant="secondary" label="Porsche Classic"></base-button>
+        <base-button variant="secondary" label="The first all-electric Macan"></base-button>
+        <base-button variant="secondary" label="Travel & Transport"></base-button
+      ></horizontal-scroller>
+    </div>
+
+    <!-- filter section -->
+    <div class="filter w-full">
+      <filter-topresult-buttons></filter-topresult-buttons>
+    </div>
+
+    <!-- Product Quantity section -->
+
+    <div class="quantity block py-3">
+      <div class="container flex items-center w-fit">
+        <span>30 Products</span>
+        <icon-button icon="/src/assets/icons/indicator/information.svg"></icon-button>
+      </div>
+    </div>
+
+    <!-- product display section -->
+    <div class="product-display gap-2 w-full h-fit mt-4">
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product1.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product3.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product1.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product4.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product1.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product2.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product4.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product3.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product4.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product1.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product2.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+      <a href="/product/123" class="block w-full h-full">
+        <div class="product-card">
+          <product-card
+            src="../src/assets/image/product4.webp"
+            description="Reversible jacket"
+            price="$529.00"
+          >
+          </product-card>
+        </div>
+      </a>
+    </div>
+    <!-- load more section -->
+    <div class="load-more flex justify-center items-center flex-col gap-3 mt-4 ml-10 mr-10 pb-6">
+      <span class="number w-fit text-center font-bold">10/30 products</span>
+      <div class="load-more-button">
+        <!-- <base-button label="Load more products" variant="primary"></base-button> -->
+        <div class="load-more-button">
+          <base-button
+            id="load-more-btn"
+            label="Load more products"
+            variant="primary"
+          ></base-button>
+        </div>
+      </div>
+      <div class="top-result hidden gap-12 px-3 py-2 border border-medium rounded-sm">
+        <span>Top results</span>
+        <icon-button
+          icon="/src/assets/icons/navigation/chevron.svg"
+          size="1.1"
+          class="chevron-down"
+        >
+        </icon-button>
+      </div>
+    </div>
+    <!-- show more section -->
+    <show-more-card content="4"></show-more-card>
+    <!-- footer section -->
+    <div class="footer text-center bg-success">
+      <footer-a></footer-a>
+    </div>
+  </body>
+</html>
