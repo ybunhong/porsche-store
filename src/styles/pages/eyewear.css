@@ -1,0 +1,250 @@
+@import url("../index.css");
+
+/* Section Spacing */
+.section-spacing-top {
+  margin-top: clamp(48px, 3vw + 38px, 96px);
+}
+
+/* Grid Container */
+.grid-container {
+  --safe-zone: max(22px, 10.625vw - 12px);
+
+  display: grid;
+  grid-gap: clamp(16px, 1.25vw + 12px, 36px);
+  padding: 0 calc(50vw - 1280px);
+  max-width: 2560px;
+  min-width: 320px;
+  grid-template-columns:
+    [full-start]
+    minmax(0, calc(var(--safe-zone) - clamp(16px, 1.25vw + 12px, 36px)))
+    [wide-start extended-start basic-start narrow-start]
+    repeat(6, minmax(0, 1fr))
+    [narrow-end basic-end extended-end wide-end]
+    minmax(0, calc(var(--safe-zone) - clamp(16px, 1.25vw + 12px, 36px)))
+    [full-end];
+}
+
+/* Grid Columns */
+.grid-col-2-pics,
+.grid-col-1-pic,
+.grid-col {
+  grid-column: basic-start / basic-end;
+}
+
+/* First Image Container */
+.first-img-container {
+  margin-top: 50px;
+  grid-column: span 5 / full-end;
+  grid-row: 2 / 3;
+}
+
+.first-img-container-1 {
+  will-change: transform;
+  aspect-ratio: 3 / 4;
+}
+
+/* Second Image Container */
+.second-img-container {
+  grid-column: full-start / 6;
+  grid-row: 2 / 3;
+}
+
+.second-img-container-1 {
+  will-change: transform;
+  transform: translateY(5.5133%);
+  aspect-ratio: 4 / 3;
+}
+
+/* Image Container */
+.img-container {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  grid-column: full-start / full-end;
+}
+
+/* Scroller */
+.scroller-container {
+  grid-column: full-start / full-end;
+  height: 600px;
+}
+
+.scroller {
+  overflow-x: scroll;
+  cursor: grab;
+}
+
+.scroller-image {
+  aspect-ratio: 16 / 9;
+}
+
+.scroller-btn {
+  bottom: clamp(16px, 1.25vw + 12px, 36px);
+  max-width: 375px;
+  left: 0;
+  right: 0;
+}
+
+/* Icon Button + Base Button */
+.icon-btn icon-button {
+  height: 24px;
+}
+
+base-button button {
+  cursor: pointer;
+}
+
+/* Banner */
+.banner {
+  aspect-ratio: 3 / 4;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    black 0%,
+    rgb(0 0 0 / 0%) 15%,
+    rgb(0 0 0 / 0%) 85%,
+    black 100%
+  );
+  pointer-events: none;
+}
+
+.banner-text-btn {
+  gap: clamp(16px, 1.25vw + 12px, 36px);
+  grid-column: extended-start / extended-end;
+}
+
+.hero-banner {
+  height: calc(100svh - 10.125rem);
+}
+
+.hero-banner img {
+  object-fit: cover;
+}
+
+.btn-text-group {
+  grid-column: extended-start / extended-end;
+  gap: clamp(16px, 1.25vw + 12px, 36px);
+}
+
+/* Header Toolbar */
+base-header header-toolbar div div:nth-child(1),
+base-header header-toolbar div div:nth-child(3) {
+  filter: brightness(0) invert(1);
+}
+
+/* object-fit: cover; */
+.first-img-container-2,
+.second-img-container-2,
+.scroller-image img,
+.img,
+.banner img {
+  object-fit: cover;
+}
+
+/* Unordered list */
+.promo-lists li {
+  list-style: square;
+}
+
+.promo-lists li::marker {
+  font-size: 0.75rem;
+}
+
+/* Media Queries */
+@media screen and (width >= 760px) {
+  .grid-container {
+    --safe-zone: calc(5vw - 16px);
+
+    grid-template-columns:
+      [full-start]
+      minmax(0, calc(var(--safe-zone) - clamp(16px, 1.25vw + 12px, 36px)))
+      [wide-start]
+      minmax(0, 1fr)
+      [extended-start]
+      minmax(0, 1fr)
+      [basic-start]
+      repeat(2, minmax(0, 1fr))
+      [narrow-start]
+      repeat(8, minmax(0, 1fr))
+      [narrow-end]
+      repeat(2, minmax(0, 1fr))
+      [basic-end]
+      minmax(0, 1fr)
+      [extended-end]
+      minmax(0, 1fr)
+      [wide-end]
+      minmax(0, calc(var(--safe-zone) - clamp(16px, 1.25vw + 12px, 36px)))
+      [full-end];
+  }
+
+  .first-img-container {
+    margin: 0;
+    grid-column: span 7 / wide-end;
+    grid-row: 1 / 3;
+  }
+
+  .grid-col-2-pics {
+    grid-column: extended-start / span 6;
+  }
+
+  .grid-col-1-pic {
+    grid-column: 11 / span 7;
+    align-self: center;
+  }
+
+  .grid-col {
+    grid-column: 5 / span 10;
+  }
+
+  .second-img-container {
+    grid-row: 2 / 3;
+    grid-column: 5 / span 8;
+  }
+
+  .img-container {
+    grid-column: full-start / span 9;
+    border-radius: var(--radius-lg);
+  }
+
+  .scroller-container {
+    height: auto;
+  }
+
+  .scroller {
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  .scroller-image {
+    min-height: auto;
+  }
+
+  .scroller-btn {
+    width: auto;
+    left: clamp(16px, 1.25vw + 12px, 36px);
+    right: auto;
+  }
+
+  base-header header-toolbar div div:nth-child(2) {
+    filter: brightness(0) invert(1);
+  }
+}
+
+@media (width >= 1300px) {
+  .grid-col-1-pic {
+    grid-column: 11 / span 5;
+  }
+
+  .banner {
+    aspect-ratio: 16 / 9;
+  }
+
+  .banner img {
+    object-position: 34% 41%;
+    object-fit: cover;
+  }
+}
