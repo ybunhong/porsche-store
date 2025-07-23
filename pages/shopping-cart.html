@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="stylesheet" href="/src/styles/pages/shopping-cart.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart | PORSCHE</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <base-header></base-header>
+    <section class="flex flex-col gap-8 p-6 m-6 h-full">
+      <div class="flex flex-col gap-4 pt-5 pb-5">
+        <icon-button
+          class="flex justify-center"
+          icon="../src/assets/icons/indicator/mountain.svg"
+          size="3"
+        ></icon-button>
+        <p class="flex justify-center font-bold body-lg">Your shopping cart is empty</p>
+        <p class="flex justify-center body-xs">Enjoy the view and be inspired by our range.</p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="flex justify-center w-full items-center gap-3">
+          <base-button label="Continue shopping" variant="primary"></base-button>
+          <base-button
+            class="hide-mobile"
+            label="Discover our new offers"
+            variant="secondary"
+          ></base-button>
+        </div>
+        <div class="flex justify-around w-full">
+          <base-button
+            class="show-mobile"
+            label="Discover our new offers"
+            variant="secondary"
+          ></base-button>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer-a></footer-a>
+  </body>
+</html>
