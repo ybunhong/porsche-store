@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <script type="module" src="/main.js"></script>
     <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="stylesheet" href="../src/styles/pages/login-page.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in</title>
   </head>
@@ -30,7 +31,6 @@
               Porsche ID
             </h3>
           </div>
-
           <!-- body contents -->
           <div class="flex flex-col items-start justify-start gap-5 w-full">
             <h6 class="body-xs mt-6">
@@ -38,15 +38,11 @@
             </h6>
             <!-- input form -->
             <div class="flex flex-col w-full gap-3">
-              <legend-textbox placeholder="Porsche ID" width="322px" height="auto"></legend-textbox>
+              <legend-textbox placeholder="Porsche ID"></legend-textbox>
               <div class="captcha-class flex items-center justify-center">
                 <img src="../src/assets/image/captcha.svg" alt="captcha" />
               </div>
-              <legend-textbox
-                placeholder="Enter the code shown above"
-                width="322px"
-                height="auto"
-              ></legend-textbox>
+              <legend-textbox placeholder="Enter the code shown above"></legend-textbox>
             </div>
             <!-- buttons and divider -->
             <div class="flex flex-col w-full gap-5">
