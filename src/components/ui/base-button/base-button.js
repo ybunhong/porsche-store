@@ -9,6 +9,7 @@ import "./base-button.css";
  *   variant="primary"
  *   type="button"
  *   action="submit-form"
+ *   href="your-path"
  *   disabled
  * ></base-button>
  *
@@ -17,6 +18,7 @@ import "./base-button.css";
  * - variant (string): Visual style of the button (e.g. "primary", "secondary", etc.).
  * - type (string): Affects styling; supported values: "button" (default), "status".
  * - action (string): Custom identifier dispatched with "base-button" event on click.
+ * - href (string): URL to link to when button is clicked.
  * - disabled (boolean): If set, disables the button and blocks user interaction.
  *
  * Examples:
@@ -31,6 +33,9 @@ import "./base-button.css";
  *
  * <!-- With action event -->
  * <base-button label="Open Panel" action="side-panel"></base-button>
+ *
+ * <!-- With href -->
+ * <base-button label="Open Panel" href="../pages/product-list.html"></base-button>
  *
  * In JavaScript:
  * const btn = document.querySelector('base-button');
@@ -55,7 +60,7 @@ import "./base-button.css";
 
 class BaseButton extends BaseComponent {
   static get observedAttributes() {
-    return ["label", "variant", "disabled", "type", "action"];
+    return ["label", "variant", "disabled", "type", "action", "href"];
   }
 
   constructor() {
@@ -64,6 +69,7 @@ class BaseButton extends BaseComponent {
     this.variant = "primary";
     this.disabled = false;
     this.type = "button";
+    this.href = "#";
   }
 
   connectedCallback() {
@@ -101,6 +107,9 @@ class BaseButton extends BaseComponent {
         case "action":
           this.action = newValue;
           break;
+        case "href":
+          this.href = newValue;
+          break;
         case "disabled":
           this.disabled = newValue !== null && newValue !== "false";
           break;
@@ -125,8 +134,10 @@ class BaseButton extends BaseComponent {
     }
 
     this.template = `
-      <button class="${classes}">${this.label}</button>
-      
+      <a href="${this.href}">
+        <button class="${classes}">${this.label}</button>
+      </a>
+  
     `;
     this.render();
   }
