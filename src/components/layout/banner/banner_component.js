@@ -10,6 +10,13 @@
  *      paragraph="Timeless style, new collection"
  *      button-label="Shop Now"
  *      button-variant="primary"
+ *      button-href="/shop.html"
+ *      primary-button-label="Our Collection"
+ *      primary-button-variant="primary"
+ *      primary-button-href="/collection.html"
+ *      secondary-button-label="Learn More"
+ *      secondary-button-variant="secondary"
+ *      secondary-button-href="/about.html"
  *    ></banner-component>
  *
  * 2. Available `variant` options:
@@ -17,16 +24,20 @@
  *    - "secondary": image + heading
  *    - "tertiary": image + heading + button
  *    - "quaternary": image + heading + paragraph + button
- *    - most be have ("quinary": image + heading + primary & secondary buttons)
+ *    - "quinary": image + heading + primary & secondary buttons
  *
  * 3. Responsive behavior:
- *    - for img it have two reponsive img (  background-mobile)(background-desktop)
- *     so make sure you put this two img to make your banner look great
- *     .background-mobile(<760px)
- *     .background-desktop(>760px)
+ *    - Use both `background-mobile` and `background-desktop` for responsive images:
+ *      .background-mobile (< 760px)
+ *      .background-desktop (>= 760px)
+ *
  * 4. Buttons usage:
- *    - Primary button controlled by `primary-button-label` and `primary-button-variant` or `button-label` and `button-variant`.
- *    - Secondary button controlled by `secondary-button-label` and `secondary-button-variant`.
+ *    - Main button controlled by:
+ *        `button-label`, `button-variant`, `button-href`
+ *    - Primary button controlled by:
+ *        `primary-button-label`, `primary-button-variant`, `primary-button-href`
+ *    - Secondary button controlled by:
+ *        `secondary-button-label`, `secondary-button-variant`, `secondary-button-href`
  */
 
 import "./banner_component.css";
@@ -43,10 +54,13 @@ class BannerComponent extends BaseComponent {
       "paragraph",
       "button-label",
       "button-variant",
+      "button-href", // NEW
       "secondary-button-label",
       "secondary-button-variant",
+      "secondary-button-href", // NEW
       "primary-button-label",
       "primary-button-variant",
+      "primary-button-href", // NEW
     ];
   }
 
@@ -61,10 +75,13 @@ class BannerComponent extends BaseComponent {
       paragraph: "",
       buttonLabel: "",
       buttonVariant: "primary",
+      buttonHref: "", // NEW
       secondaryButtonLabel: "",
       secondaryButtonVariant: "",
+      secondaryButtonHref: "", // NEW
       primaryButtonLabel: "",
       primaryButtonVariant: "",
+      primaryButtonHref: "", // NEW
     };
   }
 
@@ -151,11 +168,20 @@ class BannerComponent extends BaseComponent {
       paragraph,
       buttonLabel,
       buttonVariant,
+      buttonHref,
       primaryButtonLabel,
       primaryButtonVariant,
+      primaryButtonHref,
       secondaryButtonLabel,
       secondaryButtonVariant,
+      secondaryButtonHref,
     } = this.props;
+
+    const renderButton = (label, variant, href) => {
+      if (!label) return "";
+      const button = `<base-button label="${label}" variant="${variant}"></base-button>`;
+      return href ? `<a href="${href}">${button}</a>` : button;
+    };
 
     this.template = `
       <div class="banner relative m-5 overflow-hidden">
@@ -180,22 +206,10 @@ class BannerComponent extends BaseComponent {
           ${logoSrc ? `<img src="${logoSrc}" alt="Logo" class="mb-5 max-w-[180px]">` : ""}
           ${heading ? `<h1>${heading}</h1>` : ""}
           ${paragraph ? `<p class="p font-bold text-p1">${paragraph}</p>` : ""}
-          ${
-            buttonLabel
-              ? `<base-button label="${buttonLabel}" variant="${buttonVariant}"></base-button>`
-              : ""
-          }
+          ${renderButton(buttonLabel, buttonVariant, buttonHref)}
           <div class="button-group flex gap-2 mt-2">
-            ${
-              primaryButtonLabel
-                ? `<base-button label="${primaryButtonLabel}" variant="${primaryButtonVariant}"></base-button>`
-                : ""
-            }
-            ${
-              secondaryButtonLabel
-                ? `<base-button label="${secondaryButtonLabel}" variant="${secondaryButtonVariant}"></base-button>`
-                : ""
-            }
+            ${renderButton(primaryButtonLabel, primaryButtonVariant, primaryButtonHref)}
+            ${renderButton(secondaryButtonLabel, secondaryButtonVariant, secondaryButtonHref)}
           </div>
         </div>
       </div>
