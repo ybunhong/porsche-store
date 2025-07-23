@@ -1,7 +1,7 @@
 @import url("../index.css");
 
 /* Section Spacing */
-.section-spacing-bottom {
+.section-spacing-top {
   margin-top: clamp(48px, 3vw + 38px, 96px);
 }
 
