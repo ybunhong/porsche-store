@@ -12,6 +12,7 @@ import "./icon-button.css";
  *   disabled
  *   action="some-panel"
  *   class="your-css-classes"
+ *   href="/your html path"
  * ></icon-button>
  *
  *
@@ -22,6 +23,7 @@ import "./icon-button.css";
  * - size (number): Scale multiplier for the icon size, defaults to 1 (optional)
  * - disabled (boolean): Disables the button and prevents interaction (optional)
  * - action (string): Custom identifier dispatched with "toggle-panel" event on click (optional)
+ * - href (string): Navigates to the provided path; renders as a link (<a>) instead of a button if set (optional)
  *
  * Examples:
  * <!-- Icon only -->
@@ -32,6 +34,9 @@ import "./icon-button.css";
  *
  * <!-- Icon + Text -->
  * <icon-button icon="/icons/heart.svg" text="Like"></icon-button>
+ *
+ * <!-- Icon + Text + Link-->
+ * <icon-button icon="/icons/heart.svg" text="Like" href="../index.html"></icon-button>
  *
  * <!-- With toggle functionality -->
  * <icon-button
@@ -72,7 +77,7 @@ import "./icon-button.css";
 
 class IconButton extends BaseComponent {
   static get observedAttributes() {
-    return ["icon", "size", "toggle-icon", "disabled", "text"];
+    return ["icon", "size", "toggle-icon", "disabled", "text", "href"];
   }
 
   constructor() {
@@ -85,6 +90,8 @@ class IconButton extends BaseComponent {
     this.hasToggleIcon = false;
     this.isToggled = false;
     this.disabled = false;
+    this.href = "";
+    this.isLink = false;
   }
 
   connectedCallback() {
@@ -159,6 +166,11 @@ class IconButton extends BaseComponent {
           this.text = newValue || "";
           break;
         }
+        case "href": {
+          this.href = newValue || "";
+          this.isLink = Boolean(newValue);
+          break;
+        }
         default: {
           console.warn(`Unhandled observed attribute: ${name}`);
           break;
@@ -192,11 +204,20 @@ class IconButton extends BaseComponent {
     const currentSize = this.size || 1;
 
     this.template = `
+      ${
+        this.isLink
+          ? `<a href="${this.href}" class="icon-button border-none bg-transparent flex items-center justify-center hover-bg-primary rounded-sm p-1"
+                style="--icon-scale: ${currentSize}; transform: scale(var(--icon-scale));"
+                ${this.disabled ? "aria-disabled='true' tabindex='-1'" : ""}>
+                ${buttonContent}
+              </a>`
+          : `
       <button class="icon-button border-none bg-transparent flex items-center justify-center  hover-bg-primary rounded-sm p-1" 
       style="--icon-scale: ${currentSize}; transform: scale(var(--icon-scale));" 
       ${this.disabled ? "disabled" : ""}>
         ${buttonContent}
-      </button>
+      </button>`
+      }
     `;
 
     this.render();
