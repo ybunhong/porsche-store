@@ -24,6 +24,25 @@
   grid-column: 2 / 12;
 }
 
+/* Full-Sized Sunglass Hero (No Scroll) */
+.sunglass-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  grid-column: full-start / full-end;
+}
+
+.sunglass-hero-image {
+  object-fit: cover;
+}
+
+.sunglass-hero-btn {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
 @media (width > 1000px) {
   .porsche-card {
     display: grid;

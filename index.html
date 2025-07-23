@@ -12,8 +12,17 @@
   <body>
     <base-header></base-header>
 
-    <section class="flex flex-col gap-6 p-5">
-      <!-- Waiting thida component -->
+    <section class="flex flex-col gap-6">
+      <banner-component
+        background-mobile="./src/assets/image/root-image1-m.avif"
+        background-desktop="./src/assets/image/root-image1.avif"
+        variant="secondary"
+        heading="An iconic product that never stand still"
+        primary-button-variant="tertiary"
+        primary-button-label="Our collection"
+        secondary-button-variant="secondary"
+        secondary-button-label="Learn more"
+      ></banner-component>
 
       <!-- Category Section 1 -->
       <section class="category-root">
@@ -35,7 +44,13 @@
           </div>
         </div>
 
-        <!-- Waiting thida component -->
+        <banner-component
+          background-mobile="./src/assets/image/root-image11-m.avif"
+          background-desktop="./src/assets/image/root-image11.avif"
+          variant="primary"
+          button-variant="tertiary"
+          button-label="Discover now"
+        ></banner-component>
       </section>
 
       <!-- Category Section 2 -->
@@ -61,10 +76,37 @@
           </div>
         </div>
 
+        <div class="section-spacing-top grid-container pt-3 pb-3">
+          <div class="sunglass-hero relative">
+            <img
+              class="sunglass-hero-image absolute w-full h-full"
+              src="./src/assets/image/root-image12.avif"
+            />
+            <div
+              class="sunglass-hero-btn text-center absolute flex pb-3 pl-3 items-end w-full h-full"
+            >
+              <div class="sunglass-icon-btn">
+                <base-button
+                  label="Discover now"
+                  variant="tertiary"
+                  href="./pages/product-list.html"
+                ></base-button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Waiting thida component -->
         <scroll-product></scroll-product>
 
-        <!-- Waiting thida component -->
+        <banner-component
+          background-mobile="./src/assets/image/root-image13-m.avif"
+          background-desktop="./src/assets/image/root-image13.avif"
+          variant="secondary"
+          heading="The journey begin with Porsche"
+          button-variant="tertiary"
+          button-label="Go to products"
+        ></banner-component>
         <scroll-product></scroll-product>
 
         <scroll-product></scroll-product>
