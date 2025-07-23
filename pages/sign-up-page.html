@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/src/styles/index.css" />
     <link rel="stylesheet" href="../src/styles/pages/login-page.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Password</title>
+    <title>Sign Up</title>
   </head>
   <body class="bg-black">
     <div class="bg-screen bg-white flex flex-col items-center justify-center">
@@ -25,23 +25,38 @@
               alt="logotext"
             />
           </div>
-          <div class="flex flex-col items-start justify-start mt-6 mb-8">
-            <h3 class="heading-sm">Enter Your Password</h3>
+          <div class="flex flex-col items-start justify-start mt-6 mb-4">
+            <h3 class="heading-sm">Create your Porsche ID</h3>
           </div>
           <!-- body contents -->
           <div class="flex flex-col items-start justify-start gap-5 w-full">
+            <h6 class="body-xs">
+              The Porsche ID is your key to exclusive Porsche services, all accessible with a single
+              account.
+            </h6>
             <!-- input form -->
             <div class="flex flex-col w-full gap-2">
-              <legend-textbox placeholder="email" value="Example07@gmail.com"></legend-textbox>
-              <legend-textbox placeholder="Password"></legend-textbox>
-              <icon-button class="signup" text="Forgot password?"></icon-button>
+              <legend-textbox placeholder="Email address"></legend-textbox>
+              <dropdown-selection class="salutation" placeholder="Salutation"></dropdown-selection>
+              <legend-textbox placeholder="First name"></legend-textbox>
+              <legend-textbox placeholder="Last name"></legend-textbox>
+              <div class="flex flex-row w-full py-1">
+                <input type="checkbox" class="checkboxlogin" />
+                <h6 class="body-xs px-1">
+                  I have read the General Terms and Conditions and I accept them.
+                </h6>
+              </div>
+              <h6 class="body-xs py-2">
+                Information on the processing of your personal data can be found in our Data Privacy
+                Statement.
+              </h6>
             </div>
-            <div class="flex flex-col w-full gap-5">
+            <div class="button-login flex flex-col gap-5 w-full">
               <base-button label="Continue" variant="primary"></base-button>
             </div>
-            <div class="flex flex-row w-full">
-              <h6 class="body-xs py-2">Don't have an account?</h6>
-              <icon-button class="signup" text="Sign up"></icon-button>
+            <div class="flex flex-row w-full px-1">
+              <h6 class="body-xs py-2">Already have a Porsche ID?</h6>
+              <icon-button class="signup" text="Log in"></icon-button>
             </div>
           </div>
         </div>

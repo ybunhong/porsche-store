@@ -28,7 +28,3 @@ utility styles
 @import url("./utils/visual/radius.css");
 @import url("./utils/visual/outline.css");
 @import url("./utils/interactive/hover.css");
-
-/* login page */
-@import url("./pages/login-page.css");
-@import url("./pages/login-password.css");
