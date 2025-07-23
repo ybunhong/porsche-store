@@ -16,6 +16,10 @@
   height: 100%;
 }
 
+.category-card-wrapper icon-button {
+  filter: brightness(0) invert(1);
+}
+
 @media (width >= 1000px) {
   .categories-grid {
     grid-template-columns: repeat(3, 1fr);
