@@ -1,0 +1,134 @@
+/* title section */
+.title {
+  max-width: 1535px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+.title h1 {
+  font-style: var(--font-subheading);
+  font-size: clamp(1.8rem, 1.32rem + 2.41vw, 4.21rem);
+}
+
+.chevron-left {
+  transform: rotate(180deg);
+}
+
+.back icon-button {
+  display: none;
+}
+
+.title .back .under-line {
+  text-decoration: underline;
+}
+
+@media (width <= 760px) {
+  .back icon-button {
+    display: block;
+  }
+
+  .under-line,
+  .line {
+    display: none;
+  }
+}
+
+/* product category section */
+.category {
+  max-width: 1535px;
+  margin: 0 auto;
+}
+
+/* filter section */
+.filter {
+  height: 58px;
+}
+
+@media (width > 1000px) {
+  .filter {
+    max-width: 1535px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+}
+
+/* product quantity section */
+.quantity {
+  max-width: 1535px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+@media (width > 1000px) {
+  .quantity .container {
+    display: none;
+  }
+}
+
+/* product display section */
+.product-display {
+  display: grid;
+  max-width: 1535px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  place-items: center;
+  padding: 0 40px;
+  align-self: center;
+  margin: 0 auto;
+}
+
+@media (width <= 1000px) {
+  .product-display {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+  }
+}
+
+@media (width <= 760px) {
+  .product-display {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+  }
+}
+
+.product-display .box {
+  max-width: 371px;
+}
+
+.product-card-content .product-card {
+  border-radius: var(--radius-xl);
+}
+
+/* load-more section */
+.load-more {
+  max-width: 1535px;
+  margin: 40px auto;
+  padding: 0 40px;
+}
+
+.chevron-down {
+  transform: rotate(90deg);
+}
+
+.load-more-button {
+  width: 189.359px;
+}
+
+.load-more-button :hover {
+  cursor: pointer;
+}
+
+@media (width > 1000px) {
+  .load-more {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-result {
+    display: block;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
