@@ -10,28 +10,6 @@ body {
   min-height: var(--size-screen-h);
 }
 
-.product-fixed {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--gap-3);
-  z-index: 999;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.product-btn {
-  display: flex;
-}
-
-.product-btn icon-button {
-  margin-right: 1rem;
-}
-
 .product-detail-image {
   width: 45%;
   line-height: 0;

@@ -189,13 +189,7 @@ class ProductDetail extends BaseComponent {
 
     this.innerHTML = `
       <section class="product-detail flex justify-between min-h-screen">
-        <div class="product-fixed sticky-top flex justify-between w-full p-3 z-999 box-border">
-          <div class="product-btn flex">
-            <icon-button text="New"></icon-button>
-            <icon-button text="Coming soon" class="mr-4"></icon-button>
-          </div>
-          <div class="product-heart"><icon-button icon="${heart}"></icon-button></div>
-        </div>
+        
         <div class="product-detail-image w-45 mr-5 line-height-0 float-left">
           <div class="product-detail-image-scroll relative overflow-hidden cursor-pointer cursor-plus">
             ${imgs}
