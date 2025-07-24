@@ -63,7 +63,7 @@ class HeaderToolbar extends BaseComponent {
     <!-- center logo section -->
       <div class="flex justify-center items-center">
         <icon-button icon="${porscheIcon}" size="2" class="porsche-icon hide-tablet hide-desktop"></icon-button>
-        <icon-button icon="${porscheText}" size="7" class="header-icon-center-tablet show-tablet show-desktop hover-none" ></icon-button>
+        <icon-button icon="${porscheText}" size="6.25" class="p-header-icon-center-tablet show-tablet show-desktop hover-none" ></icon-button>
       </div>
 
     <!-- right side logo  section -->

@@ -1,13 +1,16 @@
 .banner {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   position: relative;
-  margin: var(--margin-5, 1.25rem); /* fallback to 1.25rem */
   overflow: hidden;
 }
 
 .banner picture,
 .banner img {
-  width: var(--size-full, 100%);
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }

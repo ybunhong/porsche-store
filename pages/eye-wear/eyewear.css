@@ -125,6 +125,10 @@ base-button button {
   font-size: 0.75rem;
 }
 
+.eyewear-sections .button-secondary {
+  border: none;
+}
+
 /* Media Queries */
 @media screen and (width >= 760px) {
   .grid-container {

@@ -10,7 +10,7 @@ class HamBurgerPanel extends BaseComponent {
     this.menuHistory = []; // Track navigation history
     this.menuData = [
       {
-        label: "Sample1",
+        label: "All categories",
         href: "#",
         submenu: [
           { label: "New Arrivals", href: "#" },
@@ -20,11 +20,7 @@ class HamBurgerPanel extends BaseComponent {
         ],
       },
       {
-        label: "sample2",
-        href: "#",
-      },
-      {
-        label: "sample3",
+        label: "PORSCHE DESIGN",
         href: "#",
         submenu: [
           { label: "New Arrivals", href: "#" },
@@ -32,6 +28,19 @@ class HamBurgerPanel extends BaseComponent {
           { label: "Sale Items", href: "#" },
           { label: "Limited Edition", href: "#" },
         ],
+      },
+      {
+        label: "Watches",
+        href: "#",
+      },
+
+      {
+        label: "Vehicle Accessories",
+        href: "#",
+      },
+      {
+        label: "Eyewear",
+        href: "/pages/eye-wear/eyewear.html",
       },
     ];
   }
