@@ -74,7 +74,8 @@ class ModelSelectionPanel extends BaseComponent {
               <div class="login-img flex">
                 <img src="${carImage}" alt="Vehicles" />
               </div>
-              <base-button class="log-in" label="Login"></base-button>
+              <a href="/pages/authentication-page/login-page.html">
+              <base-button label="Login"></base-button></a>
             </div>
           `
       }
