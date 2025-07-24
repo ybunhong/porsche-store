@@ -20,3 +20,12 @@ base-header[mode="dark"] header-toolbar profile-panel .hide-mobile #close-button
   color: black;
   filter: brightness(0) invert(1);
 }
+
+.full-divider {
+  all: unset;
+  display: block;
+  width: 100vw;
+  height: 1px;
+  background-color: black;
+  margin: 0;
+}
