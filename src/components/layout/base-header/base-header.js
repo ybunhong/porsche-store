@@ -30,7 +30,6 @@ class BaseHeader extends BaseComponent {
      <header class="flex flex-col z-1000">
       <header-toolbar></header-toolbar>
       <main-navigation></main-navigation>
-      <hr class="full-divider" />
       
     </header>
     `;

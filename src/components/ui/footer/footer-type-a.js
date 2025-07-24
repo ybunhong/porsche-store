@@ -47,8 +47,8 @@ class FooterTypeA extends BaseComponent {
 
     this.template = /* html */ `
       <!--icon svg-->
-      <div class="footer p-4 flex flex-col gap-4">
-        <div class="flex flex-row flex-wrap gap-6"> 
+        <div class="footer p-4 flex flex-col gap-4" style="min-height: 60vh">
+        <div class="flex flex-row flex-wrap gap-6 justify-between"> 
           ${iconList}
         </div>
          <hr class="opacity-40 w-full">
@@ -68,7 +68,7 @@ class FooterTypeA extends BaseComponent {
          <base-accordion id="more-info" title="Simple payment" data-key="simplePayment"></base-accordion>
          <base-accordion id="more-info" title="Legal Service" data-key="legalService"></base-accordion>
          </div>
-       </div>
+        </div>
     `;
     this.render();
   }
