@@ -3,3 +3,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
+.header .hover-none button:hover {
+  background-color: transparent;
+}
