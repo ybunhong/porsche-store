@@ -68,9 +68,7 @@ class ProductCard extends BaseComponent {
       </div>
       
       <div class="flex-1 flex items-center justify-center my-4">
-          <a href="/pages/product_list.html">
-            <img src="${this.src || productCard}" class="product-card-image w-full h-full object-cover max-h-48" />
-          </a>
+        <img src="${this.src || productCard}" class="product-card-image w-full h-full object-cover max-h-48" />
       </div>
       
       <div class="text-center mt-auto">
