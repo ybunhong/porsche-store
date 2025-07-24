@@ -1,0 +1,106 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+p {
+  margin: 1rem 0 2rem 1rem;
+  font-size: medium;
+}
+
+/* ===== Wishlist Empty Section ===== */
+.wishlist-empty {
+  text-align: center;
+  padding: 0 var(--padding-4);
+  margin: 0 0 10rem;
+}
+
+/* Navigation Container */
+.wishlist-empty-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--gap-4);
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 var(--padding-4);
+  margin: var(--margin-12) auto 0 auto;
+  box-sizing: border-box;
+}
+
+/* Mobile Navigation */
+.wishlist-mobile {
+  display: flex;
+  gap: var(--gap-2);
+  font-size: var(--font-heading-xl);
+  font-weight: 400;
+}
+
+/* Arrow Icon */
+.arrow-icon {
+  width: 1rem;
+  height: 1rem;
+  transform: rotate(90deg);
+}
+
+/* Desktop Navigation */
+.wishlist-desktop {
+  display: flex;
+  gap: var(--gap-2);
+  font-size: var(--text-p2);
+  font-weight: 400;
+  margin-left: var(--margin-8);
+  max-width: 1200px;
+}
+
+.wishlist-desktop a {
+  color: var(--color-link);
+}
+
+/* ===== Heart Icon ===== */
+.heart-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto var(--gap-4);
+}
+
+/* ===== Continue Button ===== */
+.continue-btn {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  font-size: var(--text-p2);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-bottom: 3rem;
+}
+
+/* ===== Responsive Rules ===== */
+@media (width <= 760px) {
+  .wishlist-desktop {
+    display: none;
+  }
+
+  .wishlist-mobile {
+    display: flex;
+  }
+}
+
+@media (width >= 761px) {
+  .wishlist-mobile {
+    display: none;
+  }
+
+  .wishlist-desktop {
+    display: flex;
+  }
+}
