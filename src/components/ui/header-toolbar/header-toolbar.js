@@ -53,7 +53,7 @@ class HeaderToolbar extends BaseComponent {
     <div class="header py-4 px-6  border-thin gap-2 w-full">
 
     <!-- left logo section -->
-      <div class="flex justify-start items-center">
+      <div class="header-icon-left flex justify-start items-center">
         <icon-button icon="${menu}" action="hamburger" class="hide-tablet hide-desktop"></icon-button>
         <icon-button icon="${menu}" action="hamburger" text="menu" class="hide-mobile"></icon-button>
         <icon-button icon="${search}" class="hide-tablet hide-desktop " action="search"></icon-button>
@@ -63,11 +63,11 @@ class HeaderToolbar extends BaseComponent {
     <!-- center logo section -->
       <div class="flex justify-center items-center">
         <icon-button icon="${porscheIcon}" size="2" class="porsche-icon hide-tablet hide-desktop"></icon-button>
-        <icon-button icon="${porscheText}" size="7" class="show-tablet show-desktop hover-none" ></icon-button>
+        <icon-button icon="${porscheText}" size="7" class="header-icon-center-tablet show-tablet show-desktop hover-none" ></icon-button>
       </div>
 
     <!-- right side logo  section -->
-      <div class="flex justify-end items-center gap-3">
+      <div class="header-icon-right flex justify-end items-center gap-3">
           <icon-button icon="${search}" class="show-tablet show-desktop" action="search"></icon-button>
           <icon-button icon="${heart}" class="show-tablet show-desktop"></icon-button>
           <icon-button icon="${cartEmpty}" class=""></icon-button>
