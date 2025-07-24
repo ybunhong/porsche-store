@@ -12,6 +12,10 @@
   padding-top: 20px;
 }
 
+.hamburger-panel-content icon-button {
+  transform: rotate(90deg);
+}
+
 @media (width >= 767px) {
   .hamburger-panel {
     backdrop-filter: blur(30px);
@@ -21,5 +25,13 @@
   .hamburger-panel-content {
     width: 40%;
     padding-top: 80px;
+  }
+
+  .hamburger-panel-content icon-button img {
+    transform: rotate(90deg);
+  }
+
+  .hamburger-panel-content icon-button {
+    transform: rotate(0deg);
   }
 }
