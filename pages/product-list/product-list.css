@@ -35,8 +35,17 @@
 
 /* product category section */
 .category {
+  width: 100%;
   max-width: 1535px;
   margin: 0 auto;
+}
+
+.category horizontal-scroller .delivery-scroller {
+  width: auto;
+}
+
+.bg-transparent {
+  justify-content: center;
 }
 
 /* filter section */

@@ -74,7 +74,7 @@ class ProductCard extends BaseComponent {
       <div class="text-center mt-auto">
           <toggle-color></toggle-color>
           <p class="body-xs font-medium">${this.title}</p>
-          <p class="body-xs text-gray-600">${this.description}</p>
+          <p class="text body-xs text-gray-600">${this.description}</p>
           ${
             this.discount
               ? `<div class="flex gap-2 items-center justify-center mt-1">
