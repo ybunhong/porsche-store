@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product details</title>
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="icon" type="image/svg" href="../../src/assets/brand-logo/porsche-icon.svg" />
+  </head>
+  <body>
+    <base-header></base-header>
+    <product-detail data-product-id="1"></product-detail>
+    <pop-up data-product-id="1"></pop-up>
+    <section class="section-spacing appear">
+      <base-accordion title="Description" data-key="productDetails"></base-accordion>
+      <base-accordion title="Dimensions and weight" data-key="productDetails"></base-accordion>
+      <base-accordion
+        title="Mateial and care instructions"
+        data-key="productDetails"
+      ></base-accordion>
+      <base-accordion title="General characteristics" data-key="productDetails"></base-accordion>
+    </section>
+    <info-warning></info-warning>
+    <section class="section-spacing">
+      <scroll-product
+        data="
+        <product-card title='Porsche Jacket' description='Performance wear with iconic design.' price='4500' discount='200' section='Motorsport' src='../../src/assets/image/shirt/2.avif'></product-card>
+        <product-card title='Urban Backpack' description='Sleek and functional for every day.' price='3100' section='Lifestyle' src='../../src/assets/image/watch/1.avif'></product-card>
+        <product-card title='Vintage Cap' description='Classic look with modern edge.' price='1900' section='Heritage' src='../../src/assets/image/shirt/2.avif'></product-card>
+        <product-card title='Driving Gloves' description='Grip and elegance on the road.' price='2700' discount='180' section='Accessories' src='../../src/assets/image/cap/1.avif'></product-card>
+        <product-card title='Carrera Sunglasses' description='Luxury eyewear, timeless silhouette.' price='5200' section='Eyewear' src='../../src/assets/image/shoes/2.avif'></product-card>
+        <product-card title='Tech Tee' description='Breathable and stylish.' price='2200' discount='120' section='Activewear' src='../../src/assets/image/coolbag/2.avif'></product-card>
+        <product-card title='Porsche Chronograph' description='Precision and performance in one.' price='8700' section='Watches' src='../../src/assets/image/luggage/7.avif'></product-card>
+        <product-card title='Padded Vest' description='Layered warmth with sleek design.' price='3500' discount='160' section='Outerwear' src='../../src/assets/image/car/2.avif'></product-card>
+        <product-card title='Sport Duffel' description='Spacious, stylish, and durable.' price='3900' section='Bags' src='../../src/assets/image/bag/3.avif'></product-card>
+        <product-card title='Motorsport Hoodie' description='Casual comfort with racing spirit.' price='4300' discount='150' section='Motorsport' src='../../src/assets/image/cup/2.avif'></product-card>
+        "
+      ></scroll-product>
+    </section>
+    <footer-a class="disappear"></footer-a>
+  </body>
+</html>
