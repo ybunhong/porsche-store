@@ -107,7 +107,7 @@ class HamBurgerPanel extends BaseComponent {
       .join("");
 
     this.template = /* html */ `
-  <aside class="hamburger-panel ${this.isOpen ? "open" : ""} absolute h-full z-100 left-0 top-0 flex">
+  <aside class="hamburger-panel ${this.isOpen ? "open" : ""} absolute h-full z-1000 left-0 top-0 flex">
 
     <div class="hamburger-panel-content bg-white  h-full w-full">
 
