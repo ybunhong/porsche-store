@@ -1,4 +1,4 @@
-import img6 from "../assets/image/6.avif";
+import img6 from "../assets/image/bag/6.avif";
 
 export const shoppingProductData = [
   {
