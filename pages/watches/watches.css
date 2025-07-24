@@ -25,10 +25,6 @@ body {
   padding: 0 var(--padding-6);
 }
 
-base-header.header-1 {
-  color: white;
-}
-
 .banner-full {
   width: 100vw; /* Full viewport width */
   margin-left: calc(-50vw + 50%); /* Cancel out any container padding/margins */
