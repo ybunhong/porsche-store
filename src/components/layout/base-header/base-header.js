@@ -29,7 +29,9 @@ class BaseHeader extends BaseComponent {
     this.template = /* html */ `
      <header class="flex flex-col z-1000">
       <header-toolbar></header-toolbar>
-      <main-navigation><main-navigation>
+      <main-navigation></main-navigation>
+      <hr class="full-divider" />
+      
     </header>
     `;
     this.render();
