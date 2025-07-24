@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body-md);
+  font-size: var(--font-size-p4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--color-white);
+}
+
+body {
+  background-color: var(--color-black);
+  line-height: var(--line-height-readable);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--padding-6);
+}
+
+base-header.header-1 {
+  color: white;
+}
+
+.banner-full {
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Cancel out any container padding/margins */
+}
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-12);
+  align-items: center;
+  padding: var(--padding-3) 0;
+}
+
+.philosophy-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.grid-3col {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gap-10);
+  align-items: center;
+  padding: var(--padding-3) 0;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 550px;
+  padding: var(--padding-3) 0;
+}
+
+.grid-3col category-card,
+.full-width category-card {
+  color: var(--color-white);
+}
+
+.grid-3col icon-button,
+.full-width icon-button {
+  filter: brightness(0) invert(1);
+}
+
+base-button.button {
+  width: 200px;
+  display: block;
+}
+
+.philosophy-image-collage {
+  position: relative;
+  width: 80%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1; /* Keeps square ratio */
+  margin: 0 auto;
+}
+
+.philosophy-image-collage img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+/* Top image sits normally */
+.philosophy-image-collage .img-top {
+  top: 0;
+  right: 30px;
+  margin: 0;
+  z-index: 1;
+}
+
+.philosophy-image-collage .img-bottom {
+  top: 70px;
+  left: 0;
+  right: 0;
+}
+
+@media (width <= 768px) {
+  .grid-2col.reverse .philosophy-image {
+    order: 1 !important;
+  }
+
+  .grid-2col.reverse .philosophy-content {
+    order: 2 !important;
+  }
+
+  .grid-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2col:not(.reverse) .philosophy-image,
+  .grid-2col:not(.reverse) .philosophy-content {
+    order: initial;
+  }
+
+  .philosophy-image-collage .img-top {
+    top: 0;
+    right: 0;
+    margin: 0;
+    z-index: 1;
+  }
+
+  .philosophy-image-collage .img-bottom {
+    top: 100px;
+    left: 40px;
+    right: 0;
+  }
+}
+
+@media (width <= 999px) {
+  .grid-3col {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-10);
+    align-items: center;
+  }
+}
