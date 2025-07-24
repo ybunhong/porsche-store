@@ -7,7 +7,16 @@ base-header[mode="dark"] header-toolbar {
   background-color: black;
 }
 
-base-header[mode="dark"] header-toolbar icon-button:not(.porsche-icon),
-base-header[mode="dark"] main-navigation icon-button:not(.porsche-icon) {
+base-header[mode="dark"] header-toolbar .header-icon-left,
+base-header[mode="dark"] header-toolbar .header-icon-right,
+base-header[mode="dark"] header-toolbar .header-icon-center-tablet {
+  color: white;
+  filter: brightness(0) invert(1);
+}
+
+base-header[mode="dark"] header-toolbar hamburger-panel .hide-mobile #close-button,
+base-header[mode="dark"] header-toolbar search-panel .hide-mobile #close-button,
+base-header[mode="dark"] header-toolbar profile-panel .hide-mobile #close-button {
+  color: black;
   filter: brightness(0) invert(1);
 }
