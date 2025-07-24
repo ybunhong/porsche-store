@@ -46,7 +46,7 @@
 
 @media (width >= 501px) and (width <= 1050px) {
   .bg-screen {
-    background-image: url("../../assets/image/bgAuthPage.webp");
+    background-image: url("../../src/assets/image/bgAuthPage.webp");
     background-size: cover;
     background-position: center;
     min-height: 90vh;

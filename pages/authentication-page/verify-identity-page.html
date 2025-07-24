@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <script type="module" src="/main.js"></script>
     <link rel="stylesheet" href="/src/styles/index.css" />
-    <link rel="stylesheet" href="../src/styles/pages/login-page.css" />
+    <link rel="stylesheet" href="../authentication-page/login-page.css" />
+    <link rel="icon" type="image/svg" href="../../src/assets/brand-logo/porsche-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Verify Identity</title>
   </head>
@@ -12,16 +13,16 @@
     <div class="bg-screen bg-white flex flex-col items-center justify-center">
       <!-- Left image shown only on large screens -->
       <div class="left-side-image">
-        <img src="../src/assets/image/bgAuthPage.webp" alt="Porsche promotional background" />
+        <img src="../../src/assets/image/bgAuthPage.webp" alt="Porsche promotional background" />
       </div>
       <!-- login card  -->
-      <form class="login-card bg-white flex flex-row items-center justify-center px-5 py-5">
+      <div class="login-card bg-white flex flex-row items-center justify-center px-5 py-5">
         <div class="login-card-contents bg-white w-full">
           <!-- header contents -->
           <div class="flex flex-col items-center justifycenter">
             <img
               class="brand-logo"
-              src="../src/assets/brand-logo/porsche-icon-text.svg"
+              src="../../src/assets/brand-logo/porsche-icon-text.svg"
               alt="logotext"
             />
           </div>
@@ -38,12 +39,15 @@
               </h6>
             </div>
             <!-- input form -->
-            <div class="flex flex-col w-full gap-2">
-              <legend-textbox placeholder="Porsche ID" value="Example07@gmail.com"></legend-textbox>
-              <legend-textbox placeholder="Enter the code"></legend-textbox>
+            <div class="otp-input flex flex-col w-full gap-2">
+              <legend-textbox
+                placeholder="Porsche ID*"
+                value="Example07@gmail.com"
+              ></legend-textbox>
+              <legend-textbox placeholder="Enter the code*"></legend-textbox>
             </div>
             <div class="flex flex-col w-full gap-5">
-              <base-button label="Continue" variant="primary"></base-button>
+              <base-button label="Continue" variant="primary" href="../../index.html"></base-button>
             </div>
             <div class="flex items-center justify-center w-full px-1">
               <h6 class="body-xs">Didn't receive an email?</h6>
@@ -51,7 +55,7 @@
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
     <!-- footer -->
     <footer-b></footer-b>
