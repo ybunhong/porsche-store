@@ -8,3 +8,4 @@ import "./product-card/product-card";
 import "./banner/banner_component";
 import "./scroll-product/scroll-product";
 import "./show-more-card/show-more-card";
+import "./product-details/product-details";

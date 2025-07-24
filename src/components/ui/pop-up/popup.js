@@ -14,8 +14,8 @@ class PopUp extends BaseComponent {
     this.variant = "primary";
     this.disabled = false;
 
-    const [, product] = sampleProductDataList;
-    this.product = product; // ✅ load product here
+    const id = Number(this.getAttribute("data-product-id")) || 0;
+    this.product = sampleProductDataList.find(p => p.id === id);
   }
 
   connectedCallback() {

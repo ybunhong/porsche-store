@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product details</title>
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="icon" type="image/svg" href="../../src/assets/brand-logo/porsche-icon.svg" />
+  </head>
+  <body>
+    <base-header></base-header>
+    <product-detail data-product-id="7"></product-detail>
+    <pop-up data-product-id="7"></pop-up>
+    <section class="section-spacing appear">
+      <base-accordion title="Description" data-key="productDetails"></base-accordion>
+      <base-accordion title="Dimensions and weight" data-key="productDetails"></base-accordion>
+      <base-accordion
+        title="Mateial and care instructions"
+        data-key="productDetails"
+      ></base-accordion>
+      <base-accordion title="General characteristics" data-key="productDetails"></base-accordion>
+    </section>
+    <info-warning></info-warning>
+    <section class="section-spacing">
+      <scroll-product
+        data="
+          <a href='../product-details/product-detail1.html'>
+            <product-card title='Heritage Canvas Bag' description='Spacious canvas bag with vintage Porsche design.' price='£90.00' discount='£70.00' section='Bag' src='../../src/assets/image/bag/1.avif'></product-card>
+          </a>
+          <a href='../product-details/product-detail2.html'>
+            <product-card title='Motorsport Baseball Cap' description='Inspired by Porsche's timeless design legacy, the Heritage Canvas Bag combines functionality with sophisticated style.' price='£35.00' section='Cap' src='../../src/assets/image/cap/1.avif'></product-card>
+          </a>
+          <a href='../product-details/product-detail3.html'>
+            <product-card title='1:43 Porsche 911 Carrera' description='Ideal for collectors or as a gift for Porsche lovers, this model brings the thrill.' price='£55.00' discount='£45.00' section='Car Model' src='../../src/assets/image/car/1.avif'></product-card>
+          </a>
+          <a href='../product-details/product-detail4.html'>
+            <product-card title='Thermo Cooler' description='This insulated cool bag features advanced thermal technology to keep your food and drinks fresh for hours.' price='£60.00' section='Cool Bag' src='../../src/assets/image/coolbag/1.avif'></product-card>
+          </a>
+          <a href='../product-details/product-detail5.html'>
+            <product-card title='Porsche Espresso Cup' description='while the compact size is perfect for enjoying a rich espresso.' price='£22.00' discount='£15.00' section='Cup' src='../../src/assets/image/cup/1.avif'></product-card>
+          </a>
+          <a href='../product-details/product-detail6.html'>
+            <product-card title='Heritage Long Sleeve Tee' description='Soft long sleeve cotton shirt with Porsche heritage graphics. Made from premium, soft cotton.' price='£50.00' section='Long Shirt' src='../../src/assets/image/longshirt/1.avif'></product-card>
+          </a>
+          <a href='../product-details/product-detail7.html'>
+            <product-card title='Hardcase Travel Luggage' description='Hardcase Travel Luggage embodies Porsche's commitment to innovation and style.' price='£350.00' discount='£299.00' section='Luggage' src='../../src/assets/image/luggage/7.avif'></product-card>
+          </a>
+          <a href='../product-details/product-detail8.html'>
+            <product-card title='Porsche Polo Shirt' description='Elegant polo shirt with Porsche branding. blending sporty elegance with everyday versatility.' price='£55.00' section='Shirt' src='../../src/assets/image/shirt/1.avif'></product-card>
+          </a>
+          <a href='../product-details/product-detail9.html'>
+            <product-card title='Urban Driving Sneaker' description=' with a cushioned sole for superior comfort during long drives or casual outings.' price='£150.00' discount='£129.00' section='Shoe' src='../../src/assets/image/shoes/1.avif'></product-card>
+          </a>
+          <a href='../product-details/product-detail10.html'>
+            <product-card title='Chronograph Titanium Watch' description='Premium Porsche chronograph with titanium case and leather strap. reflecting Porsche's commitment to engineering excellence.' price='£650.00' section='Watch' src='../../src/assets/image/watch/1.avif'></product-card>
+          </a>
+        "
+      ></scroll-product>
+    </section>
+    <footer-a class="disappear"></footer-a>
+  </body>
+</html>
