@@ -107,12 +107,6 @@ base-button button {
   gap: clamp(16px, 1.25vw + 12px, 36px);
 }
 
-/* Header Toolbar */
-base-header header-toolbar div div:nth-child(1),
-base-header header-toolbar div div:nth-child(3) {
-  filter: brightness(0) invert(1);
-}
-
 /* object-fit: cover; */
 .first-img-container-2,
 .second-img-container-2,
@@ -204,10 +198,6 @@ base-header header-toolbar div div:nth-child(3) {
     width: auto;
     left: clamp(16px, 1.25vw + 12px, 36px);
     right: auto;
-  }
-
-  base-header header-toolbar div div:nth-child(2) {
-    filter: brightness(0) invert(1);
   }
 }
 
