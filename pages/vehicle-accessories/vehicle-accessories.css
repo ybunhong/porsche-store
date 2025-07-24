@@ -33,6 +33,17 @@
   }
 }
 
+/* product category section */
+.vehicle-accessories-scroller horizontal-scroller .delivery-scroller {
+  width: auto;
+}
+
+.vehicle-accessories-scroller {
+  width: 100%;
+  max-width: 1535px;
+  margin: 0 auto;
+}
+
 /* filter section */
 .filter {
   height: 58px;
