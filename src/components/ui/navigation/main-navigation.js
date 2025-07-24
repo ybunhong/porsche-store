@@ -26,14 +26,11 @@ class MainNavigation extends BaseComponent {
 
   updateTemplate() {
     const navItems = [
-      { href: "#", label: "All categories  |" },
-      { href: "#", label: "PORSCHE DESIGN" },
-      { href: "#", label: "Watches" },
-      { href: "#", label: "Bag & Luggage" },
-      { href: "#", label: "Example" },
-      { href: "#", label: "Heritage" },
-      { href: "#", label: "Vehicle Accessories" },
-      { href: "#", label: "Eyewear" },
+      { href: "/pages/all-category/all-category.html", label: "All categories  |" },
+      { href: "/pages/porsche-design/porsche-design.html", label: "PORSCHE DESIGN" },
+      { href: "/pages/watches/watches.html", label: "Watches" },
+      { href: "/pages/vehicle-accessories/vehicle-accessories.html", label: "Vehicle Accessories" },
+      { href: "/pages/eye-wear/eyewear.html", label: "Eyewear" },
     ];
 
     const navList = navItems

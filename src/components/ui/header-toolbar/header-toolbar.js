@@ -69,8 +69,8 @@ class HeaderToolbar extends BaseComponent {
     <!-- right side logo  section -->
       <div class="header-icon-right flex justify-end items-center gap-3">
           <icon-button icon="${search}" class="show-tablet show-desktop" action="search"></icon-button>
-          <icon-button icon="${heart}" class="show-tablet show-desktop"></icon-button>
-          <icon-button icon="${cartEmpty}" class=""></icon-button>
+          <icon-button icon="${heart}" href="/pages/wishlist/wishlist.html" class="show-tablet show-desktop"></icon-button>
+          <icon-button icon="${cartEmpty}" href="/pages/shopping-cart/shopping-cart.html" class=""></icon-button>
           <icon-button icon="${profile}" action="profile" class="" ></icon-button>
       </div>
 
