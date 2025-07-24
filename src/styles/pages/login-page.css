@@ -99,3 +99,22 @@
   width: 13px;
   height: 13px;
 }
+
+/* opt code page  */
+
+.otp-input legend-textbox .textbox-fieldset .textbox-input {
+  font-size: var(--font-size-p2);
+}
+
+.otp-input legend-textbox .textbox-fieldset {
+  padding: 12px 24px;
+  margin: 4px 0 0;
+}
+
+.button-login base-button button {
+  cursor: pointer;
+}
+
+.button-login icon-button {
+  cursor: auto;
+}
