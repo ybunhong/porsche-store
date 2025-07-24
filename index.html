@@ -23,7 +23,7 @@
         primary-button-variant="tertiary"
         primary-button-label="Our collection"
         primary-button-href="./pages/product-list/product-list.html"
-        secondary-button-variant="secondary"
+        secondary-button-variant="ghost"
         secondary-button-label="Learn more"
         secondary-button-href="./pages/product-list/product-list.html"
       ></banner-component>
@@ -64,30 +64,24 @@
         ></banner-component>
       </section>
 
-      <!-- Category Section 2 -->
-      <section class="category-root">
+      <!-- Category Sections 2 -->
+      <section class="category-root2">
         <div class="porsche-card w-full layout-grid">
-          <div class="porsche-box1">
+          <a href="./pages/watches/watches.html" class="porsche-box1">
             <category-card
-              title="Vehicle Accessories"
+              title="Watches"
               image="/src/assets/image/root-image2.avif"
-              href="./pages/product-list/product-list.html"
             ></category-card>
-          </div>
-          <div class="porsche-box2">
+          </a>
+          <a href="./pages/product-list/product-list.html" class="porsche-box2">
+            <category-card title="ebike" image="/src/assets/image/root-image3.avif"></category-card>
+          </a>
+          <a href="./pages/eye-wear/eyewear.html" class="porsche-box3">
             <category-card
-              title="Clothing"
-              image="/src/assets/image/root-image3.avif"
-              href="./pages/product-list/product-list.html"
-            ></category-card>
-          </div>
-          <div class="porsche-box3">
-            <category-card
-              title="Home & Lifestyle"
+              title="Eyewear"
               image="/src/assets/image/root-image4.avif"
-              href="./pages/product-list/product-list.html"
             ></category-card>
-          </div>
+          </a>
         </div>
 
         <!-- Sunglasses Hero Section -->
@@ -104,7 +98,7 @@
                 <base-button
                   label="Discover now"
                   variant="tertiary"
-                  href="./pages/product-list/product-list.html"
+                  href="./pages/porsche-design/porsche-design.html"
                 ></base-button>
               </div>
             </div>
@@ -115,16 +109,37 @@
         <div class="scroll-wrapper px-4 py-6">
           <scroll-product
             data="
-              <product-card title='Porsche Jacket' description='Performance wear with iconic design.' price='4500' discount='200' section='Motorsport' src='./src/assets/card/shirt-5.avif'></product-card>
-              <product-card title='Urban Backpack' description='Sleek and functional for every day.' price='3100' section='Lifestyle' src='./src/assets/card/shirt-9.avif'></product-card>
-              <product-card title='Vintage Cap' description='Classic look with modern edge.' price='1900' section='Heritage' src='./src/assets/card/shirt-4.avif'></product-card>
-              <product-card title='Driving Gloves' description='Grip and elegance on the road.' price='2700' discount='180' section='Accessories' src='./src/assets/card/shirt-6.avif'></product-card>
-              <product-card title='Carrera Sunglasses' description='Luxury eyewear, timeless silhouette.' price='5200' section='Eyewear' src='./src/assets/card/shirt-10.avif'></product-card>
-              <product-card title='Tech Tee' description='Breathable and stylish.' price='2200' discount='120' section='Activewear' src='./src/assets/card/shirt-3.avif'></product-card>
-              <product-card title='Porsche Chronograph' description='Precision and performance in one.' price='8700' section='Watches' src='./src/assets/card/white-shirt.avif'></product-card>
-              <product-card title='Padded Vest' description='Layered warmth with sleek design.' price='3500' discount='160' section='Outerwear' src='./src/assets/card/shirt-9.avif'></product-card>
-              <product-card title='Sport Duffel' description='Spacious, stylish, and durable.' price='3900' section='Bags' src='./src/assets/card/green-shirt.avif'></product-card>
-            "
+  <a href='./pages/product-detail7.html'>
+    <product-card title='Hardcase Travel Luggage' description='Hardcase Travel Luggage embodies Porsche's commitment to innovation and style.' price='£350.00' discount='£299.00' section='Luggage' src='./src/assets/image/luggage/7.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail9.html'>
+    <product-card title='Urban Driving Sneaker' description=' with a cushioned sole for superior comfort during long drives or casual outings.' price='£150.00' discount='£129.00' section='Shoe' src='./src/assets/image/shoes/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail6.html'>
+    <product-card title='Heritage Long Sleeve Tee' description='Soft long sleeve cotton shirt with Porsche heritage graphics. Made from premium, soft cotton.' price='£50.00' section='Long Shirt' src='./src/assets/image/longshirt/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail3.html'>
+    <product-card title='1:43 Porsche 911 Carrera' description='Ideal for collectors or as a gift for Porsche lovers, this model brings the thrill.' price='£55.00' discount='£45.00' section='Car Model' src='./src/assets/image/car/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail5.html'>
+    <product-card title='Porsche Espresso Cup' description='while the compact size is perfect for enjoying a rich espresso.' price='£22.00' discount='£15.00' section='Cup' src='./src/assets/image/cup/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail4.html'>
+    <product-card title='Thermo Cooler' description='This insulated cool bag features advanced thermal technology to keep your food and drinks fresh for hours.' price='£60.00' section='Cool Bag' src='./src/assets/image/coolbag/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail8.html'>
+    <product-card title='Porsche Polo Shirt' description='Elegant polo shirt with Porsche branding. blending sporty elegance with everyday versatility.' price='£55.00' section='Shirt' src='./src/assets/image/shirt/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail1.html'>
+    <product-card title='Heritage Canvas Bag' description='Spacious canvas bag with vintage Porsche design.' price='£90.00' discount='£70.00' section='Bag' src='./src/assets/image/bag/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail2.html'>
+    <product-card title='Motorsport Baseball Cap' description='Inspired by Porsche's timeless design legacy, the Heritage Canvas Bag combines functionality with sophisticated style.' price='£35.00' section='Cap' src='./src/assets/image/cap/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail10.html'>
+    <product-card title='Chronograph Titanium Watch' description='Premium Porsche chronograph with titanium case and leather strap. reflecting Porsche's commitment to engineering excellence.' price='£650.00' section='Watch' src='./src/assets/image/watch/1.avif'></product-card>
+  </a>
+"
           ></scroll-product>
         </div>
 
@@ -143,16 +158,37 @@
         <div class="scroll-wrapper px-4 py-6">
           <scroll-product
             data="
-              <product-card title='Urban Backpack' description='Luxury gear for bold lifestyles.' price='3600' section='Lifestyle' src='./src/assets/card/shirt-4.avif'></product-card>
-              <product-card title='Driving Gloves' description='Grip and elegance on the road.' price='2900' discount='120' section='Accessories' src='./src/assets/card/shirt-6.avif'></product-card>
-              <product-card title='Sport Duffel' description='Sleek, durable, and travel-ready.' price='4200' section='Bags' src='./src/assets/card/shirt-8.avif'></product-card>
-              <product-card title='Porsche Chronograph' description='Engineered for precision and elegance.' price='8900' discount='300' section='Watches' src='./src/assets/card/shirt-9.avif'></product-card>
-              <product-card title='Tech Tee' description='Lightweight comfort for everyday use.' price='2400' section='Activewear' src='./src/assets/card/shirt-10.avif'></product-card>
-              <product-card title='Vintage Cap' description='Timeless Porsche branding.' price='1950' discount='100' section='Heritage' src='./src/assets/card/shirt-7.avif'></product-card>
-              <product-card title='Porsche Jacket' description='Performance wear with iconic design.' price='4700' section='Motorsport' src='./src/assets/card/shirt-3.avif'></product-card>
-              <product-card title='Padded Vest' description='Sleek insulation for cold days.' price='3500' discount='180' section='Outerwear' src='./src/assets/card/shirt-5.avif'></product-card>
-              <product-card title='Carrera Sunglasses' description='Stylish protection for bright drives.' price='5100' section='Eyewear' src='./src/assets/card/white-shirt.avif'></product-card>
-            "
+  <a href='./pages/product-detail6.html'>
+    <product-card title='Heritage Long Sleeve Tee' description='Soft long sleeve cotton shirt with Porsche heritage graphics. Made from premium, soft cotton.' price='£50.00' section='Long Shirt' src='./src/assets/image/longshirt/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail10.html'>
+    <product-card title='Chronograph Titanium Watch' description='Premium Porsche chronograph with titanium case and leather strap. reflecting Porsche's commitment to engineering excellence.' price='£650.00' section='Watch' src='./src/assets/image/watch/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail3.html'>
+    <product-card title='1:43 Porsche 911 Carrera' description='Ideal for collectors or as a gift for Porsche lovers, this model brings the thrill.' price='£55.00' discount='£45.00' section='Car Model' src='./src/assets/image/car/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail1.html'>
+    <product-card title='Heritage Canvas Bag' description='Spacious canvas bag with vintage Porsche design.' price='£90.00' discount='£70.00' section='Bag' src='./src/assets/image/bag/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail4.html'>
+    <product-card title='Thermo Cooler' description='This insulated cool bag features advanced thermal technology to keep your food and drinks fresh for hours.' price='£60.00' section='Cool Bag' src='./src/assets/image/coolbag/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail8.html'>
+    <product-card title='Porsche Polo Shirt' description='Elegant polo shirt with Porsche branding. blending sporty elegance with everyday versatility.' price='£55.00' section='Shirt' src='./src/assets/image/shirt/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail9.html'>
+    <product-card title='Urban Driving Sneaker' description=' with a cushioned sole for superior comfort during long drives or casual outings.' price='£150.00' discount='£129.00' section='Shoe' src='./src/assets/image/shoes/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail7.html'>
+    <product-card title='Hardcase Travel Luggage' description='Hardcase Travel Luggage embodies Porsche's commitment to innovation and style.' price='£350.00' discount='£299.00' section='Luggage' src='./src/assets/image/luggage/7.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail2.html'>
+    <product-card title='Motorsport Baseball Cap' description='Inspired by Porsche's timeless design legacy, the Heritage Canvas Bag combines functionality with sophisticated style.' price='£35.00' section='Cap' src='./src/assets/image/cap/1.avif'></product-card>
+  </a>
+  <a href='./pages/product-detail5.html'>
+    <product-card title='Porsche Espresso Cup' description='while the compact size is perfect for enjoying a rich espresso.' price='£22.00' discount='£15.00' section='Cup' src='./src/assets/image/cup/1.avif'></product-card>
+  </a>
+"
           ></scroll-product>
         </div>
       </section>
@@ -160,20 +196,21 @@
       <!-- Final Categories -->
       <section class="category-root2">
         <div class="porsche-card w-full layout-grid">
-          <div class="porsche-box1">
-            <category-card
-              title="Vehicle Accessories"
-              image="/src/assets/image/root-image6.avif"
-              href="#"
-            ></category-card>
-          </div>
-          <div class="porsche-box2">
-            <category-card
-              title="Clothing"
-              image="/src/assets/image/root-image8.avif"
-              href="./pages/product-list/product-list.html"
-            ></category-card>
-          </div>
+          <a href="./pages/product-list/product-list.html" class="porsche-box1">
+            <a href="./pages/product-list/product-list.html" class="porsche-box1">
+              <category-card
+                title="Vehicle Accessories"
+                image="/src/assets/image/root-image6.avif"
+                href="#"
+              ></category-card>
+            </a>
+            <a href="./pages/product-list/product-list.html" class="porsche-box2">
+              <category-card
+                title="Clothing"
+                image="/src/assets/image/root-image8.avif"
+              ></category-card>
+            </a>
+          </a>
         </div>
       </section>
 
