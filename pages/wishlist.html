@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist | PORSCHE SHOP</title>
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <link rel="stylesheet" href="../src/styles/pages/wishlist.css" />
+    <link rel="icon" type="image/svg" href="../src/assets/brand-logo/porsche-icon.svg" />
+  </head>
+  <body>
+    <base-header></base-header>
+
+    <div class="wishlist-empty">
+      <!-- Navigation (Mobile and Desktop) -->
+      <div class="wishlist-empty-icon">
+        <!-- Mobile: Back arrow + Porsche Shop -->
+        <a href="../index.html" class="wishlist-mobile flex items-center gap-1 md:hidden">
+          <img src="../src/assets/icons/navigation/arrow.svg" alt="Back Arrow" class="arrow-icon" />
+          Porsche Shop
+        </a>
+
+        <!-- Desktop: Porsche | Wishlist -->
+        <p class="wishlist-desktop md:flex gap-1 text-sm font-medium">
+          <a href="../index.html"><u>Porsche Shop</u></a
+          >| Wishlist
+        </p>
+      </div>
+
+      <!-- Wishlist Content -->
+      <img src="../src/assets/icons/indicator/heart.svg" alt="Heart Icon" class="heart-icon" />
+      <h1>Your Wishlist is empty</h1>
+      <p>
+        It seems that you have not saved any product yet.<br />
+        You can press the heart to add your favorite product to this list.
+      </p>
+      <a href="../index.html">
+        <button id="continue-btn" class="continue-btn text-white text-p2 rounded-md">
+          Continue Shopping
+        </button></a
+      >
+    </div>
+
+    <footer-a></footer-a>
+  </body>
+</html>
