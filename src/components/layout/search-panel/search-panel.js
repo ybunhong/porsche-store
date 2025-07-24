@@ -62,7 +62,7 @@ class SearchPanel extends BaseComponent {
 
   renderTemplate() {
     const historyItem = this.historyData
-      .map(item => `<icon-button icon='${search}' text='${item}'></icon-button>`)
+      .map(item => `<icon-button icon="${search}" text='${item}'></icon-button>`)
       .join("");
     const productItem = this.products
       .map(
