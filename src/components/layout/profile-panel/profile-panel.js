@@ -53,7 +53,7 @@ class ProfilePanel extends BaseComponent {
         <icon-button id="close-button" icon="${cross}" action="profilePanelClose" class="absolute right-6"></icon-button>
       </div>
       <div class="profile-panel-buttons pb-5 ">
-        <base-button label="Log In"></base-button>
+        <base-button label="Log In" href="../../pages/authentication-page/login-page.html"></base-button>
         <base-button label="Discovery More" variant="secondary"></base-button>
       </div>
       <div class="flex flex-col gap-4 heading-sm">

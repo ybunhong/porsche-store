@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <script type="module" src="/main.js"></script>
     <link rel="stylesheet" href="/src/styles/index.css" />
-    <link rel="stylesheet" href="../src/styles/pages/login-page.css" />
+    <link rel="stylesheet" href="../authentication-page/login-page.css" />
+    <link rel="icon" type="image/svg" href="../../src/assets/brand-logo/porsche-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in</title>
   </head>
@@ -12,16 +13,16 @@
     <div class="bg-screen bg-white flex flex-col items-center justify-center">
       <!-- Left image shown only on large screens -->
       <div class="left-side-image">
-        <img src="../src/assets/image/bgAuthPage.webp" alt="Porsche promotional background" />
+        <img src="../../src/assets/image/bgAuthPage.webp" alt="Porsche promotional background" />
       </div>
       <!-- login card  -->
-      <form class="login-card bg-white flex flex-row items-center justify-center px-5 py-5">
+      <div class="login-card bg-white flex flex-row items-center justify-center px-5 py-5">
         <div class="login-card-contents bg-white w-full">
           <!-- header contents -->
           <div class="flex flex-col items-center justify-center gap-5">
             <img
               class="brand-logo"
-              src="../src/assets/brand-logo/porsche-icon-text.svg"
+              src="../../src/assets/brand-logo/porsche-icon-text.svg"
               alt="logotext"
             />
           </div>
@@ -37,28 +38,30 @@
               Please enter the e-mail address you defined as your Porsche ID.
             </h6>
             <!-- input form -->
-            <div class="flex flex-col w-full gap-3">
-              <legend-textbox placeholder="Porsche ID"></legend-textbox>
+            <div class="otp-input flex flex-col w-full gap-3">
+              <legend-textbox placeholder="Email address*"></legend-textbox>
               <div class="captcha-class flex items-center justify-center">
-                <img src="../src/assets/image/captcha.svg" alt="captcha" />
+                <img src="../../src/assets/image/captcha.svg" alt="captcha" />
               </div>
-              <legend-textbox placeholder="Enter the code shown above"></legend-textbox>
+              <legend-textbox placeholder="Enter the code shown above*"></legend-textbox>
             </div>
-            <!-- buttons and divider -->
-            <div class="flex flex-col w-full gap-5">
-              <base-button label="Login with password" variant="primary"></base-button>
-              <base-button label="Get login code via email" variant="secondary"></base-button>
-              <!-- divider-line -->
-              <div class="flex flex-row items-center w-full">
-                <div class="divider-line bg-black"></div>
-                <span class="body-xs pr-3 pl-3">OR</span>
-                <div class="divider-line bg-black"></div>
-              </div>
-              <base-button label="Create Porsche ID" variant="secondary"></base-button>
+            <div class="flex flex-col w-full">
+              <base-button
+                label="Continue"
+                variant="primary"
+                href="../../pages/authentication-page/verify-identity-page.html"
+              ></base-button>
+            </div>
+            <div class="flex flex-col items-center justify-center w-full">
+              <icon-button
+                class="signup"
+                text="Back"
+                href="../../pages/authentication-page/login-page.html"
+              ></icon-button>
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
     <!-- footer -->
     <footer-b></footer-b>

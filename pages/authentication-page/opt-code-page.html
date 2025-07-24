@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <script type="module" src="/main.js"></script>
     <link rel="stylesheet" href="../../src/styles/index.css" />
-    <link rel="stylesheet" href="../src/styles/pages/login-page.css" />
-    <link rel="icon" type="image/svg" href="../src/assets/brand-logo/porsche-icon.svg" />
+    <link rel="stylesheet" href="../authentication-page/login-page.css" />
+    <link rel="icon" type="image/svg" href="../../src/assets/brand-logo/porsche-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enter your email code to login</title>
   </head>
@@ -16,7 +16,7 @@
         <img src="../../src/assets/image/bgAuthPage.webp" alt="Porsche promotional background" />
       </div>
       <!-- login card  -->
-      <form class="login-card bg-white flex flex-row items-center justify-center px-5 py-5">
+      <div class="login-card bg-white flex flex-row items-center justify-center px-5 py-5">
         <div class="login-card-contents bg-white w-full">
           <!-- header contents -->
           <div class="flex flex-col items-center justify-center">
@@ -40,7 +40,7 @@
               <legend-textbox placeholder="Enter the 6-digits code*"></legend-textbox>
             </div>
             <div class="button-login flex flex-col w-full text-center">
-              <base-button label="Continue" variant="primary"></base-button>
+              <base-button label="Continue" variant="primary" href="../../index.html"></base-button>
               <div class="flex flex-row w-full px-1 justify-center items-center">
                 <h6 class="body-xs">Didn't receive a code?</h6>
                 <icon-button class="signup" text="Resend"></icon-button>
@@ -48,12 +48,12 @@
               <icon-button
                 class="signup self-center text-p3"
                 text="Go back"
-                href="../login-page.html"
+                href="../../pages/authentication-page/login-page.html"
               ></icon-button>
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </body>
   <footer>
