@@ -38,7 +38,7 @@ class MainNavigation extends BaseComponent {
       .join("");
 
     this.template = /* html */ `
-      <nav class="header-nav  border-t justify-center ">
+      <nav class="header-nav  border-t border-b justify-center" style="border-color: var(--color-gray-300)">
       <div class="ml-12 pl-6">
       <ul class="flex">
         ${navList}
