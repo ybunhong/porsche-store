@@ -33,12 +33,6 @@
   }
 }
 
-/* product category section */
-.category {
-  max-width: 1535px;
-  margin: 0 auto;
-}
-
 /* filter section */
 .filter {
   height: 58px;
@@ -131,4 +125,14 @@
     align-items: center;
     height: 100%;
   }
+}
+
+.category {
+  width: 100%;
+  max-width: 1535px;
+  margin: 0 auto;
+}
+
+.category horizontal-scroller .delivery-scroller {
+  width: auto;
 }
