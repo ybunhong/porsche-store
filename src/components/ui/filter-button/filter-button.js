@@ -28,7 +28,7 @@ class FilterTopResultButtons extends BaseComponent {
 
       <div class="flex justify-between hide-mobile hide-tablet">
         <div class="flex justify-between px-4 py-2 gap-2 border border-medium rounded-sm">
-          <icon-button icon="../src/assets/icons/interface-controll/sliders.svg"></icon-button>
+          <icon-button icon="/src/assets/icons/interface-controll/sliders.svg"></icon-button>
           <span class=" flex justify-center items-center">Filter</span>
         </div>
 

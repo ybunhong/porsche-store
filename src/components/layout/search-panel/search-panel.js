@@ -72,7 +72,7 @@ class SearchPanel extends BaseComponent {
       .join("");
 
     this.template = /* html */ `
-    <aside id="searchpanel" class="search-panel ${this.isOpen ? "open" : ""} absolute  h-full z-100 left-0 top-0 flex">
+    <aside id="searchpanel" class="search-panel ${this.isOpen ? "open" : ""} absolute  h-full z-1000 left-0 top-0 flex">
 
     <div class="search-panel-content bg-white px-5 h-full">
     <!-- Right section -->

@@ -46,7 +46,7 @@ class ProfilePanel extends BaseComponent {
     const menulist = this.list.map(item => `<a href='${item.href}'> ${item.label}</a>`).join("");
 
     this.template = /* html */ `
-    <aside id="profilepanel" class="profile-panel ${this.isOpen ? "open" : ""} absolute bg-white h-full z-100 left-0 top-0 flex">
+    <aside id="profilepanel" class="profile-panel ${this.isOpen ? "open" : ""} absolute bg-white h-full z-1000 left-0 top-0 flex">
     <div class="profile-panel-content bg-white px-5 h-full w-full pb-3 pt-6 ">
       <div class="flex items-center justify-center w-full pb-3 hide-tablet hide-desktop">
         <h4>Account</h4>
