@@ -7,3 +7,11 @@
 .header .hover-none button:hover {
   background-color: transparent;
 }
+
+.header .icon-button {
+  height: 1rem;
+}
+
+.p-header-icon-center-tablet .icon-button {
+  padding: 0;
+}
