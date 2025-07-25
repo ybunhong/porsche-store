@@ -1,7 +1,7 @@
 import "@ui";
 import "./popup.css";
 import { heart, heartFilled } from "@assets";
-import { sampleProductDataList } from "../../../data/sample-data.js";
+import { sampleProductDataList } from "../../../sample/sample-data.js";
 
 class PopUp extends BaseComponent {
   static get observedAttributes() {
