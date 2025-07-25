@@ -29,7 +29,7 @@
 
 import { cross, cursorminus, cursorplus, arrow } from "../../../assets/assets";
 import "./product-gallery.css";
-import { sampleProductDataList } from "../../../data/sample-data";
+import { sampleProductDataList } from "../../../sample/sample-data";
 
 class ProductGallery extends BaseComponent {
   static get observedAttributes() {

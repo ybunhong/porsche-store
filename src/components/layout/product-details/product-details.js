@@ -33,7 +33,7 @@
 
 import "./product-details.css";
 import { cartEmpty, heart, warning } from "@assets";
-import { sampleProductDataList } from "../../../data/sample-data";
+import { sampleProductDataList } from "../../../sample/sample-data";
 import "../../ui/index";
 
 class ProductDetail extends BaseComponent {
