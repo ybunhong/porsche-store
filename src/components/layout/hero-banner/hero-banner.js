@@ -1,6 +1,6 @@
 import "./hero-banner.css";
 import "@ui";
-import BannerImage from "../../../assets/hero-section.avif";
+import BannerImage from "../../../assets/hero-section.jpeg";
 
 class HeroBanner extends BaseComponent {
   connectedCallback() {
