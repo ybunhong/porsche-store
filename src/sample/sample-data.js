@@ -1,5 +1,5 @@
 // bag
-import bag1 from "../assets/image/bag/1.avif";
+import bag1 from "../assets/image/bag/1.jpeg";
 import bag2 from "../assets/image/bag/2.avif";
 import bag3 from "../assets/image/bag/3.avif";
 import bag4 from "../assets/image/bag/4.avif";
