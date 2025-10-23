@@ -1,5 +1,6 @@
 import "./dropdown-selection.css";
 import { chevron } from "@assets";
+import { BaseComponent } from "../../base-component.js";
 
 /**
  * DropdownSelection Web Component

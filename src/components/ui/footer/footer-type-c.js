@@ -1,6 +1,7 @@
 import "@ui";
 import "./footer-main.css";
 import { ukFlag, discoverLg, applePayLg, mastercardLg, visaLg, dinerMd, amexLg } from "@assets";
+import { BaseComponent } from "../../base-component.js";
 
 class FooterTypeC extends BaseComponent {
   static get observedAttributes() {

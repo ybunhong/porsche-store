@@ -1,4 +1,5 @@
 import "./model-selection-panel.css";
+import { BaseComponent } from "../../base-component.js";
 import carImage from "../../../assets/Cayenne.png";
 
 class ModelSelectionPanel extends BaseComponent {

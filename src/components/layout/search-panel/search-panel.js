@@ -1,4 +1,5 @@
 import "./search-panel.css";
+import { BaseComponent } from "../../base-component.js";
 import { cross, search } from "../../../assets/assets";
 import "@ui";
 

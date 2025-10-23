@@ -1,4 +1,5 @@
 import "./legend-textbox.css";
+import { BaseComponent } from "../../base-component.js";
 
 /**
  * LegendTextBox Web Component

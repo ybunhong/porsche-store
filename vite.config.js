@@ -4,7 +4,6 @@ import { fileURLToPath } from "url";
 import AutoImport from "unplugin-auto-import/vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
-const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(__filename);
 
 export default defineConfig({
@@ -24,11 +23,7 @@ export default defineConfig({
   },
   plugins: [
     AutoImport({
-      imports: [
-        {
-          "./src/components/base-component.js": ["BaseComponent"],
-        },
-      ],
+      include: ["src/**/*.js", "!src/components/base-component.js"],
       dts: true,
     }),
     viteStaticCopy({

@@ -1,6 +1,7 @@
 import "@ui";
 import "./scroll-product.css";
 import { arrow } from "@assets";
+import { BaseComponent } from "../../base-component.js";
 
 class ScrollProduct extends BaseComponent {
   static get observedAttributes() {

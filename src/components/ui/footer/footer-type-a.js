@@ -1,6 +1,7 @@
 import "@ui";
 import "./footer-main.css";
 import { truckFast, clock, lock, car, ukFlag } from "@assets";
+import { BaseComponent } from "../../base-component.js";
 
 class FooterTypeA extends BaseComponent {
   static get observedAttributes() {

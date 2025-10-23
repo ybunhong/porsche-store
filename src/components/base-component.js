@@ -1,6 +1,8 @@
-import { renderHTML } from "../utils/renderHTML.js"; // Import the utility
+import { renderHTML } from "../utils/renderHTML.js";
 
-// Base class for all custom components
+/**
+ * Base class for all custom components
+ */
 class BaseComponent extends HTMLElement {
   static get observedAttributes() {
     return []; // subclasses should override this
@@ -25,6 +27,11 @@ class BaseComponent extends HTMLElement {
     // Default render logic using the template defined in child components
     this.innerHTML = ""; // Clear previous content
     this.appendChild(renderHTML(this.template)); // Use renderHTML utility to render the template
+  }
+
+  updateTemplate(newTemplate) {
+    this.template = newTemplate;
+    this.render();
   }
 }
 

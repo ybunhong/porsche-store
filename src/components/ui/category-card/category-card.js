@@ -5,6 +5,7 @@
 
 import "./category-card.css";
 import { arrow } from "@assets";
+import { BaseComponent } from "../../base-component.js";
 import "../index.js";
 
 class CategoryCard extends BaseComponent {

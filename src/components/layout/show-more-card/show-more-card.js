@@ -1,3 +1,5 @@
+import { BaseComponent } from "../../base-component.js";
+
 //  Usage Instructions for <show-more-card> Component:
 //
 // This component accepts two optional attributes:

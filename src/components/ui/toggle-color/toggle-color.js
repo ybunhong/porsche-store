@@ -1,3 +1,5 @@
+import { BaseComponent } from "../../base-component.js";
+
 class ToggleColor extends BaseComponent {
   static get observedAttributes() {
     return ["icon"];

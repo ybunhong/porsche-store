@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "test": "jest",
-    "lint": "eslint '**/*.js' --fix && stylelint '**/*.css' --fix && htmlhint '**/*.html' && prettier --write '**/*.{js,json,css,html}'"
+    "lint": "eslint '**/*.js' --fix && stylelint '**/*.css' --fix && htmlhint '**/*.html' && prettier --write '**/*.{js,json,css,html}'",
+    "setup": "node setup.cjs"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.28.0",

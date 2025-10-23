@@ -1,5 +1,6 @@
 import "./product-card.css";
 import { heart, heartFilled } from "@assets";
+import { BaseComponent } from "../../base-component.js";
 import productCard from "../../../assets/product_card.avif";
 import "@ui";
 import "@layout";

@@ -1,4 +1,5 @@
 import "./icon-button.css";
+import { BaseComponent } from "../../base-component.js";
 
 /**
  * IconButton Web Component

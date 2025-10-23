@@ -1,5 +1,6 @@
 import { arrow } from "@assets";
 import searchImage from "../../../assets/search-item.avif";
+import { BaseComponent } from "../../base-component.js";
 import "./search-result-item.css";
 
 class SearchResultItem extends BaseComponent {

@@ -1,4 +1,5 @@
 import "./base-button.css";
+import { BaseComponent } from "../../base-component.js";
 
 /**
  * BaseButton Web Component
@@ -133,12 +134,11 @@ class BaseButton extends BaseComponent {
       classes += "py-1  px-2 body-3xs ";
     }
 
-    this.template = `
-      <a href="${this.href}">
-        <button class="${classes}">${this.label}</button>
-      </a>
-  
-    `;
+    if (this.disabled) {
+      this.template = `<button class="${classes}" disabled>${this.label}</button>`;
+    } else {
+      this.template = `<a href="${this.href}"><button class="${classes}">${this.label}</button></a>`;
+    }
     this.render();
   }
 }

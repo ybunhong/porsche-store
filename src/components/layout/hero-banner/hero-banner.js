@@ -1,4 +1,5 @@
 import "./hero-banner.css";
+import { BaseComponent } from "../../base-component.js";
 import "@ui";
 import BannerImage from "../../../assets/hero-section.jpeg";
 

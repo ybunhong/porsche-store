@@ -1,6 +1,7 @@
 import "@ui";
 import "./popup.css";
 import { heart, heartFilled } from "@assets";
+import { BaseComponent } from "../../base-component.js";
 import { sampleProductDataList } from "../../../sample/sample-data.js";
 
 class PopUp extends BaseComponent {

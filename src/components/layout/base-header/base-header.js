@@ -1,5 +1,6 @@
 import "@ui";
 import "./base-header.css";
+import { BaseComponent } from "../../base-component.js";
 
 class BaseHeader extends BaseComponent {
   static get observedAttributes() {

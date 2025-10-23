@@ -1,4 +1,5 @@
 import "./footer-main.css";
+import { BaseComponent } from "../../base-component.js";
 
 class FooterTypeB extends BaseComponent {
   static get obseredAttributes() {

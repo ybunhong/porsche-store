@@ -1,5 +1,6 @@
 import "./profile-panel.css";
 import { cross, search } from "@assets";
+import { BaseComponent } from "../../base-component.js";
 import "@ui";
 
 class ProfilePanel extends BaseComponent {

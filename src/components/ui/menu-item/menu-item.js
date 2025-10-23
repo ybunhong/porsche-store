@@ -1,5 +1,6 @@
 import "./menu-item.css";
 import { chevron } from "@assets";
+import { BaseComponent } from "../../base-component.js";
 
 class MenuItem extends BaseComponent {
   static get observedAttributes() {

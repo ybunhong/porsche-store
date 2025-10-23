@@ -1,4 +1,5 @@
 import "./main-navigation.css";
+import { BaseComponent } from "../../base-component.js";
 
 class MainNavigation extends BaseComponent {
   static get observedAttributes() {

@@ -30,6 +30,7 @@
 
 import "./horizontal-scroller.css";
 import { chevron } from "@assets";
+import { BaseComponent } from "../../base-component.js";
 
 class DeliveryScroller extends BaseComponent {
   constructor() {

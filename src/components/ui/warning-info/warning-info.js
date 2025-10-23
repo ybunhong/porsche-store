@@ -1,6 +1,6 @@
 import "./warning-info.css";
 import { warning } from "@assets";
-import "../../base-component";
+import { BaseComponent } from "../../base-component.js";
 
 /**
  * InfoWarningComponent Web Component

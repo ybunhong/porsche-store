@@ -1,6 +1,7 @@
 import "./search-input.css";
-import "@ui";
 import { search } from "@assets";
+import { BaseComponent } from "../../base-component.js";
+import "@ui";
 
 class searchInput extends BaseComponent {
   static get observedAttributes() {

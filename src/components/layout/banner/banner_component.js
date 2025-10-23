@@ -42,6 +42,7 @@
 
 import "./banner_component.css";
 import "../index.js";
+import { BaseComponent } from "../../base-component.js";
 
 class BannerComponent extends BaseComponent {
   static get observedAttributes() {
