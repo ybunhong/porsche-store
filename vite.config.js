@@ -12,6 +12,14 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
+  build: {
+    assetsDir: "assets",
+    rollupOptions: {
+      output: {
+        assetFileNames: "assets/[name].[ext]",
+      },
+    },
+  },
   resolve: {
     alias: {
       "@assets": path.resolve(dirname, "./src/assets/assets.js"),
