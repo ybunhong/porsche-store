@@ -29,7 +29,10 @@ class MainNavigation extends BaseComponent {
       { href: "/pages/all-category/all-category.html", label: "All categories  |" },
       { href: "/pages/porsche-design/porsche-design.html", label: "PORSCHE DESIGN" },
       { href: "/pages/watches/watches.html", label: "Watches" },
-      { href: "/pages/vehicle-accessories/vehicle-accessories.html", label: "Vehicle Accessories" },
+      {
+        href: "/pages/vehicle-accessories/vehicle-accessories.html",
+        label: "Vehicle Accessories",
+      },
       { href: "/pages/eye-wear/eyewear.html", label: "Eyewear" },
     ];
 

@@ -2,12 +2,13 @@ import { defineConfig } from "vite";
 import path from "path";
 import { fileURLToPath } from "url";
 import AutoImport from "unplugin-auto-import/vite";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(__filename);
 
 export default defineConfig({
-  base: "./",
+  base: "/",
   server: {
     port: 3000,
     open: true,
@@ -25,10 +26,18 @@ export default defineConfig({
     AutoImport({
       imports: [
         {
-          [path.resolve(__dirname, "src/components/base-component.js")]: ["BaseComponent"],
+          "./src/components/base-component.js": ["BaseComponent"],
         },
       ],
       dts: true,
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: "pages/**/*",
+          dest: "pages",
+        },
+      ],
     }),
   ],
 });
