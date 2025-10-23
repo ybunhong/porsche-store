@@ -1,0 +1,9 @@
+{
+  "static": {
+    "headers": {
+      "/**/*.avif": {
+        "Content-Type": "image/avif"
+      }
+    }
+  }
+}
