@@ -1,5 +1,5 @@
 import "./header-toolbar.css";
-import { cartEmpty, menu, profile, search, porscheIcon, porscheText, heart } from "@assets";
+import { cartEmpty, menu, profile, search, porscheIcon, porscheText, heart } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 import "@ui";
 import "@layout";
