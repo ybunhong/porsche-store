@@ -1,5 +1,5 @@
 import "./hamburger-panel.css";
-import { cross, arrow } from "@assets";
+import { cross, arrow } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 import "@ui";
 

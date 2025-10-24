@@ -1,6 +1,6 @@
 import "@ui";
 import "./scroll-product.css";
-import { arrow } from "@assets";
+import { arrow } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 
 class ScrollProduct extends BaseComponent {

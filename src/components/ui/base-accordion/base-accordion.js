@@ -1,5 +1,5 @@
 import "./base-accordion.css";
-import { plus, minus } from "@assets";
+import { plus, minus } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 import { sampleSets } from "../../../sample/accordion-data.js";
 

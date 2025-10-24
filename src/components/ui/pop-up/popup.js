@@ -1,6 +1,6 @@
 import "@ui";
 import "./popup.css";
-import { heart, heartFilled } from "@assets";
+import { heart, heartFilled } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 import { sampleProductDataList } from "../../../sample/sample-data.js";
 

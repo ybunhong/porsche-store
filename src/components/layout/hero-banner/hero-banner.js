@@ -1,7 +1,6 @@
 import "./hero-banner.css";
 import { BaseComponent } from "../../base-component.js";
 import "@ui";
-import BannerImage from "../../../assets/hero-section.jpeg";
 
 class HeroBanner extends BaseComponent {
   connectedCallback() {
@@ -13,7 +12,7 @@ class HeroBanner extends BaseComponent {
     this.template = /* html */ `
        <section class=" hero w-full">
         <img 
-          src="${BannerImage}" 
+          src="/assets/hero-section.jpeg" 
           alt="Porsche Outdoor Equipment" 
           class=" absolute hero-image "
         />

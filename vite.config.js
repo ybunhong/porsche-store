@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import path from "path";
-import { fileURLToPath } from "url";
 import AutoImport from "unplugin-auto-import/vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
@@ -24,7 +23,6 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@assets": path.resolve(dirname, "./src/assets/assets.js"),
       "@ui": path.resolve(dirname, "./src/components/ui/index.js"),
       "@components": path.resolve(dirname, "./src/components/index.js"),
       "@layout": path.resolve(dirname, "./src/components/layout/index.js"),

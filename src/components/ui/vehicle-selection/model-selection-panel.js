@@ -1,6 +1,5 @@
 import "./model-selection-panel.css";
 import { BaseComponent } from "../../base-component.js";
-import carImage from "../../../assets/Cayenne.png";
 
 class ModelSelectionPanel extends BaseComponent {
   constructor() {
@@ -8,12 +7,12 @@ class ModelSelectionPanel extends BaseComponent {
     this.isModelTab = true;
 
     this.models = [
-      { src: carImage },
-      { src: carImage },
-      { src: carImage },
-      { src: carImage },
-      { src: carImage },
-      { src: carImage },
+      { src: "/assets/Cayenne.png" },
+      { src: "/assets/Cayenne.png" },
+      { src: "/assets/Cayenne.png" },
+      { src: "/assets/Cayenne.png" },
+      { src: "/assets/Cayenne.png" },
+      { src: "/assets/Cayenne.png" },
     ];
   }
 
@@ -73,7 +72,7 @@ class ModelSelectionPanel extends BaseComponent {
                 <strong>Simply log in below.</strong>
               </p>
               <div class="login-img flex">
-                <img src="${carImage}" alt="Vehicles" />
+                <img src="/assets/Cayenne.png" alt="Vehicles" />
               </div>
               <a href="/pages/authentication-page/login-page.html">
               <base-button label="Login"></base-button></a>

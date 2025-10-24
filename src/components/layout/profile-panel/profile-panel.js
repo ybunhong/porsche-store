@@ -1,5 +1,5 @@
 import "./profile-panel.css";
-import { cross, search } from "@assets";
+import { cross, search } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 import "@ui";
 

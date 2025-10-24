@@ -27,7 +27,7 @@
  * - Close button triggers 'close-gallery' event
  */
 
-import { cross, cursorminus, cursorplus, arrow } from "../../../assets/assets";
+import { cross, cursorminus, cursorplus, arrow } from "../../../assets/assets.js";
 import "./product-gallery.css";
 import { BaseComponent } from "../../base-component.js";
 import { sampleProductDataList } from "../../../sample/sample-data";

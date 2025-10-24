@@ -1,5 +1,5 @@
 import "./warning-info.css";
-import { warning } from "@assets";
+import { warning } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 
 /**

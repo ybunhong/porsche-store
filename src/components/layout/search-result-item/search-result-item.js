@@ -1,5 +1,5 @@
-import { arrow } from "@assets";
-import searchImage from "../../../assets/search-item.avif";
+import { arrow } from "../../../assets/assets.js";
+import searchImage from "../../../../public/assets/search-item.avif";
 import { BaseComponent } from "../../base-component.js";
 import "./search-result-item.css";
 

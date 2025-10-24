@@ -1,5 +1,5 @@
 import "./search-input.css";
-import { search } from "@assets";
+import { search } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 import "@ui";
 

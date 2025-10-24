@@ -1,6 +1,14 @@
 import "@ui";
 import "./footer-main.css";
-import { ukFlag, discoverLg, applePayLg, mastercardLg, visaLg, dinerMd, amexLg } from "@assets";
+import {
+  ukFlag,
+  discoverLg,
+  applePayLg,
+  mastercardLg,
+  visaLg,
+  dinerMd,
+  amexLg,
+} from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 
 class FooterTypeC extends BaseComponent {
@@ -10,6 +18,7 @@ class FooterTypeC extends BaseComponent {
 
   constructor() {
     super();
+
     this.label = "";
   }
 

@@ -1,142 +1,76 @@
 // brand logo
-import porscheIcon from "./brand-logo/porsche-icon.svg";
-import porscheText from "./brand-logo/porsche-icon-text.svg";
+export const porscheIcon = "/assets/brand-logo/porsche-icon.svg";
+export const porscheText = "/assets/brand-logo/porsche-icon-text.svg";
 
 // director icons
-import bell from "./icons/indicator/bell.svg";
-import card from "./icons/indicator/card.svg";
-import checkCircle from "./icons/indicator/check-circle.svg";
-import clock from "./icons/indicator/clock.svg";
-import document from "./icons/indicator/document.svg";
-import leather from "./icons/indicator/leather.svg";
-import location from "./icons/indicator/location.svg";
-import mail from "./icons/indicator/mail.svg";
-import pagePinned from "./icons/indicator/page-pinned.svg";
-import profile from "./icons/indicator/profile.svg";
-import tag from "./icons/indicator/tag.svg";
-import truck from "./icons/indicator/truck.svg";
-import heart from "./icons/indicator/heart.svg";
-import heartFilled from "./icons/indicator/heart-filled.svg";
-import cartEmpty from "./icons/indicator/cart-empty.svg";
-import cartFilled from "./icons/indicator/cart-filled.svg";
-import lock from "./icons/indicator/lock.svg";
-import mountain from "./icons/indicator/mountain.svg";
-import car from "./icons/indicator/car.svg";
-import truckFast from "./icons/indicator/truck-fast.svg";
-import warning from "./icons/indicator/warning-line.svg";
+export const bell = "/assets/icons/indicator/bell.svg";
+export const card = "/assets/icons/indicator/card.svg";
+export const checkCircle = "/assets/icons/indicator/check-circle.svg";
+export const clock = "/assets/icons/indicator/clock.svg";
+export const document = "/assets/icons/indicator/document.svg";
+export const leather = "/assets/icons/indicator/leather.svg";
+export const location = "/assets/icons/indicator/location.svg";
+export const mail = "/assets/icons/indicator/mail.svg";
+export const pagePinned = "/assets/icons/indicator/page-pinned.svg";
+export const profile = "/assets/icons/indicator/profile.svg";
+export const tag = "/assets/icons/indicator/tag.svg";
+export const truck = "/assets/icons/indicator/truck.svg";
+export const heart = "/assets/icons/indicator/heart.svg";
+export const heartFilled = "/assets/icons/indicator/heart-filled.svg";
+export const cartEmpty = "/assets/icons/indicator/cart-empty.svg";
+export const cartFilled = "/assets/icons/indicator/cart-filled.svg";
+export const lock = "/assets/icons/indicator/lock.svg";
+export const mountain = "/assets/icons/indicator/mountain.svg";
+export const car = "/assets/icons/indicator/car.svg";
+export const truckFast = "/assets/icons/indicator/truck-fast.svg";
+export const warning = "/assets/icons/indicator/warning-line.svg";
 
 // interface control icons
-import expand from "./icons/interface-controll/expand.svg";
-import filter from "./icons/interface-controll/filter.svg";
-import menu from "./icons/interface-controll/menu.svg";
-import pencil from "./icons/interface-controll/pencil.svg";
-import sliders from "./icons/interface-controll/sliders.svg";
-import sort from "./icons/interface-controll/sort.svg";
-import plus from "./icons/interface-controll/plus.svg";
-import minus from "./icons/interface-controll/minus.svg";
-import cross from "./icons/interface-controll/cross.svg";
-import search from "./icons/interface-controll/search-.svg";
-import cursorminus from "./icons/interface-controll/cursorminus.svg";
-import cursorplus from "./icons/interface-controll/cursorplus.svg";
+export const expand = "/assets/icons/interface-controll/expand.svg";
+export const filter = "/assets/icons/interface-controll/filter.svg";
+export const menu = "/assets/icons/interface-controll/menu.svg";
+export const pencil = "/assets/icons/interface-controll/pencil.svg";
+export const sliders = "/assets/icons/interface-controll/sliders.svg";
+export const sort = "/assets/icons/interface-controll/sort.svg";
+export const plus = "/assets/icons/interface-controll/plus.svg";
+export const minus = "/assets/icons/interface-controll/minus.svg";
+export const cross = "/assets/icons/interface-controll/cross.svg";
+export const search = "/assets/icons/interface-controll/search-.svg";
+export const cursorminus = "/assets/icons/interface-controll/cursorminus.svg";
+export const cursorplus = "/assets/icons/interface-controll/cursorplus.svg";
 
 // payments icons
-import americanExpressMd from "./icons/payments/american-express-md.svg";
-import amexSm from "./icons/payments/amex-sm.svg";
-import amexLg from "./icons/payments/amex-lg.svg";
-import applePayLg from "./icons/payments/apple-pay-lg.svg";
-import dinerLg from "./icons/payments/diner-lg.svg";
-import dinerMd from "./icons/payments/diner-md.svg";
-import dinersSm from "./icons/payments/diners-sm.svg";
-import discoverLg from "./icons/payments/discover-lg.svg";
-import discoverMd from "./icons/payments/discover-md.svg";
-import googlePayLg from "./icons/payments/google-pay-lg.svg";
-import googlePaySm from "./icons/payments/google-pay-sm.svg";
-import mastercardLg from "./icons/payments/mastercard-lg.svg";
-import paypalLg from "./icons/payments/paypal-lg.svg";
-import paypalSm from "./icons/payments/paypal-sm.svg";
-import paypalMd from "./icons/payments/paypal-md.svg";
-import visaLg from "./icons/payments/visa-lg.svg";
-import visaMd from "./icons/payments/visa-md.svg";
+export const americanExpressMd = "/assets/icons/payments/american-express-md.svg";
+export const amexSm = "/assets/icons/payments/amex-sm.svg";
+export const amexLg = "/assets/icons/payments/amex-lg.svg";
+export const applePayLg = "/assets/icons/payments/apple-pay-lg.svg";
+export const dinerLg = "/assets/icons/payments/diner-lg.svg";
+export const dinerMd = "/assets/icons/payments/diner-md.svg";
+export const dinersSm = "/assets/icons/payments/diners-sm.svg";
+export const discoverLg = "/assets/icons/payments/discover-lg.svg";
+export const discoverMd = "/assets/icons/payments/discover-md.svg";
+export const googlePayLg = "/assets/icons/payments/google-pay-lg.svg";
+export const googlePaySm = "/assets/icons/payments/google-pay-sm.svg";
+export const mastercardLg = "/assets/icons/payments/mastercard-lg.svg";
+export const paypalLg = "/assets/icons/payments/paypal-lg.svg";
+export const paypalSm = "/assets/icons/payments/paypal-sm.svg";
+export const paypalMd = "/assets/icons/payments/paypal-md.svg";
+export const visaLg = "/assets/icons/payments/visa-lg.svg";
+export const visaMd = "/assets/icons/payments/visa-md.svg";
 
 // social media icons
-import facebook from "./icons/social-media/facebook.svg";
-import google from "./icons/social-media/google.svg";
-import instagram from "./icons/social-media/instagram.svg";
-import linkin from "./icons/social-media/linkin.svg";
-import pinterest from "./icons/social-media/pinterest.svg";
-import telegram from "./icons/social-media/telegram.svg";
-import x from "./icons/social-media/x.svg";
-import youtube from "./icons/social-media/youtube.svg";
+export const facebook = "/assets/icons/social-media/facebook.svg";
+export const google = "/assets/icons/social-media/google.svg";
+export const instagram = "/assets/icons/social-media/instagram.svg";
+export const linkin = "/assets/icons/social-media/linkin.svg";
+export const pinterest = "/assets/icons/social-media/pinterest.svg";
+export const telegram = "/assets/icons/social-media/telegram.svg";
+export const x = "/assets/icons/social-media/x.svg";
+export const youtube = "/assets/icons/social-media/youtube.svg";
 
 // navigation
-import arrow from "./icons/navigation/arrow.svg";
-import chevron from "./icons/navigation/chevron.svg";
+export const arrow = "/assets/icons/navigation/arrow.svg";
+export const chevron = "/assets/icons/navigation/chevron.svg";
 
 // flag
-import ukFlag from "./icons/flag/united-kingdom.svg";
-
-export {
-  expand,
-  filter,
-  menu,
-  pencil,
-  sliders,
-  sort,
-  americanExpressMd,
-  amexSm,
-  amexLg,
-  applePayLg,
-  dinerLg,
-  dinerMd,
-  dinersSm,
-  discoverLg,
-  discoverMd,
-  googlePayLg,
-  googlePaySm,
-  mastercardLg,
-  paypalLg,
-  paypalSm,
-  paypalMd,
-  visaLg,
-  visaMd,
-  facebook,
-  google,
-  instagram,
-  linkin,
-  pinterest,
-  telegram,
-  x,
-  youtube,
-  arrow,
-  chevron,
-  porscheIcon,
-  porscheText,
-  minus,
-  plus,
-  cross,
-  bell,
-  card,
-  checkCircle,
-  clock,
-  document,
-  leather,
-  location,
-  mail,
-  pagePinned,
-  profile,
-  tag,
-  truck,
-  heart,
-  heartFilled,
-  search,
-  cartFilled,
-  cartEmpty,
-  lock,
-  truckFast,
-  mountain,
-  car,
-  cursorminus,
-  cursorplus,
-  ukFlag,
-  warning,
-};
+export const ukFlag = "/assets/icons/flag/united-kingdom.svg";

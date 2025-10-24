@@ -1,5 +1,5 @@
 // import "/src/components/ui/filter-button/filter-button.css";
-import { sort, filter, chevron } from "@assets";
+import { sort, filter, chevron } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 
 class FilterTopResultButtons extends BaseComponent {

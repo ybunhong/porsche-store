@@ -4,7 +4,7 @@
 // - href : link url path
 
 import "./category-card.css";
-import { arrow } from "@assets";
+import { arrow } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 import "../index.js";
 

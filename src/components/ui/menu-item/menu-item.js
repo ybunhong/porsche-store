@@ -1,5 +1,5 @@
 import "./menu-item.css";
-import { chevron } from "@assets";
+import { chevron } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 
 class MenuItem extends BaseComponent {

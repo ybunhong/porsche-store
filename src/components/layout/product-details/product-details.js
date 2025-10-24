@@ -32,7 +32,7 @@
  */
 
 import "./product-details.css";
-import { cartEmpty, heart, warning } from "@assets";
+import { cartEmpty, heart, warning } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 import { sampleProductDataList } from "../../../sample/sample-data";
 import "../../ui/index";

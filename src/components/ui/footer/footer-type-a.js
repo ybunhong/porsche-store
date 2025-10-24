@@ -1,6 +1,6 @@
 import "@ui";
 import "./footer-main.css";
-import { truckFast, clock, lock, car, ukFlag } from "@assets";
+import { truckFast, clock, lock, car, ukFlag } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
 
 class FooterTypeA extends BaseComponent {
