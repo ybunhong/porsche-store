@@ -1,1 +1,1 @@
-import "@components";
+import "./src/components/index";
