@@ -10,7 +10,7 @@ import {
   x,
   pinterest,
   linkin,
-} from "@assets";
+} from "../assets/assets";
 
 const navItems = [
   { href: "index.html", label: "Terms and Conditions." },
