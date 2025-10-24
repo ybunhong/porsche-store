@@ -1,6 +1,6 @@
 import "./hero-banner.css";
 import { BaseComponent } from "../../base-component.js";
-import "@ui";
+import "../../index.js";
 
 class HeroBanner extends BaseComponent {
   connectedCallback() {

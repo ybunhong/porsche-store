@@ -21,13 +21,7 @@ export default defineConfig({
       },
     },
   },
-  resolve: {
-    alias: {
-      "@ui": path.resolve(dirname, "./src/components/ui/index.js"),
-      "@layout": path.resolve(dirname, "./src/components/layout/index.js"),
-      "@data": path.resolve(dirname, "./src/data"),
-    },
-  },
+
   plugins: [
     AutoImport({
       include: ["src/**/*.js", "!src/components/base-component.js"],

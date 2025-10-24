@@ -1,4 +1,4 @@
-import "@ui";
+import "../../index.js";
 import "./footer-main.css";
 import { truckFast, clock, lock, car, ukFlag } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";

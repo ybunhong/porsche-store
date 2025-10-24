@@ -1,7 +1,7 @@
 import "./hamburger-panel.css";
 import { cross, arrow } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
-import "@ui";
+import "../../index.js";
 
 class HamBurgerPanel extends BaseComponent {
   constructor() {

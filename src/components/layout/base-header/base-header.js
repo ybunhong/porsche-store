@@ -1,4 +1,4 @@
-import "@ui";
+import "../../index.js";
 import "./base-header.css";
 import { BaseComponent } from "../../base-component.js";
 

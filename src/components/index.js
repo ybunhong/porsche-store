@@ -1,2 +1,2 @@
-import "@ui";
-import "@layout";
+import "./ui/index";
+import "./layout/index";

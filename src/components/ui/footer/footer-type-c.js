@@ -1,4 +1,4 @@
-import "@ui";
+import "../../index.js";
 import "./footer-main.css";
 import {
   ukFlag,

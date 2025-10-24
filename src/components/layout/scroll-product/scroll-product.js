@@ -1,4 +1,4 @@
-import "@ui";
+import "../../index.js";
 import "./scroll-product.css";
 import { arrow } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";

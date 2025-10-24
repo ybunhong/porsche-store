@@ -1,8 +1,7 @@
 import "./product-card.css";
 import { heart, heartFilled } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
-import "@ui";
-import "@layout";
+import "../../index.js";
 
 class ProductCard extends BaseComponent {
   static get observedAttributes() {

@@ -1,4 +1,4 @@
-import "@ui";
+import "../../index.js";
 import "./popup.css";
 import { heart, heartFilled } from "../../../assets/assets.js";
 import { BaseComponent } from "../../base-component.js";
