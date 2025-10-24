@@ -24,7 +24,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@ui": path.resolve(dirname, "./src/components/ui/index.js"),
-      "@components": path.resolve(dirname, "./src/components/index.js"),
       "@layout": path.resolve(dirname, "./src/components/layout/index.js"),
       "@data": path.resolve(dirname, "./src/data"),
     },
@@ -43,7 +42,4 @@ export default defineConfig({
       ],
     }),
   ],
-  optimizeDeps: {
-    include: ["@components"],
-  },
 });
